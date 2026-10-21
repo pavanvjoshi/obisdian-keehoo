@@ -1,0 +1,7 @@
+{
+	"nodes":[
+		{"id":"0a42266a739fe429","x":-620,"y":-360,"width":547,"height":345,"type":"text","text":"1. need to check on voice based responses to the support bot\n\t1. not fully functional ai assistant\n\t2. search the services.\n2. I am assuming they are speaking about hybrid model.\n\t1. not fully handled by ai voice agent\n\t2. handled by both human whenever required or for simple queries let it be handled by voice bot. \n\t3. if this is the case we already have vapi, retell etc. services. \n3. When i try to search the service providers i am able to see the only old one that are vapi, retell, etc.,.\n"},
+		{"id":"13a27931714114ea","x":-73,"y":-360,"width":547,"height":345,"type":"text","text":"### Questions:\n\n1. what specifically felt wrong about a full AI voice\n2. What happens when a user asks something we don't have an answer for?\n3. "}
+	],
+	"edges":[]
+}

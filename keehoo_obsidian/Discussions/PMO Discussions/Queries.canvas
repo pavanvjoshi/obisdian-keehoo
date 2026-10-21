@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"b1bd91de835f8a7a",
+			"type":"text",
+			"text":"## 2026-09-01\n\n1. Goodday credentials\n2. discussion time with sir. \n3. started separate tasks and updates in different group",
+			"styleAttributes":{},
+			"x":-580,
+			"y":-380,
+			"width":540,
+			"height":200
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

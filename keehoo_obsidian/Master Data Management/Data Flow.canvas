@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"741102488ebe64e5","type":"text","text":"**Data Quality**","x":-137,"y":-300,"width":250,"height":60},
+		{"id":"6b9770b8f038dfe7","type":"text","text":"**Base Object**","x":-137,"y":-140,"width":250,"height":60},
+		{"id":"250dabc9464c8be5","type":"text","text":"**Configuration**","x":-137,"y":20,"width":250,"height":60},
+		{"id":"fae34291d3429b83","type":"text","text":"**Matching**","x":-137,"y":220,"width":250,"height":60},
+		{"id":"1fe637fdd366e3c1","type":"text","text":"**Merging**","x":-137,"y":320,"width":250,"height":60},
+		{"id":"a655d6d53ea6ffa2","type":"text","text":"**Mapping**","x":-137,"y":120,"width":250,"height":60},
+		{"id":"e2efac8113e0b43c","type":"text","text":"**Source connection** ","x":-137,"y":-460,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"073c2afdde4b1b07","fromNode":"e2efac8113e0b43c","fromSide":"bottom","toNode":"741102488ebe64e5","toSide":"top","label":"User DB collection to Data source collection(Local)"},
+		{"id":"315163fa55af7c6b","fromNode":"741102488ebe64e5","fromSide":"bottom","toNode":"6b9770b8f038dfe7","toSide":"top","label":"data source collection to data_validity collection"},
+		{"id":"f5339509ed0741bc","fromNode":"6b9770b8f038dfe7","fromSide":"bottom","toNode":"250dabc9464c8be5","toSide":"top","label":"data_validity collection to data_baseobject collection"},
+		{"id":"aebb6198dcbfc876","fromNode":"250dabc9464c8be5","fromSide":"bottom","toNode":"a655d6d53ea6ffa2","toSide":"top"},
+		{"id":"883ed9d0280d1eb7","fromNode":"a655d6d53ea6ffa2","fromSide":"bottom","toNode":"fae34291d3429b83","toSide":"top"},
+		{"id":"1089f8187222bab3","fromNode":"fae34291d3429b83","fromSide":"bottom","toNode":"1fe637fdd366e3c1","toSide":"top"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

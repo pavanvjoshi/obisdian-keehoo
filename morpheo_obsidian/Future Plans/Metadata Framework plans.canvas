@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"850c50000f4fb879","type":"text","text":"\n## Future Implementations Meta Intelligence.\n\n1. Improvising primary keys and foreign keys including primary key referencing table and foreign key referencing table\n2. Need to externalise data quality script \n3. Make naming convention right for env variables\n4. Client on-boarding.\n5. Enhancing prompt files for entire framework\n6. Make plug-able inference  for every scope level (client, source, table  and column level)\n7. Using cache for generation validation rules\n8. Remove end point from the env for external sanity api.\n9.   Need to work on tech tags\n10. Need to work on citation\n11. Add right loggers and remove unnecessary loggers. (use of info, debug, warning, error, trace and critical) ","x":-537,"y":-380,"width":957,"height":380,"color":"3"}
+	],
+	"edges":[]
+}

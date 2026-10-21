@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{
+			"id":"5c37cb367eb6dda5",
+			"type":"text",
+			"text":"![[relationships.real.large.png]]",
+			"styleAttributes":{},
+			"x":-460,
+			"y":-260,
+			"width":580,
+			"height":480
+		},
+		{
+			"id":"4117bf2c9ba56dc1",
+			"type":"text",
+			"text":"![[relationships.real.large.png]]",
+			"styleAttributes":{},
+			"x":160,
+			"y":-260,
+			"width":460,
+			"height":480
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

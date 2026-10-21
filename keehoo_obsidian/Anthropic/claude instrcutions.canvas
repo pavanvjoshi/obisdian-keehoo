@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"1c52919ef6f09586","type":"text","text":"```\n**Instructions:** Always lead with a bold one-line \"headline\" that states the core point. Follow immediately with one sentence explaining why it matters. Keep all responses under 300 words. Use paragraphs of 1–2 sentences max. Use plain, conversational language — no jargon, no filler, no corporate-speak. Avoid passive voice. Use strategic bolding to anchor key ideas. Offer a \"Go deeper\" section only when extra context genuinely adds value. Never bury the main point. Cut every word that doesn't earn its place.\n```","x":-245,"y":-157,"width":645,"height":257},
+		{"id":"949f5e287c441505","type":"text","text":"GLOBAL RULES — STRICTLY FOLLOW:\n1. Use ONLY these imports for LLM and agent related code:\n   from langchain.agents import create_agent\n   from langchain_openai import AzureChatOpenAI\n   from langchain.tools import tool\n   from langchain.messages import ToolMessage, SystemMessage, HumanMessage, AIMessage\n   from langgraph.graph import StateGraph, START, END\n   from langgraph.types import Send, interrupt, Command\n   from langgraph.checkpoint.memory import MemorySaver\n\n   LLM init (use exactly this):\n   llm = AzureChatOpenAI(\n       azure_deployment=Config.INFERENCE_MODEL,\n       openai_api_version=Config.OPENAI_API_VERSION,\n       azure_endpoint=Config.OPENAI_API_URL,\n       api_key=Config.OPENAI_API_KEY,\n       temperature=1,\n       streaming=True\n   )\n\n2. No mermaid diagrams unless I explicitly ask\n3. No emojis anywhere in the codebase\n4. No module, function, or class level docstrings\n5. No comments unless absolutely critical to understanding\n6. Write the simplest, shortest code possible\n7. No unnecessary loggers — only add if debugging is critical\n8. No explanations between code blocks — just write the code","x":540,"y":-157,"width":780,"height":700},
+		{"id":"e9819ce69d22bcde","type":"text","text":"1. Do not waste unnecessary tokens on mermaid diagrams or any other explanations\n2. Do not add any emojis in code base\n3. return the mermaid when user have asked explicitly \n4. Do not add module level, function level or class level doc string until and unless it is mandatory to add.\n5. Do not add comments in code file until it is very important. \n6. If you are writing the code make sure to write the simple code and it should be less in lines. \n7. Do not add more loggers unless it is debugging. ","x":-312,"y":140,"width":780,"height":260},
+		{"id":"7303cbb8fe25e09a","type":"text","text":"#### smart brevity style","x":-245,"y":-260,"width":250,"height":103}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"4aeb7b7615fceacc",
+			"type":"text",
+			"text":"```mermaid\nflowchart TD\n  START([User message]) --> CTX[Context<br/>persona + org catalog + registry]\n  CTX --> COMP[Comprehend<br/>preflight heuristics, else LLM JSON]\n\n  COMP -->|general| GEN[General node<br/>LLM, no tools]\n  COMP -->|out_of_scope| OOS[Out of scope<br/>static policy text]\n  COMP -->|scoped_complex| PLAN[Planner<br/>task DAG, closed agent_ids]\n\n  GEN --> END([Assistant reply])\n  OOS --> END\n\n  PLAN --> SCH[Scheduler<br/>ready wave from ledger]\n  SCH -->|no ready tasks or forgotten graph| SYN[Synthesizer<br/>CEO-facing reply]\n  SCH -->|ready tasks| FAN[Fan-out Send<br/>one specialist per task]\n  FAN --> SPEC[Specialist ReAct]\n  SPEC --> BAR[Barrier<br/>merge ledger, skip failed deps]\n  BAR -->|pending remain| SCH\n  BAR -->|wave done| SYN\n  SYN --> END\n\n```",
+			"styleAttributes":{},
+			"x":-240,
+			"y":-940,
+			"width":1020,
+			"height":1380
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

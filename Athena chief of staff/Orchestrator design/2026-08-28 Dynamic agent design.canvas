@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"a60bc03192177b88",
+			"type":"text",
+			"text":"```mermaid\nflowchart TD\n    START([START]) --> LR[\"domain agent\"]\n\n    LR --> RL{\"department information gather complete?\"}\n    RL -->|Yes| CA[\"synthesizer node\"]\n    \n\n \n   \n    RL -->|No| FANOUT{{\"Fan-out: Subagent Tasks\"}}\n\n    FANOUT --> S1[\"Dept agent 1\"]\n    FANOUT --> S2[\"Dept agent 2\"]\n    FANOUT --> S3[\"Dept agent N\"]\n\n    S1 --> CR[\"Merge Node\"]\n    S2 --> CR\n    S3 --> CR\n\n    CR --> SC{\"all departments completed?\"}\n\n    SC -->|yes| CA\n    SC -->|Max Iterations with note saying max_iteration| CA\n    SC -->|Continue| LR\n\n    CA --> END([END])\n```",
+			"styleAttributes":{},
+			"x":-1200,
+			"y":-520,
+			"width":820,
+			"height":1480
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

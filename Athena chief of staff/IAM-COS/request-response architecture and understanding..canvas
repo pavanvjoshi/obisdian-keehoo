@@ -1,0 +1,117 @@
+{
+	"nodes":[
+		{
+			"id":"ef322c89101a54dd",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    autonumber\n    actor User\n    participant UI as Frontend<br/>(Login.tsx)\n    participant Store as localStorage\n    participant API as FastAPI<br/>POST /auth/login\n    participant DB as Postgres<br/>users\n\n    User->>UI: email + password\n    UI->>API: JSON body {email, password}<br/>no role/org headers\n    API->>DB: SELECT user WHERE email\n    DB-->>API: row (id, hashed_password, org_role, org_id, …)\n    alt password mismatch\n        API-->>UI: 401 Incorrect email or password\n    else ok\n        Note over API: JWT payload is only { sub: user.id, exp }\n        API-->>UI: { access_token, token_type: bearer }\n        UI->>Store: athena_token = access_token\n    end\n\n```",
+			"styleAttributes":{},
+			"x":-3120,
+			"y":-1940,
+			"width":1440,
+			"height":760
+		},
+		{
+			"id":"566a915801217764",
+			"type":"text",
+			"text":"## Login — token is issued, identity is not",
+			"styleAttributes":{},
+			"x":-3120,
+			"y":-2040,
+			"width":260,
+			"height":100
+		},
+		{
+			"id":"2140c6920a23769a",
+			"type":"text",
+			"text":"## Who am I — first time you see role and org\n",
+			"styleAttributes":{},
+			"x":-910,
+			"y":-2180,
+			"width":260,
+			"height":110
+		},
+		{
+			"id":"f281d5f3fc9517a9",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    autonumber\n\n    participant UI as Frontend (AuthProvider)\n    participant Store as localStorage\n    participant API as FastAPI\n    participant Guard as get_current_user\n    participant JWT as JwtTokenService\n    participant DB as Postgres\n\n    UI->>Store: getToken()\n    UI->>API: GET /auth/me\n    UI->>API: Authorization: Bearer JWT\n    UI->>API: Content-Type: application/json\n\n    API->>Guard: Depends(get_current_user)\n    Guard->>JWT: decode(token)\n    JWT-->>Guard: sub = 42, exp = ...\n\n    Guard->>DB: SELECT user WHERE id = 42\n    DB-->>Guard: User row with org_role, permission_tier, org_id\n\n    Guard->>DB: SELECT organization WHERE id = org_id\n    DB-->>Guard: Organization name and slug\n\n    Guard-->>API: current_user\n    API-->>UI: UserOut JSON\n\n    Note over UI: Contains org_role, permission_tier, org_id, org_name, org_slug\n    Note over UI: React context derives isPmo, isCustodian, isManagementOrPmo\n    Note over UI: These flags only control route visibility\n    Note over UI: They are NOT sent on later API requests\n\n```",
+			"styleAttributes":{},
+			"x":-910,
+			"y":-2070,
+			"width":1660,
+			"height":1020
+		},
+		{
+			"id":"95c5422252e33e40",
+			"type":"text",
+			"text":"### Every later API call — role/org loaded again from DB ",
+			"styleAttributes":{},
+			"x":1340,
+			"y":-2110,
+			"width":380,
+			"height":80
+		},
+		{
+			"id":"016ae08a7b5287b4",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    autonumber\n    participant UI as Chat.tsx\n    participant API as POST /athena/.../messages\n    participant Auth as get_current_user\n    participant DB as Postgres\n    participant Stream as stream_send_message\n    participant Persona as build_system_prompt\n    participant LLM as Model\n\n    UI->>API: Bearer token + { message }\n    API->>Auth: decode JWT → load User\n    Auth-->>API: actor (org_id, org_role, …)\n    API->>DB: conversation owned by actor.id\n    API->>Stream: user=actor\n    Stream->>DB: load_org_catalog(actor.org_id)\n    Stream->>Persona: Chief of Staff system prompt<br/>+ this org's HQ/depts\n    Note over Persona: \"persona\" is Athena's identity,<br/>not the human's org_role\n    Stream->>LLM: system + history + user message\n    LLM-->>Stream: tokens\n    Stream-->>UI: SSE stream (assistant role = LLM turn)\n\n```",
+			"styleAttributes":{},
+			"x":3520,
+			"y":-1910,
+			"width":1780,
+			"height":820
+		},
+		{
+			"id":"a5510eb5f839223e",
+			"type":"text",
+			"text":"### Chat — persona is prompt, not a header",
+			"styleAttributes":{},
+			"x":3520,
+			"y":-1990,
+			"width":420,
+			"height":80
+		},
+		{
+			"id":"b0b80c90aab52cdb",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    autonumber\n\n    participant UI as Frontend\n    participant API as FastAPI Route\n    participant Auth as get_current_user\n    participant RBAC as require_pmo\n    participant JWT as JwtTokenService\n    participant DB as Postgres\n    participant Handler as Route Handler\n\n    UI->>API: POST /org-structure/hqs\n    UI->>API: Authorization: Bearer JWT\n\n    API->>Auth: Depends(get_current_user)\n    Auth->>JWT: Decode JWT and get sub\n    Auth->>DB: Load user where users.id = sub\n    DB-->>Auth: User with org_role and org_id\n    Auth-->>RBAC: current_user\n\n    alt org_role is not PMO\n        RBAC-->>UI: 403 PMO access required\n    else org_role is PMO\n        RBAC-->>Handler: current_user\n\n        Note over Handler: tenant = current_user.org_id\n        Note over Handler: Client cannot choose another organization\n\n        Handler->>DB: Create HQ using current_user.org_id\n        DB-->>Handler: HQ saved\n        Handler-->>UI: 200 HQ JSON\n    end\n\n```",
+			"styleAttributes":{},
+			"x":1340,
+			"y":-1990,
+			"width":1580,
+			"height":1060
+		}
+	],
+	"edges":[
+		{
+			"id":"eba97d54f136e528",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"f281d5f3fc9517a9",
+			"fromSide":"right",
+			"toNode":"b0b80c90aab52cdb",
+			"toSide":"left"
+		},
+		{
+			"id":"3c27aad5243956e0",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b0b80c90aab52cdb",
+			"fromSide":"right",
+			"toNode":"016ae08a7b5287b4",
+			"toSide":"left"
+		},
+		{
+			"id":"dee9ac9be81b8348",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ef322c89101a54dd",
+			"fromSide":"right",
+			"toNode":"f281d5f3fc9517a9",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

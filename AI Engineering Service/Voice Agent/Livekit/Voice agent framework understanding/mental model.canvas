@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"d7d8e134125f15b3","type":"group","x":-1180,"y":-880,"width":340,"height":520,"label":"Stack of 3 layers"},
+		{"id":"dfe3666bb5ca5be1","type":"text","text":"### General patterns for future features:\n\n**Whenever we hit any requirement, run it through this checklist:**\n\n```\n1. Does it change what the agent SAYS or UNDERSTANDS?\n      → Touch Gemini instructions / model config\n\n2. Does it change how a TURN or TOOL executes?\n      → Touch AgentSession params or tool decorator options\n\n3. Does it need USER CONFIRMATION before proceeding?\n      → Voice confirmation = Gemini conversation + your tool logic\n      → UI confirmation = LiveKit tool confirmation feature\n\n4. Does it touch RECORDING / STORAGE / ROOMS?\n      → LiveKit Infra APIs (Egress, Room Service)\n\n5. Does it need to happen AT A SPECIFIC MOMENT in the call?\n      → Hook into LiveKit session events\n         (session_started, turn_completed, metrics_collected etc.)\n```\n","x":-1200,"y":-330,"width":1040,"height":540},
+		{"id":"7fef9b1e394a628b","type":"text","text":"GEMINI - AI brain\nUnderstands, decides, speaks\nknobs: instructions, voice, language","x":-1160,"y":-860,"width":300,"height":120},
+		{"id":"6957041a5e639cde","type":"text","text":"LIVEKIT INFRA - transport/rooms\nknobs: recording, egress, room mgmt.","x":-1160,"y":-500,"width":300,"height":120},
+		{"id":"e2cd00c929aad7d6","type":"text","text":"LIVEKIT AGENTS - orchestration layer\ncontrols HOW the session behaves\nknobs: interruption, turn talking, tool gating, confirmations, events\n","x":-1160,"y":-700,"width":300,"height":160},
+		{"id":"89f4dbb42e4e63b7","type":"text","text":"**Everytime ask one question:**\n\"is this about what the agent understands/says, or about how the session behaves?\"\n\n* Understands/says - Gemini\n* session behaves - livekit agents\n* infrastructure (record, stream, store) - livekit infra","x":-820,"y":-540,"width":660,"height":180}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{
+			"id":"f02f091067181e59",
+			"type":"text",
+			"text":"# 1. ERP Integration:\n\n1. challenges:\n\t1. HTTP, forms, approvals\n\t\t1. simple workflows doesn't need code changes\n\t\t2. implemented with help of application co-pilot and nagraj\n\t2. LLM parser in MCP tool, no worries with agent nodes.\n\t\t1. dynamic output or complex output needs code changes\n\t\t2. output configuration\n\t\t3. complex parsing fails\n\t\t\t1. n8n provides run time fix.\n\t3. \n2. how ease?\n\n# 2. Agentic flow:\n\n1. challenges:\n\t1. new node creation\n\t2. some of the nodes are not being shown sometimes. ",
+			"styleAttributes":{},
+			"x":-580,
+			"y":-260,
+			"width":580,
+			"height":580
+		},
+		{
+			"id":"15d11310109eeae7",
+			"type":"text",
+			"text":"\tconventions:\n\t* Business flows\n\t\t* ERP\n\t\t* customer\n\t* cognitive flows\n\t\t* LLMs + tools - simple\n\t\t* LLMs - MCP based\n\t* agentic flows\n\t\t* agentic behavior\n\t\t* chain of LLMs + tools - task oriented\n\t\t* react kind of loop - goal oriented",
+			"styleAttributes":{},
+			"x":40,
+			"y":-260,
+			"width":500,
+			"height":440
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

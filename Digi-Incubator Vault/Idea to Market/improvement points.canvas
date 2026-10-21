@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"36ef986f71126008","x":-561,"y":-204,"width":1021,"height":484,"type":"text","text":"1. Fix state hook (usepersona react hook)\n2. human in the loop in research agent\n3. context feeding in conviction report\n4. "}
+	],
+	"edges":[]
+}

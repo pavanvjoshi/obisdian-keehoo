@@ -1,0 +1,306 @@
+{
+	"nodes":[
+		{"id":"4924b50720c38a85","type":"group","x":-1600,"y":2400,"width":9040,"height":7000,"label":"Untitled group"},
+		{"id":"16d02276e22cc4a0","type":"group","x":2920,"y":6780,"width":1500,"height":580,"label":"Ports"},
+		{"id":"8f8c169d60b13583","type":"group","x":3460,"y":7480,"width":1020,"height":540,"label":"Usecase as a Coordinator or  Bridge"},
+		{"id":"b6327006e2ad3ebf","type":"group","x":2480,"y":7480,"width":880,"height":580,"label":"flow connections"},
+		{"id":"27624498b494cc83","type":"group","x":2380,"y":6180,"width":860,"height":240,"label":"Domain"},
+		{
+			"id":"d0e6a66ffef28aaf",
+			"type":"text",
+			"text":"fetch from the db",
+			"styleAttributes":{},
+			"x":3480,
+			"y":7820,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"b3ee2eb6d40f7044",
+			"type":"text",
+			"text":"## std request response life cycle\n\n```mermaid\nsequenceDiagram\n    participant Client\n    participant Middleware\n    participant Router\n    participant Dependency Injection\n    participant Route Handler\n    participant Service Layer\n    participant Repository Layer\n    participant Database\n\n    Client->>Middleware: HTTP Request\n    Note over Middleware: auth, logging, CORS, rate limiting\n\n    Middleware->>Router: passes request forward\n    Note over Router: matches URL + method to a handler\n\n    Router->>Dependency Injection: resolve dependencies\n    Note over Dependency Injection: DB session, current user, config\n    Dependency Injection-->>Router: dependencies ready\n\n    Router->>Route Handler: call handler(request, ...deps)\n    Note over Route Handler: validates input shape (Pydantic)\n    Note over Route Handler: raises HTTPException if invalid\n\n    Route Handler->>Service Layer: call business logic\n    Note over Service Layer: pure Python, no HTTP concepts\n    Note over Service Layer: calculations, rules, decisions\n\n    Service Layer->>Repository Layer: read or write\n    Note over Repository Layer: only place that talks to DB\n    Note over Repository Layer: returns domain objects, not raw rows\n\n    Repository Layer->>Database: SQL query\n    Database-->>Repository Layer: rows\n    Repository Layer-->>Service Layer: domain objects\n\n    Service Layer-->>Route Handler: result\n    Route Handler-->>Middleware: HTTP Response (JSON)\n    Middleware-->>Client: final response\n\n```",
+			"styleAttributes":{},
+			"x":-460,
+			"y":3300,
+			"width":1720,
+			"height":1440
+		},
+		{
+			"id":"eb0312bddbdb9a07",
+			"type":"text",
+			"text":"**Middleware** is any code that runs on every request before it reaches your router — auth checks, logging, rate limiting, CORS headers, etc.\n\n## Common middleware categories\n\n|Category|What it does|Example|\n|---|---|---|\n|**CORS**|allows/blocks cross-origin browser requests|`CORSMiddleware`|\n|**Authentication**|verifies who the caller is|JWT token check|\n|**Authorization**|verifies what the caller can do|role/permission check|\n|**Logging**|records every request and response|request ID, duration, status|\n|**Rate Limiting**|caps requests per client per time window|100 req/min per IP|\n|**Compression**|shrinks response body|`GZipMiddleware`|\n|**Tracing**|tracks a request across multiple services|OpenTelemetry|\n|**HTTPS Redirect**|forces HTTP → HTTPS|`HTTPSRedirectMiddleware`|\n|**Trusted Hosts**|blocks requests from unknown hostnames|`TrustedHostMiddleware`|\n|**Session**|attaches session data to each request|cookie-based sessions|",
+			"styleAttributes":{},
+			"x":400,
+			"y":2420,
+			"width":660,
+			"height":600
+		},
+		{
+			"id":"e256abc22fb11fe9",
+			"type":"text",
+			"text":"When you see any endpoint  \n\nWhat comes in?\nWhat decision is made?\nWhat goes out?\n\n> [!NOTE] Title\n> The database, business logic, and files in between are just the **how**.\n\n",
+			"styleAttributes":{},
+			"x":-200,
+			"y":2900,
+			"width":600,
+			"height":360
+		},
+		{
+			"id":"e4244b80431ed37e",
+			"type":"text",
+			"text":"All middleware stacks like this — each one wraps the next\n\n```\nRequest → Middleware A → Middleware B → Middleware C → Router\nResponse ← Middleware A ← Middleware B ← Middleware C ← Router\n\n```",
+			"styleAttributes":{},
+			"x":1100,
+			"y":2420,
+			"width":700,
+			"height":160
+		},
+		{
+			"id":"5e818b81915f1901",
+			"type":"text",
+			"text":"## web app mental model\n```mermaid\nsequenceDiagram\n    participant Browser\n    participant Server\n    participant Business Logic\n    participant Database\n\n    Browser->>Server: HTTP Request (GET /page or POST /action)\n    Note over Browser,Server: carries: URL, headers, body (JSON/form)\n\n    Server->>Server: validate input\n    Server->>Business Logic: call the right function\n    Business Logic->>Database: read or write data\n    Database-->>Business Logic: result\n    Business Logic-->>Server: computed result\n    Server-->>Browser: HTTP Response (JSON or HTML)\n\n    Note over Browser: renders what it receives\n\n```",
+			"styleAttributes":{},
+			"x":-1580,
+			"y":2980,
+			"width":1020,
+			"height":820
+		},
+		{
+			"id":"ecf2805dcbabb288",
+			"type":"text",
+			"text":"```mermaid\ngraph LR\n    HTTP[\"🌐 HTTP Client\"]\n\n    subgraph DRIVING[\"Driving Adapter\"]\n        ROUTER[\"router.py<br>ApplyBxGyRequest → Command<br>Result → ApplyBxGyResponse\"]\n    end\n\n    subgraph DEPS[\"Dependency Wiring\"]\n        DEP1[\"get_db_session()<br>creates DB session\"]\n        DEP2[\"get_bxgy_deal_repository()<br>session → SQLAlchemyBxGyDealRepository\"]\n        DEP3[\"get_apply_bxgy_service()<br>repo → ApplyBxGyService\"]\n    end\n\n    subgraph PORTS_IN[\"Incoming Port\"]\n        UC[\"ApplyBxGyUseCase<br>(abstract)\"]\n    end\n\n    subgraph APP_CORE[\"Application Core\"]\n        SERVICE[\"ApplyBxGyService<br>1. fetch active deal<br>2. validate deal exists<br>3. delegate math\"]\n        DS[\"apply_bxgy_discount<br>(domain service)<br>buy_x_get_y_free logic\"]\n    end\n\n    subgraph PORTS_OUT[\"Outgoing Port\"]\n        REPO_PORT[\"BxGyDealRepository<br>(abstract)\"]\n    end\n\n    subgraph DRIVEN[\"Driven Adapter\"]\n        REPO[\"SQLAlchemyBxGyDealRepository<br>DB row → BxGyDeal entity\"]\n    end\n\n    DB[(\"🗄️ PostgreSQL\")]\n\n    DEP1 -->|\"a session\"| DEP2\n    DEP2 -->|\"b repository\"| DEP3\n    DEP3 -->|\"c injects service\"| ROUTER\n\n    HTTP -->|\"1 HTTP POST<br>/bxgy/apply\"| ROUTER\n    ROUTER -->|\"2 execute(Command)\"| UC\n    UC -->|\"3 implemented by\"| SERVICE\n    SERVICE -->|\"4 find_active()\"| REPO_PORT\n    REPO_PORT -->|\"5 implemented by\"| REPO\n    REPO -->|\"6 SQL query\"| DB\n    DB -->|\"7 row\"| REPO\n    REPO -->|\"8 BxGyDeal entity\"| SERVICE\n    SERVICE -->|\"9 calculate\"| DS\n    DS -->|\"10 final price\"| SERVICE\n    SERVICE -->|\"11 float\"| ROUTER\n    ROUTER -->|\"12 JSON response\"| HTTP\n```",
+			"styleAttributes":{},
+			"x":4580,
+			"y":8820,
+			"width":2840,
+			"height":560
+		},
+		{
+			"id":"4abce8cc003ac5d7",
+			"type":"text",
+			"text":"###  Outgoing : What do I need from the outside?\n\nabstract classes return domain entities\n\n```\nCouponRepository says \nI need someone who can find coupons by code. I don't care if it's Postgres, Redis, or a mock\n```",
+			"styleAttributes":{},
+			"x":3680,
+			"y":7080,
+			"width":680,
+			"height":240
+		},
+		{
+			"id":"21a68746c954362e",
+			"type":"text",
+			"text":"NEVER does the actual job",
+			"styleAttributes":{},
+			"x":3480,
+			"y":7910,
+			"width":980,
+			"height":60,
+			"color":"1"
+		},
+		{
+			"id":"61a790988f0d684f",
+			"type":"text",
+			"text":"validate the inputs",
+			"styleAttributes":{},
+			"x":3840,
+			"y":7820,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"4ec507ea33a0c02d",
+			"type":"text",
+			"text":"connects the business logic",
+			"styleAttributes":{},
+			"x":4200,
+			"y":7820,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"03203bd8b4383f57",
+			"type":"text",
+			"text":"## usecase : named business operation\nWhen you implement it as a class, calling it a **Service** is the standard convention \n\n```\nThe key rule is: **one use case = one class = one `execute` method\n```",
+			"styleAttributes":{},
+			"x":3480,
+			"y":7490,
+			"width":980,
+			"height":260
+		},
+		{
+			"id":"f39b863e8b0e689d",
+			"type":"text",
+			"text":"router calls the port but it does the dependency injection and calls the usecase.\n\n```\nservice: ApplyCouponUseCase = Depends(get_apply_coupon_service)\n#        ^^^^^^^^^^^^^^^^^^                ^^^^^^^^^^^^^^^^^^^^^^\n#        type = the PORT (abstract)        value = ApplyCouponService (concrete)\n\n```",
+			"styleAttributes":{},
+			"x":2530,
+			"y":7500,
+			"width":810,
+			"height":220,
+			"color":"1"
+		},
+		{
+			"id":"6e5859a368587551",
+			"type":"text",
+			"text":"The router is a **driving adapter** — it lives outside the application core. The rule is: **adapters must only depend on ports, never on concrete implementations.**",
+			"styleAttributes":{},
+			"x":2530,
+			"y":7740,
+			"width":810,
+			"height":120,
+			"color":"4"
+		},
+		{
+			"id":"46f616ca4e1badb0",
+			"type":"text",
+			"text":"The router is completely isolated. It only knows: _\"give me something that has an `execute` method.\"_ It doesn't care what's behind it.",
+			"styleAttributes":{},
+			"x":2500,
+			"y":7920,
+			"width":840,
+			"height":120
+		},
+		{
+			"id":"c0874bf8cdf0347f",
+			"type":"text",
+			"text":"## business logic\naka domain service. where actual business rules are written",
+			"styleAttributes":{},
+			"x":2820,
+			"y":6200,
+			"width":400,
+			"height":200
+		},
+		{
+			"id":"d3f93fa129d43b5f",
+			"type":"text",
+			"text":"## Ports = Contracts (Interfaces) wall power sockets\n\n```\n[Outside World]  -->  [INCOMING port]  -->  [App Core]  -->  [OUTGOING port]  -->  [Database/Services]\n\n```",
+			"styleAttributes":{},
+			"x":2940,
+			"y":6820,
+			"width":940,
+			"height":200
+		},
+		{
+			"id":"d71a8c659c79b6e1",
+			"type":"text",
+			"text":"### Incoming  :  What can you ask me to do?\n\nabstract classes a promises (python classes only)\n\n```\nApplyCouponUseCase says : \nYou can ask me to apply a coupon, and I'll give you back a price.\n```",
+			"styleAttributes":{},
+			"x":2940,
+			"y":7080,
+			"width":700,
+			"height":240
+		},
+		{
+			"id":"be699c3d0668b446",
+			"type":"text",
+			"text":"## entities\nbusiness objects (pure python)",
+			"styleAttributes":{},
+			"x":2400,
+			"y":6200,
+			"width":380,
+			"height":200
+		},
+		{
+			"id":"88f3f46773c341a2",
+			"type":"text",
+			"text":"```\napp/\n├── shared_kernel/\n│   └── infrastructure/\n│       └── database.py\n└── discounts/                        ← one module\n    ├── domain/\n    │   ├── entities.py               ← Coupon, BxGyDeal\n    │   └── domain_services.py        ← all closures live here\n    ├── application/\n    │   ├── ports/\n    │   │   ├── incoming.py           ← ApplyCouponCommand + UseCase\n    │   │   │                           ApplyBxGyCommand + UseCase\n    │   │   └── outgoing.py           ← CouponRepository, BxGyDealRepository\n    │   └── use_cases/\n    │       ├── apply_coupon.py       ← use case 1: user enters a code\n    │       └── apply_bxgy.py         ← use case 2: cart sent, rule applied\n    └── infrastructure/\n        ├── adapters/\n        │   ├── driving/http/\n        │   │   ├── router.py         ← POST /discounts/coupon/apply\n        │   │   │                       POST /discounts/bxgy/apply\n        │   │   └── schemas.py        ← schemas for both\n        │   └── driven/persistence/\n        │       ├── orm_models.py     ← CouponRow, BxGyDealRow\n        │       └── repository.py     ← both implementations\n        └── dependencies.py           ← wires both use cases\n\n```",
+			"styleAttributes":{},
+			"x":1460,
+			"y":2860,
+			"width":820,
+			"height":580
+		},
+		{
+			"id":"be8b59748bcc2946",
+			"type":"text",
+			"text":"```\nRequest arrives\n      ↓\nrouter.py          — receives HTTP, builds command\n      ↓\ndependencies.py    — creates SQLAlchemyBxGyDealRepository\n                   — hands it to ApplyBxGyService\n      ↓\napply_bxgy.py      — calls repo.find_active()\n                   — use case thinks it's talking to the promise\n      ↓\nrepository.py      — the REAL find_active() runs here\n                   — queries SQLite\n                   — returns BxGyDeal entity\n      ↓\napply_bxgy.py      — gets the deal back\n                   — calls domain_services.apply_bxgy_discount()\n                   — returns final price\n      ↓\nrouter.py          — wraps result in HTTP response\n      ↓\nClient gets JSON\n\n```",
+			"styleAttributes":{},
+			"x":1360,
+			"y":3500,
+			"width":880,
+			"height":700
+		},
+		{
+			"id":"3cf6dc8325eeb29b",
+			"type":"text",
+			"text":"## shared kernel\n\n### infra\n1. session and db connection\n**dependenices**",
+			"styleAttributes":{},
+			"x":1260,
+			"y":6540,
+			"width":440,
+			"height":260
+		},
+		{
+			"id":"a316283295dbcb98",
+			"type":"text",
+			"text":"The **caller** (your FastAPI router)  depends on this abstract class.\n\nThis means your HTTP layer doesn't care _how_ the discount is calculated, just that _something_ can calculate it",
+			"styleAttributes":{},
+			"x":2220,
+			"y":7100,
+			"width":540,
+			"height":200
+		},
+		{
+			"id":"16b6af87c12af261",
+			"type":"text",
+			"text":"## apply coupon flow\n\n```mermaid\ngraph LR\n    HTTP[\"🌐 HTTP Client\"]\n\n    subgraph DRIVING[\"Driving Adapter\"]\n        ROUTER[\"router.py<br>ApplyCouponRequest → Command<br>Result → ApplyCouponResponse\"]\n    end\n\n    subgraph DEPS[\"Dependency Wiring\"]\n        DEP1[\"get_db_session()<br>creates DB session\"]\n        DEP2[\"get_coupon_repository()<br>session → SQLAlchemyCouponRepository\"]\n        DEP3[\"get_apply_coupon_service()<br>repo → ApplyCouponService\"]\n    end\n\n    subgraph PORTS_IN[\"Incoming Port\"]\n        UC[\"ApplyCouponUseCase<br>(abstract)\"]\n    end\n\n    subgraph APP_CORE[\"Application Core\"]\n        SERVICE[\"ApplyCouponService<br>1. fetch coupons<br>2. validate codes<br>3. delegate math\"]\n        DS[\"apply_coupon_discounts<br>(domain service)\"]\n    end\n\n    subgraph PORTS_OUT[\"Outgoing Port\"]\n        REPO_PORT[\"CouponRepository<br>(abstract)\"]\n    end\n\n    subgraph DRIVEN[\"Driven Adapter\"]\n        REPO[\"SQLAlchemyCouponRepository<br>DB row → Coupon entity\"]\n    end\n\n    DB[(\"🗄️ PostgreSQL\")]\n\n    DEP1 -->|\"a session\"| DEP2\n    DEP2 -->|\"b repository\"| DEP3\n    DEP3 -->|\"c injects service\"| ROUTER\n\n    HTTP -->|\"1 HTTP POST<br>/coupon/apply\"| ROUTER\n    ROUTER -->|\"2 execute(Command)\"| UC\n    UC -->|\"3 implemented by\"| SERVICE\n    SERVICE -->|\"4 find_by_codes()\"| REPO_PORT\n    REPO_PORT -->|\"5 implemented by\"| REPO\n    REPO -->|\"6 SQL query\"| DB\n    DB -->|\"7 rows\"| REPO\n    REPO -->|\"8 Coupon entities\"| SERVICE\n    SERVICE -->|\"9 calculate\"| DS\n    DS -->|\"10 final price\"| SERVICE\n    SERVICE -->|\"11 float\"| ROUTER\n    ROUTER -->|\"12 JSON response\"| HTTP\n\n```",
+			"styleAttributes":{},
+			"x":4580,
+			"y":8220,
+			"width":2840,
+			"height":560
+		},
+		{
+			"id":"a7f352d1db13d544",
+			"type":"text",
+			"text":"The ports (3 and 5) are where the abstract contracts sit — everything to the left is HTTP world, everything to the right is DB world, and the app core in the middle never touches either directly.",
+			"styleAttributes":{},
+			"x":3740,
+			"y":8500,
+			"width":490,
+			"height":160
+		},
+		{
+			"id":"b262bf78e0e5d6fc",
+			"type":"text",
+			"text":"The **app core** depends on this abstract class — not on SQLAlchemy directly. This means your business logic doesn't care _where_ the data comes from.",
+			"styleAttributes":{},
+			"x":4500,
+			"y":7100,
+			"width":620,
+			"height":200
+		},
+		{
+			"id":"bfc594d934e02256",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    participant Client\n    participant Middleware\n    participant Router\n    participant Schema\n    participant Depends\n    participant UseCase\n    participant DomainService\n    participant Repository\n    participant ORM\n    participant Database\n\n    Client->>Middleware: HTTP Request (method + URL + body)\n    Note over Middleware: CORS · Auth · Logging · Rate limit\n\n    Middleware->>Router: forward request\n    Note over Router: matches route<br/>POST /apply → apply_coupons()\n\n    Router->>Schema: parse + validate body\n    Note over Schema: Pydantic rejects bad shape<br/>returns 422 if invalid\n\n    Router->>Depends: resolve dependencies\n    Note over Depends: get_db_session()<br/>get_coupon_repository()<br/>get_apply_coupons_service()\n\n    Router->>UseCase: execute(Command)\n    Note over UseCase: coordination only<br/>no business logic<br/>no HTTP knowledge\n\n    UseCase->>Repository: find_by_codes(codes)\n    Note over Repository: speaks only SQL<br/>no business rules\n\n    Repository->>ORM: session.query(...)\n    ORM->>Database: SELECT ...\n    Database-->>ORM: raw rows\n    ORM-->>Repository: ORM model objects\n\n    Repository-->>UseCase: domain entities (Coupon)\n    Note over Repository: _to_entity() converts<br/>ORM row → domain object\n\n    UseCase->>DomainService: apply_discounts(coupons, price)\n    Note over DomainService: pure Python<br/>closures run here<br/>no imports from infra\n\n    DomainService-->>UseCase: final_price\n\n    UseCase-->>Router: float\n\n    Router->>Schema: serialize → ApplyResponse\n    Router-->>Middleware: HTTP 200 + JSON body\n    Middleware-->>Client: final response\n\n```",
+			"styleAttributes":{},
+			"x":-760,
+			"y":4760,
+			"width":2420,
+			"height":1640
+		}
+	],
+	"edges":[
+		{
+			"id":"e8942ae7c6eded94",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a316283295dbcb98",
+			"fromSide":"right",
+			"toNode":"d71a8c659c79b6e1",
+			"toSide":"left"
+		},
+		{
+			"id":"27804dd21a611ac6",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b262bf78e0e5d6fc",
+			"fromSide":"left",
+			"toNode":"4abce8cc003ac5d7",
+			"toSide":"right"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

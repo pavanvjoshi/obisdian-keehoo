@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Domain Map — AI Chief of Staff POC</title>
+<style>
+  :root {
+    --core: #A6572A;
+    --core-bg: #F7E9DF;
+    --supporting: #3E5C76;
+    --supporting-bg: #EAF0F5;
+    --generic: #7C7A74;
+    --generic-bg: #EFEEEA;
+    --ink: #26251F;
+    --muted: #5B584F;
+    --line: #D8D5CC;
+    --paper: #FCFBF9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+  h1 {
+    font-family: Georgia, 'Iowan Old Style', serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 0 28px;
+  }
+  .primer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .primer .card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 16px;
+    background: white;
+  }
+  .primer .dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    top: -1px;
+  }
+  .primer h3 {
+    font-size: 14px;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .primer p {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .chart-container {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+    padding: 12px 8px 4px;
+    margin-bottom: 36px;
+  }
+  svg { width: 100%; height: auto; display: block; }
+  .legend-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 44px;
+  }
+  .legend-table th {
+    text-align: left;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--ink);
+    padding: 8px 10px;
+  }
+  .legend-table td {
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .num-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .cat-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+  .cat-core { background: var(--core-bg); color: var(--core); }
+  .cat-supporting { background: var(--supporting-bg); color: var(--supporting); }
+  .cat-generic { background: var(--generic-bg); color: var(--generic); }
+  h2 {
+    font-family: Georgia, 'Iowan Old Style', serif;
+    font-size: 21px;
+    margin: 0 0 14px;
+  }
+  .effort-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  .effort-card {
+    border-radius: 8px;
+    padding: 18px 18px 20px;
+  }
+  .effort-card h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+  .effort-card p, .effort-card ul {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 0;
+    padding-left: 18px;
+  }
+  .effort-card li { margin-bottom: 4px; }
+  .callout {
+    border-left: 3px solid var(--core);
+    background: var(--core-bg);
+    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+  }
+  .callout b { color: var(--core); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Domain Map — AI Chief of Staff POC</h1>
+  <p class="subtitle">Where to build carefully, where to build simply, and where not to build at all.</p>
+
+  <div class="primer">
+    <div class="card">
+      <h3><span class="dot" style="background:var(--core)"></span>Core</h3>
+      <p>The reason this system exists. Nobody else solves it for this company. Worth custom-building and investing your best effort in.</p>
+    </div>
+    <div class="card">
+      <h3><span class="dot" style="background:var(--supporting)"></span>Supporting</h3>
+      <p>Needed to make the core work, specific to how this org operates, but not what makes the system valuable on its own. Build it, but keep it thin.</p>
+    </div>
+    <div class="card">
+      <h3><span class="dot" style="background:var(--generic)"></span>Generic</h3>
+      <p>Solved the same way everywhere. Buy it, reuse an existing tool or API, or use a built-in feature. Never worth custom engineering.</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <svg viewBox="0 0 1000 780" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- corner tints -->
+      <rect x="660" y="90" width="240" height="180" fill="var(--core-bg)" opacity="0.7"/>
+      <rect x="140" y="450" width="210" height="150" fill="var(--generic-bg)" opacity="0.9"/>
+
+      <!-- midlines -->
+      <line x1="520" y1="90" x2="520" y2="600" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="5,5"/>
+      <line x1="140" y1="345" x2="900" y2="345" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="5,5"/>
+
+      <!-- zone labels -->
+      <text x="895" y="112" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--core)" letter-spacing="0.03em">CORE — BUILD &amp; INVEST</text>
+      <text x="150" y="470" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--generic)" letter-spacing="0.03em">GENERIC — BUY / REUSE</text>
+      <text x="420" y="300" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--supporting)" letter-spacing="0.03em">SUPPORTING — BUILD SIMPLY</text>
+
+      <!-- trap zone annotation -->
+      <ellipse cx="710" cy="549" rx="46" ry="30" fill="none" stroke="#B8863A" stroke-width="1.75" stroke-dasharray="4,4"/>
+      <line x1="756" y1="535" x2="805" y2="500" stroke="#B8863A" stroke-width="1.25"/>
+      <text x="808" y="485" font-size="12" fill="#8a6222" font-weight="600">⚠ complex to build,</text>
+      <text x="808" y="500" font-size="12" fill="#8a6222" font-weight="600">but not differentiating —</text>
+      <text x="808" y="515" font-size="12" fill="#8a6222" font-weight="600">use an existing API, don't</text>
+      <text x="808" y="530" font-size="12" fill="#8a6222" font-weight="600">hand-build the connector</text>
+
+      <!-- axes -->
+      <line x1="140" y1="600" x2="905" y2="600" stroke="var(--ink)" stroke-width="1.5"/>
+      <polygon points="905,600 895,595 895,605" fill="var(--ink)"/>
+      <line x1="140" y1="600" x2="140" y2="85" stroke="var(--ink)" stroke-width="1.5"/>
+      <polygon points="140,85 135,95 145,95" fill="var(--ink)"/>
+
+      <text x="520" y="645" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)">Model / Integration Complexity</text>
+      <text x="150" y="615" font-size="11.5" fill="var(--muted)">Low</text>
+      <text x="890" y="615" text-anchor="end" font-size="11.5" fill="var(--muted)">High</text>
+
+      <text x="45" y="345" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink)" transform="rotate(-90, 45, 345)">Business Differentiation</text>
+      <text x="150" y="592" font-size="11.5" fill="var(--muted)">Low</text>
+      <text x="150" y="102" font-size="11.5" fill="var(--muted)">High</text>
+
+      <!-- points: core -->
+      <circle cx="748" cy="141" r="17" fill="var(--core)"/>
+      <text x="748" y="146" text-anchor="middle" fill="white" font-size="13" font-weight="700">1</text>
+
+      <circle cx="596" cy="192" r="17" fill="var(--core)"/>
+      <text x="596" y="197" text-anchor="middle" fill="white" font-size="13" font-weight="700">2</text>
+
+      <circle cx="672" cy="167" r="17" fill="var(--core)" opacity="0.55"/>
+      <text x="672" y="172" text-anchor="middle" fill="white" font-size="13" font-weight="700">3</text>
+
+      <!-- points: supporting -->
+      <circle cx="520" cy="447" r="17" fill="var(--supporting)"/>
+      <text x="520" y="452" text-anchor="middle" fill="white" font-size="13" font-weight="700">4</text>
+
+      <circle cx="406" cy="422" r="17" fill="var(--supporting)"/>
+      <text x="406" y="427" text-anchor="middle" fill="white" font-size="13" font-weight="700">5</text>
+
+      <circle cx="330" cy="396" r="17" fill="var(--supporting)"/>
+      <text x="330" y="401" text-anchor="middle" fill="white" font-size="13" font-weight="700">6</text>
+
+      <!-- points: generic -->
+      <circle cx="710" cy="549" r="17" fill="var(--generic)"/>
+      <text x="710" y="554" text-anchor="middle" fill="white" font-size="13" font-weight="700">7</text>
+
+      <circle cx="254" cy="549" r="17" fill="var(--generic)"/>
+      <text x="254" y="554" text-anchor="middle" fill="white" font-size="13" font-weight="700">8</text>
+
+    </svg>
+  </div>
+
+  <table class="legend-table">
+    <thead>
+      <tr><th style="width:34px"></th><th>Subdomain</th><th style="width:110px">Category</th><th>What it actually is</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="num-badge" style="background:var(--core)">1</span></td>
+        <td><b>Cross-department signal ranking</b></td>
+        <td><span class="cat-tag cat-core">Core</span></td>
+        <td>Comparing unlike signals (a shipping delay vs. a budget dip) and deciding which one most threatens vision or revenue today. This is the whole point of the system.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--core)">2</span></td>
+        <td><b>Policy/vision-grounded reasoning</b></td>
+        <td><span class="cat-tag cat-core">Core</span></td>
+        <td>Checking every recommendation against this company's own stated priorities, so advice isn't generic — it's specific to what leadership actually said matters.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--core)">3</span></td>
+        <td><b>Institutional memory</b> <em>(deferred — Phase 2)</em></td>
+        <td><span class="cat-tag cat-core">Core</span></td>
+        <td>Recognizing "this looks like what happened in March." Real long-term differentiator, but the POC doesn't need it to prove the concept.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--supporting)">4</span></td>
+        <td><b>Persona-based visibility</b></td>
+        <td><span class="cat-tag cat-supporting">Supporting</span></td>
+        <td>Making sure the Product Owner sees only their lane while the CEO sees everything. Necessary and org-specific, not the differentiator.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--supporting)">5</span></td>
+        <td><b>Approval workflow</b></td>
+        <td><span class="cat-tag cat-supporting">Supporting</span></td>
+        <td>The "recommend, never act" gate — plan, review, approve. Critical for trust, but a well-worn workflow pattern, not a novel one.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--supporting)">6</span></td>
+        <td><b>Persona-tailored briefing</b></td>
+        <td><span class="cat-tag cat-supporting">Supporting</span></td>
+        <td>Same underlying insight, written differently for a CEO vs. a Product Owner. A presentation layer on top of the real work.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--generic)">7</span></td>
+        <td><b>Department connectors</b> (GoodDay, Outlook)</td>
+        <td><span class="cat-tag cat-generic">Generic</span></td>
+        <td>Pulling raw data out of existing tools. Fiddly to wire up (auth, pagination, rate limits) but zero competitive value — every company with these tools faces the same plumbing.</td>
+      </tr>
+      <tr>
+        <td><span class="num-badge" style="background:var(--generic)">8</span></td>
+        <td><b>Audit &amp; compliance logging</b></td>
+        <td><span class="cat-tag cat-generic">Generic</span></td>
+        <td>Recording who saw what and what was approved. A completely solved problem — use an existing logging pattern, don't design one.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>What this means for where POC effort actually goes</h2>
+  <div class="effort-grid">
+    <div class="effort-card" style="background:var(--core-bg)">
+      <h3 style="color:var(--core)">Build carefully (2 items)</h3>
+      <ul>
+        <li>Cross-department ranking logic</li>
+        <li>Policy/vision-grounded reasoning</li>
+      </ul>
+      <p style="margin-top:8px">This is where nearly all the real engineering time should go — it's the only part that makes this a "chief of staff" and not a dashboard.</p>
+    </div>
+    <div class="effort-card" style="background:var(--supporting-bg)">
+      <h3 style="color:var(--supporting)">Build thin (3 items)</h3>
+      <ul>
+        <li>Visibility scoping (2 personas only)</li>
+        <li>Approval workflow</li>
+        <li>Persona-tailored briefing</li>
+      </ul>
+      <p style="margin-top:8px">Keep these simple on purpose. Over-engineering here just steals time from the two items that actually matter.</p>
+    </div>
+    <div class="effort-card" style="background:var(--generic-bg)">
+      <h3 style="color:var(--generic)">Buy or reuse (2 items)</h3>
+      <ul>
+        <li>GoodDay / Outlook connectors</li>
+        <li>Audit logging</li>
+      </ul>
+      <p style="margin-top:8px">Use the existing APIs directly. Don't write a custom integration framework for a POC — that effort has no payoff here.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>The one thing worth remembering:</b> if the POC timeline gets tight, the two Core items are the only ones that can't be cut, mocked, or simplified without losing the actual point of the system. Everything else can flex.
+  </div>
+
+</div>
+</body>
+</html>

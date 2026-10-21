@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"3e7a496d44bb014c","x":-460,"y":-240,"width":900,"height":800,"type":"text","text":"```json\n{\n  \"stage\": \"migration\",\n  \"sourceId\": [\n    \"123\"\n  ],\n  \"processId\": \"123\",\n  \"parameters\": [\n    \"summary\"\n  ],\n  \"type\": \"string\"\n}\n```\n"}
+	],
+	"edges":[]
+}

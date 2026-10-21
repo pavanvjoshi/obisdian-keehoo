@@ -1,0 +1,198 @@
+{
+	"nodes":[
+		{"id":"3a1ea7547c1b6377","type":"group","x":-600,"y":-560,"width":1520,"height":940},
+		{"id":"c529d1a56159de8d","type":"group","x":-580,"y":40,"width":300,"height":200},
+		{
+			"id":"287f1b54450bc7bc",
+			"type":"text",
+			"text":"### goals\n",
+			"styleAttributes":{},
+			"x":-560,
+			"y":160,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"282c218d5922f504",
+			"type":"text",
+			"text":"### vision",
+			"styleAttributes":{},
+			"x":-560,
+			"y":60,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"b170507336531fdb",
+			"type":"text",
+			"text":"### vision",
+			"styleAttributes":{},
+			"x":-560,
+			"y":60,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"c61b3b4443b0d1fb",
+			"type":"text",
+			"text":"### enterprise knowledge",
+			"styleAttributes":{},
+			"x":-560,
+			"y":300,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"20476c523dd288d9",
+			"type":"text",
+			"text":"### Azure blob",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-180,
+			"y":-540,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"266c0e51381dd767",
+			"type":"text",
+			"text":"### Qdrant",
+			"styleAttributes":{"textAlign":"center"},
+			"x":640,
+			"y":-540,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"e26e58307e812dc6",
+			"type":"text",
+			"text":"### Postgres",
+			"styleAttributes":{"textAlign":"center"},
+			"x":240,
+			"y":-540,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"06b96324f2414e94",
+			"type":"text",
+			"text":"### Daily updates\n",
+			"styleAttributes":{},
+			"x":-560,
+			"y":-240,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"d4044264593c59e7",
+			"type":"text",
+			"text":"### week plan",
+			"styleAttributes":{},
+			"x":-560,
+			"y":-100,
+			"width":260,
+			"height":60
+		}
+	],
+	"edges":[
+		{
+			"id":"a278a38f6033b01e",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"06b96324f2414e94",
+			"fromSide":"right",
+			"toNode":"20476c523dd288d9",
+			"toSide":"bottom",
+			"label":"raw data"
+		},
+		{
+			"id":"3df7c8fb379a3cdc",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"06b96324f2414e94",
+			"fromSide":"right",
+			"toNode":"e26e58307e812dc6",
+			"toSide":"bottom",
+			"label":"structured data"
+		},
+		{
+			"id":"6966d2bdbc5c2160",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"06b96324f2414e94",
+			"fromSide":"right",
+			"toNode":"266c0e51381dd767",
+			"toSide":"bottom",
+			"label":"week summary"
+		},
+		{
+			"id":"5efb1bddefd783a7",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"d4044264593c59e7",
+			"fromSide":"right",
+			"toNode":"20476c523dd288d9",
+			"toSide":"bottom",
+			"label":"raw data"
+		},
+		{
+			"id":"87d66b1294357c26",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"d4044264593c59e7",
+			"fromSide":"right",
+			"toNode":"e26e58307e812dc6",
+			"toSide":"bottom",
+			"label":"structured data"
+		},
+		{
+			"id":"95f292b68e45f494",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c61b3b4443b0d1fb",
+			"fromSide":"right",
+			"toNode":"20476c523dd288d9",
+			"toSide":"bottom",
+			"label":"raw data"
+		},
+		{
+			"id":"0008854d615d2472",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c61b3b4443b0d1fb",
+			"fromSide":"right",
+			"toNode":"e26e58307e812dc6",
+			"toSide":"bottom",
+			"label":"structured data"
+		},
+		{
+			"id":"32e43adc4ab36f31",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"c61b3b4443b0d1fb",
+			"fromSide":"right",
+			"toNode":"266c0e51381dd767",
+			"toSide":"bottom",
+			"label":"report indexed"
+		},
+		{
+			"id":"2619997d0897a9d3",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c529d1a56159de8d",
+			"fromSide":"right",
+			"toNode":"e26e58307e812dc6",
+			"toSide":"bottom",
+			"label":"structured data"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

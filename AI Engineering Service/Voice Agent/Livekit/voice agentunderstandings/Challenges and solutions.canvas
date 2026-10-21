@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"6319af16d44f057a","x":-580,"y":-130,"width":1320,"height":520,"type":"group","label":"Bug 1"},
+		{"id":"dff2b04589f9b21e","x":-357,"y":480,"width":874,"height":513,"type":"group","label":"Bug 2"},
+		{"id":"a8aed42a2ec2bcc0","x":-560,"y":-100,"width":648,"height":430,"type":"text","text":"**![[Pasted image 20260514112952.png]]**"},
+		{"id":"bf35e88bc7c55e16","x":120,"y":-100,"width":589,"height":430,"type":"text","text":"![[Pasted image 20260514113023.png]]"},
+		{"id":"dd0ffab782ed5673","x":-337,"y":560,"width":834,"height":413,"type":"text","text":"![[Pasted image 20260514113107.png]]"},
+		{"id":"896e9ccb52632294","x":-337,"y":500,"width":250,"height":60,"type":"text","text":"Delay 2"}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

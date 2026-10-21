@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{
+			"id":"5c4d3e66ab41f8e7",
+			"type":"text",
+			"text":"Infrastructure\n\n1. FastAPI\n2. pydantic schema\n3. SQLAlchemy",
+			"styleAttributes":{},
+			"x":-540,
+			"y":-260,
+			"width":220,
+			"height":160
+		},
+		{
+			"id":"0bb8e7bb1cd25ae1",
+			"type":"text",
+			"text":"Domain",
+			"styleAttributes":{},
+			"x":40,
+			"y":-260,
+			"width":260,
+			"height":160
+		},
+		{
+			"id":"3fdd2618a32680f7",
+			"type":"text",
+			"text":"Application\n\n1. Usecases\n2. ports",
+			"styleAttributes":{},
+			"x":-300,
+			"y":-260,
+			"width":260,
+			"height":160
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

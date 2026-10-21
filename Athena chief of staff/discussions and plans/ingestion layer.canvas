@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"afac511dbe7bcad5","type":"group","x":-1040,"y":-560,"width":1060,"height":640,"label":"ingestion layer thoughts"},
+		{
+			"id":"fd479fcd9ce4fe1e",
+			"type":"text",
+			"text":"## weekly plan \n\n* fetch the data from the respective group of given time window and day. (Monday - 8 am to 11 am)\n* detect the plan posted and store only the plan no other conversation. \n* database store. \n* this store must contain only the plan, no any unnecessary conversations. \n---\nfor better context include the table format. ",
+			"styleAttributes":{},
+			"x":-1020,
+			"y":-540,
+			"width":460,
+			"height":340
+		},
+		{
+			"id":"8851172e3275ef72",
+			"type":"text",
+			"text":"## daily updates \n\n* everyday in group developers post their individual updates, PO will also update the updates of all the team memebers\n* fetch only the updates posted by the PO in the given time window everyday. (around 6 PM to 8 PM)\n* on daily updates fetch sync fetch the update table data only posted by the PO. \n* sync the task/module name to the planned task/module name so that it maps correctly also helps in giving the updates\n* While showing the updates in the UI we need to show the latest updates by summarising all the updates posted. \n\t* for example: \n\t\t* day - 1 completed X task completed by 30 %\n\t\t* day - 2 delayed due to adhoc task\n\t\t* day - 3 completed by 90 %\n\t\t* day - 4 completed 100%\n\t\t* update should look like in day 4 is \"this estimated days was 3 days but completed in 4 days due to adhoc task\"\n\t\t\t* this update is shown in the daily updates column everyday. \n* this store must contain only the posted updates, no any unnecessary conversation\n---\nfor better context include the table format. ",
+			"styleAttributes":{},
+			"x":-460,
+			"y":-540,
+			"width":460,
+			"height":340
+		},
+		{
+			"id":"bdeb7e46c7b9513f",
+			"type":"text",
+			"text":"## points to keep in mind\n\n* instead of showing sticker like ontrack or risk\n\t* make the entire card red or sort them according to the status\n* fix layout design of every product task details",
+			"styleAttributes":{},
+			"x":-720,
+			"y":-140,
+			"width":440,
+			"height":200
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"9619a0870d1ba1fc","x":-225,"y":220,"width":325,"height":420,"type":"group","label":"Agentic Flow "},
+		{"id":"0ea55186dbba7eff","x":-225,"y":-260,"width":325,"height":380,"type":"group","label":"Workflow"},
+		{"id":"96ab68b12afcfcfa","x":-186,"y":-120,"width":247,"height":220,"type":"text","text":"**Assume nodes are agents**\nnode 1\nnode 2 (let HITL node)\nnode 3\nnode 2\nnode 4\nnode 2\n"},
+		{"id":"123991d3c56b8abb","x":-205,"y":-240,"width":285,"height":64,"type":"text","text":"### Langgraph "},
+		{"id":"10beb41aaefffddb","x":-205,"y":240,"width":285,"height":60,"type":"text","text":"### Langchain"},
+		{"id":"351a6a1c3e9b8d12","x":-197,"y":360,"width":269,"height":260,"type":"text","text":"**Note every node/agent as tools**\n\nnode 1(5 tools)\n\t5 tools = 2 risky tools + 3 safe tools\nnode 2(2 tools)\n\t2 tools = 1 risky tool + 1 safe tool"}
+	],
+	"edges":[
+		{"id":"17aaa497b36e6a82","fromNode":"123991d3c56b8abb","fromSide":"bottom","toNode":"96ab68b12afcfcfa","toSide":"top"},
+		{"id":"ffa2828281c6e9b8","fromNode":"96ab68b12afcfcfa","fromSide":"bottom","toNode":"10beb41aaefffddb","toSide":"top"},
+		{"id":"fd4335bc0f22c5db","fromNode":"10beb41aaefffddb","fromSide":"bottom","toNode":"351a6a1c3e9b8d12","toSide":"top"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

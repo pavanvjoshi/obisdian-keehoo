@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"e6f4592ee8ed0a49","x":-420,"y":-180,"width":1040,"height":360,"type":"text","text":"\"input_reference\": {\n    \"file_path\": \"\",\n    \"context\": \"Table: properties with columns prop_id (INT, PRIMARY KEY), name (VARCHAR), address (TEXT), city (VARCHAR), created_at (TIMESTAMP). The properties table stores all property details in the portfolio, linking to multiple tasks through prop_id. BUSINESS_CONTEXT: This table is essential for managing real estate portfolio data, allowing for task management associated with each property. TECHNICAL_INSIGHTS: The change from property_id to prop_id indicates a need for clarity in naming conventions, which may enhance understanding and usability. The primary key prop_id is assumed to be auto-incremented. RELATIONSHIPS: The properties table connects to a tasks table via the prop_id foreign key, indicating a one-to-many relationship where each property can have multiple associated tasks. DATA_QUALITY: No specific data quality issues were mentioned, but the need for future changes suggests a dynamic data environment. METADATA: The context is being saved for future reference, indicating an evolving data structure that may require updates as business needs change.\",\n    \"label\": \"\",\n    \"type\": \"Structured\"\n  }"}
+	],
+	"edges":[]
+}

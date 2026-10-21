@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{
+			"id":"cd0505cf8fd0f473",
+			"type":"text",
+			"text":"\n1. Entire application demo\n\t1. Products onboard\n\t2. Chats\n\t\t1. gaps\n\t\t2. impact\n\t\t3. view\n2. Model migration and reponse\n\t1. reasoning\n\t2. time consumption is more\n\t3. token consumption\n\t\t1. need to make optimisation in multi agent architecture\n\t4. needs optimisation on latency and cost\n3. IAM integration is completed, SSO is pending\n4. currently working on \n\t1. Sandbox integration \n\t2. Adhoc task management",
+			"styleAttributes":{},
+			"x":-660,
+			"y":-250,
+			"width":560,
+			"height":650
+		},
+		{
+			"id":"e6881a35edfff535",
+			"type":"text",
+			"text":"\n1. Stock production database integration\n\t1. **What is the approach?**\n\t2. Need multiple data sources? \n\t\t1. teams and\n\t\t2. database? \n2. data points fetch?\n\t1. Format?\n3. both 1 and 2 are connection? \n4. **entire pipeline structure** \n5. approach for fetching plans from planner agent and rewriting into it. \n\t1. both athena and planner are different applications or planner needs to be integrated in the athena only? \n6. Need to confirm whether the application is standalone or will be integrated in the IIP hub?",
+			"styleAttributes":{},
+			"x":-60,
+			"y":-250,
+			"width":600,
+			"height":570
+		},
+		{
+			"id":"6f961e4310418ccc",
+			"type":"text",
+			"text":"## outcome?\n\n\n\n\n## next task? ",
+			"styleAttributes":{},
+			"x":-420,
+			"y":680,
+			"width":640,
+			"height":360
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

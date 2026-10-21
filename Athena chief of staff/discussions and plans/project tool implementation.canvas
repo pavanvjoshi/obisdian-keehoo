@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"5611b5933afc3e67","type":"group","x":-700,"y":-460,"width":1360,"height":870,"label":"Untitled group"},
+		{
+			"id":"498aa6bea7fe67d3",
+			"type":"text",
+			"text":"## Onboarding flow\n\n* Create headquarter\n\t* create department\n\t\t* vision tab\n\t\t\t* input space for \n\t\t* goal tab\n\t\t* execution tab",
+			"styleAttributes":{},
+			"x":-80,
+			"y":-450,
+			"width":720,
+			"height":460
+		},
+		{
+			"id":"db800da0006ab533",
+			"type":"text",
+			"text":"* onboarding org or defining org structure\n\t* plumbing job \n\t\t* strategy\n\t\t\t* vision\n\t\t\t* goals\n\t* sync job (weekly)\n\t\t* execution\n\t\t\t* milestone\n\t\t\t* task\n\t\t\t* subtask",
+			"styleAttributes":{},
+			"x":-680,
+			"y":-450,
+			"width":540,
+			"height":460
+		},
+		{
+			"id":"5257d67b352143dc",
+			"type":"text",
+			"text":"So far we have been successful in integrating the org structure and daily information tracking for each department and we are able to extract the status and conversation on the current knowledge. Now we want to enhance and improvise the execution tracking so we would like to build one more layer as a execution tracking system. Lets start with a mocking the frontend screen if we aligned then we will wire the backend with proper data and api. \nUser Flow i am thinking from the headquarters and departments page when PMO clicks on each department new page should open and it will have a three tabs - vision, goals, execution. In the execution tab we will have a frequency setting option for the milestone, as of now we are going with a weekly milestone, using calendar component they can cycle through different weeks. The same page layout must have two columns , in first column contains planned weekly milestone which will fetched from the teams as exisited in the start of the week(monday),that gets populated. In second column daily updates are ingested and shown as a actual execution but this comes via intelligence layer because it has to translated as correct format i mean delays, risks, ontrack are shown in the same column against the planned task. ",
+			"styleAttributes":{},
+			"x":-520,
+			"y":80,
+			"width":980,
+			"height":300
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

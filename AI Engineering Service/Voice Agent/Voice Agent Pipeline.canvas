@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"f0b7fb29030a424f","x":-820,"y":-10,"width":1290,"height":100,"type":"group","label":"speech-to-speech (STS)"},
+		{"id":"2c6224ee16934872","x":-1120,"y":10,"width":250,"height":60,"type":"text","text":"Voice "},
+		{"id":"c17d5c08f3770e01","x":-800,"y":10,"width":250,"height":60,"type":"text","text":"VAD - detects speech when human is speaking"},
+		{"id":"b74fee51a1382bff","x":-460,"y":10,"width":250,"height":60,"type":"text","text":"Speech-to-text (STT)"},
+		{"id":"2a2dc04ba3bea14c","x":520,"y":10,"width":250,"height":60,"type":"text","text":"Voice"},
+		{"id":"db9af0bc0917f8e2","type":"text","text":"Text-to-speech","x":200,"y":10,"width":250,"height":60},
+		{"id":"4bd5076affbb5b86","x":-120,"y":10,"width":250,"height":60,"type":"text","text":"LLM"},
+		{"id":"d19b8c6710f292da","x":-800,"y":120,"width":400,"height":567,"type":"text","text":"**VAD:** voice activity dectection.\n\n**Key Aspects of Voice Activity Detection:**\n\n- **Purpose:** VAD distinguishes between speech and noise, allowing systems to \"pause\" when a person is not speaking to save power and computation.\n- **Applications:** It is essential in speaker diarization, speech coding, VoIP, and automatic speech recognition (ASR).\n- **How it Works:** Algorithms analyze audio segments for acoustic properties like energy and frequency. Modern systems often use machine learning for increased accuracy in noisy environments.\n- **Realtime VAD (OpenAI Example):** In realtime AI sessions, VAD determines when a user stops speaking to \"chunk\" audio for processing.\n- **Tools:** Various libraries exist, including Silero V4/V5 for cross-platform implementation."}
+	],
+	"edges":[
+		{"id":"26c154bd57c84dc2","fromNode":"2c6224ee16934872","fromSide":"right","toNode":"c17d5c08f3770e01","toSide":"left"},
+		{"id":"7c4f5b2440960f55","fromNode":"c17d5c08f3770e01","fromSide":"right","toNode":"b74fee51a1382bff","toSide":"left"},
+		{"id":"fa5bf4218995949c","fromNode":"b74fee51a1382bff","fromSide":"right","toNode":"4bd5076affbb5b86","toSide":"left"},
+		{"id":"b0df882970105254","fromNode":"4bd5076affbb5b86","fromSide":"right","toNode":"db9af0bc0917f8e2","toSide":"left"},
+		{"id":"cd0b85cbc98b1750","fromNode":"db9af0bc0917f8e2","fromSide":"right","toNode":"2a2dc04ba3bea14c","toSide":"left"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"68241654e56ecde3","type":"group","x":-1137,"y":-1160,"width":2274,"height":2040,"label":"bronze_processes"},
+		{"id":"15a8cc47c46166e2","type":"text","text":"## Output :\n It generates the primary key referencing table and foreign key referencing table\n \n **Updates in Same Collection**","x":397,"y":-341,"width":460,"height":221},
+		{"id":"62dab0681d705348","type":"text","text":"## Output :\n\n\nEdge metadata collection.","x":463,"y":283,"width":520,"height":214},
+		{"id":"372e2fe287a4a852","type":"text","text":"## Process 2: Relationship Inference\n\n- **Primary Key Referencing Tables**: Determine referencing tables by extracting the primary keys and matching them using both key-name matching and RAG-based cosine similarity.  \n    For each identified primary key referencing table, adding the following fields: `to_table`, `linking_column`, `relationship_description`, and `relationship_type`.\n- **Foreign Key Referencing Tables**: Determine referencing tables by extracting the foreign keys and matching them using both key-name matching and RAG-based cosine similarity.  \n    For each identified foreign key referencing table, add the following fields: `target_table`, `linking_column`, `relationship_description`, and `relationship_type`.","x":-457,"y":-460,"width":580,"height":540},
+		{"id":"088725400b8028b0","type":"text","text":"\n\n## Process 3: Edge Metadata Generation\n\n\n\n1. **Table-to-Table Relationships**\n    - Reads all tables from `table_metadata`.\n    - Finds references from `primary_keys_referencing_tables`.\n    - Creates edges labeled `HAS_FOREIGN_KEY` or `HAS_CROSS_REFERENCE` based on parent IDs.\n    - Skips duplicates before inserting into `edge_metadata`.\n2. **Source-to-Table Relationships**\n    - Links each table to its originating source system (e.g., CRM → S1).\n    - Uses label `HAS_TABLE`.\n    - Avoids inserting duplicates.\n3. **Table-to-Column Relationships**\n    - Reads all columns from `column_metadata`.\n    - Links each column to its parent table with label `HAS_COLUMN`.\n    - Skips duplicates before inserting.","x":-457,"y":156,"width":780,"height":604},
+		{"id":"dd6526da0c490014","type":"text","text":"## Input :\n\nInferred metadata:\n- Inferred table metadata\n- Inferred column metadata","x":-967,"y":-315,"width":371,"height":235},
+		{"id":"7f76c27ccf13ab9f","type":"text","text":"## Input :\nEdge Metadata creation:\n- source metadata\n- table metadata\n- column metadata","x":-981,"y":290,"width":385,"height":207},
+		{"id":"60236c1e2e2eb89c","type":"text","text":"## Output :\n\nGenerates metadata inference for each table document\nOutput - \n- description\n-  embedding vector\n- foreign keys\n- embedding input\n\nGenerates metadata inference for each column document\nOutput - \n- description\n-  embedding vector\n- embedding input\n\n\n\n**Updates in Same Collection**\n\n\n","x":397,"y":-1013,"width":460,"height":353},
+		{"id":"a7c0c88167815f8f","type":"text","text":"## Process 1 : Metadata inference\n\n1. Source Inference\n2. Extract Table Metadata\n   This process extracts tables and columns from a collection and, generates their descriptions, embedding input, embedding vectors for each.     \n3. It also detects foreign key relationships using key matching and also with RAG,\n4. Generates the embedding vector, embedding input and description and store it in column collection.\n","x":-437,"y":-1076,"width":560,"height":416},
+		{"id":"0ace603d076d1137","type":"text","text":"## Input : \nRaw data collection:\n- source metadata\n- table metadata \n- column metadata\n","x":-967,"y":-974,"width":287,"height":254}
+	],
+	"edges":[
+		{"id":"cfb06fd2218b7d40","fromNode":"372e2fe287a4a852","fromSide":"right","toNode":"15a8cc47c46166e2","toSide":"left"},
+		{"id":"def36b669e535303","fromNode":"088725400b8028b0","fromSide":"right","toNode":"62dab0681d705348","toSide":"left"},
+		{"id":"15704894a1756330","fromNode":"a7c0c88167815f8f","fromSide":"right","toNode":"60236c1e2e2eb89c","toSide":"left"},
+		{"id":"78baff1606150040","fromNode":"dd6526da0c490014","fromSide":"right","toNode":"372e2fe287a4a852","toSide":"left"},
+		{"id":"224d03781a87daf6","fromNode":"7f76c27ccf13ab9f","fromSide":"right","toNode":"088725400b8028b0","toSide":"left"},
+		{"id":"7b20e136486aa5e4","fromNode":"0ace603d076d1137","fromSide":"right","toNode":"a7c0c88167815f8f","toSide":"left"}
+	]
+}

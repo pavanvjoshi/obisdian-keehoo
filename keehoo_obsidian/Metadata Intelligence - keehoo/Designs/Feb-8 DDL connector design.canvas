@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"05626f4c670b99d8","x":-1380,"y":-560,"width":1950,"height":1440,"type":"group"},
+		{"id":"3c44e0491775c836","x":-463,"y":-440,"width":1013,"height":1220,"type":"group","label":"Overall Design"},
+		{"id":"d37a820dc6344098","type":"text","text":"DDL Connector\nstorages:\n1. RDMS\n2. NOSQL connector\n3. etc..","x":-440,"y":-246,"width":250,"height":186,"color":"1"},
+		{"id":"1eb54df0573f1682","type":"text","text":"Extracted DDL's Storage","x":-405,"y":203,"width":250,"height":60,"color":"2"},
+		{"id":"79fdcfa018845f4f","type":"text","text":"MongoDB Storage","x":-267,"y":60,"width":250,"height":60,"color":"2"},
+		{"id":"bde1eb3748f2bc33","type":"text","text":"**Global orchestrator**","x":-244,"y":-420,"width":204,"height":54,"color":"4"},
+		{"id":"3c91f2114eb940d8","type":"text","text":"non -inferred Metadata","x":-81,"y":203,"width":250,"height":60,"color":"2"},
+		{"id":"c079314fef52de9e","type":"text","text":"DDL parser and Metadata extraction","x":-443,"y":360,"width":326,"height":60,"color":"2"},
+		{"id":"0f8598270b30153c","type":"text","text":"Metadata Inference","x":-190,"y":560,"width":250,"height":60,"color":"2"},
+		{"id":"e6643baa7d6c164e","type":"text","text":"output result","x":-190,"y":700,"width":250,"height":60,"color":"2"},
+		{"id":"9165d9f8738dcb23","type":"text","text":"Flattening process ","x":280,"y":-193,"width":250,"height":60,"color":"4"},
+		{"id":"e0dcea1c055ce058","type":"text","text":"### schema for DDLs in mongo store.\n\n```json\n{\n  \"_id\": \"ent_customers_001\",\n  \"source_id\": \"src_postgres_prod_01\",\n  \"entity_name\": \"customers\",\n  \"entity_type\": \"table\",\n  \"columns\": [\n    {\n      \"col_id\": \"col_cust_id\",\n      \"name\": \"customer_id\",\n      \"data_type\": \"INTEGER\",\n      \"nullable\": false,\n      \"is_primary_key\": true,\n      \"is_foreign_key\": false,\n      \"position\": 1\n    },\n    {\n      \"col_id\": \"col_email\",\n      \"name\": \"email\",\n      \"data_type\": \"VARCHAR(255)\",\n      \"nullable\": false,\n      \"is_unique\": true,\n      \"position\": 2\n    }\n  ],\n  \n  \"primary_key\": {\n    \"constraint_name\": \"pk_customers\",\n    \"columns\": [\"customer_id\"]\n  },\n  \n  \"indexes\": [\n    {\n      \"name\": \"idx_email\",\n      \"columns\": [\"email\"],\n      \"is_unique\": true\n    }\n  ],\n  \n  \"raw_ddl\": \"CREATE TABLE customers (...)\",\n  \n  \"metadata\": {\n    \"row_count\": 150000,\n    \"created_at\": ISODate(\"2024-01-15T00:00:00Z\"),\n    \"extracted_at\": ISODate(\"2025-02-08T10:30:00Z\")\n  }\n}\n```","x":-1360,"y":-430,"width":559,"height":554,"color":"1"}
+	],
+	"edges":[
+		{"id":"4fe03ad19777694a","fromNode":"bde1eb3748f2bc33","fromSide":"bottom","toNode":"d37a820dc6344098","toSide":"top"},
+		{"id":"e324deb00c2690d1","fromNode":"bde1eb3748f2bc33","fromSide":"bottom","toNode":"9165d9f8738dcb23","toSide":"top"},
+		{"id":"abdb55a07d493cdb","fromNode":"d37a820dc6344098","fromSide":"bottom","toNode":"79fdcfa018845f4f","toSide":"top","label":"extract DDLs"},
+		{"id":"80998897688e6f85","fromNode":"9165d9f8738dcb23","fromSide":"bottom","toNode":"79fdcfa018845f4f","toSide":"top","label":"extract metadata"},
+		{"id":"2e79e9a658b170d1","fromNode":"79fdcfa018845f4f","fromSide":"bottom","toNode":"1eb54df0573f1682","toSide":"top"},
+		{"id":"2e5b6d926ff89ba0","fromNode":"79fdcfa018845f4f","fromSide":"bottom","toNode":"3c91f2114eb940d8","toSide":"top"},
+		{"id":"c97a74ec37a66141","fromNode":"1eb54df0573f1682","fromSide":"bottom","toNode":"c079314fef52de9e","toSide":"top"},
+		{"id":"4f4bdf53b08cf59a","fromNode":"c079314fef52de9e","fromSide":"bottom","toNode":"0f8598270b30153c","toSide":"top"},
+		{"id":"335be6ad0ae6bce5","fromNode":"0f8598270b30153c","fromSide":"bottom","toNode":"e6643baa7d6c164e","toSide":"top"},
+		{"id":"f3c39cc4b1f6cc6d","fromNode":"3c91f2114eb940d8","fromSide":"bottom","toNode":"0f8598270b30153c","toSide":"top"},
+		{"id":"1e76aa4b7642c33e","fromNode":"d37a820dc6344098","fromSide":"left","toNode":"e0dcea1c055ce058","toSide":"right"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

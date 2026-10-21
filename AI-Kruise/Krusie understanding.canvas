@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"18fdad938a1f3ab5","x":-1700,"y":-1060,"width":920,"height":920,"type":"text","text":"## What is AI-Kruise?\n\n```mermaid\ngraph TD\n    subgraph \"Who uses it\"\n        Admin[\"🏢 Admin<br>(manages orgs & users)\"]\n        User[\"👤 Tenant User<br>(builds & runs workflows)\"]\n        External[\"🌐 External Systems<br>(webhooks, APIs)\"]\n    end\n\n    subgraph \"AI-Kruise Platform\"\n        Platform[\"🛠️ Platform App<br>Admin portal<br>Manage orgs, users, roles\"]\n        UI[\"🖥️ Tenant App<br>Build workflows<br>Chat with AI Co-Pilot<br>Monitor runs\"]\n        Backend[\"⚙️ Backend API<br>Runs all business logic\"]\n    end\n\n    subgraph \"Data & AI Layer\"\n        MongoDB[(\"🗄️ MongoDB<br>All data stored here\")]\n        Qdrant[(\"🔍 Qdrant<br>Searches tools by meaning\")]\n        LangGraph[\"🤖 LangGraph<br>AI agent brain\"]\n        OpenAI[\"💬 OpenAI / Azure<br>LLM provider\"]\n    end\n\n    Admin --> Platform\n    User --> UI\n    External --> Backend\n    Platform --> Backend\n    UI --> Backend\n    Backend --> MongoDB\n    Backend --> Qdrant\n    Backend --> LangGraph\n    LangGraph --> OpenAI\n\n\n```"}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

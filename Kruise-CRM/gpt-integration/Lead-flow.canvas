@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"d9d67901d6605131",
+			"type":"text",
+			"text":"1. user query\n\t1. It will be a research related prompt and contains\n\t\t1. Requirements\n\t\t2. target contacts\n\t\t3. capabilities\n2. contacts found\n\t1. lead review\n\t2. select review\n3. Save contact to CRM\n4. select MQL \n\t1. first reason, fit notes and fit rating must be first provided by the GPT by analyzing found contact information and our requirements. \n\t2. need to get reviewed by the user, once user approves the reasons need to qualify the lead as MQL. \n5. Outreach planning\n\t1.  User needs to provide:\n\t\t1. goal\n\t\t2. Key message\n6. Email draft\n7. Email review\n8. Email send\n\t1. wait for reply\n9. Email followup\n\t1. may be multiple back and forth conversations.\n10. Discovery \n\t1. meeting schedule\n\t2. meeting done\n\t3. meeting outcome\n11. Sales qualification\n12. Proposal\n13. Negotiation\n14. Deals",
+			"styleAttributes":{},
+			"x":-500,
+			"y":-200,
+			"width":560,
+			"height":480
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

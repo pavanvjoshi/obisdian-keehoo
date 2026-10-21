@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"e16154df692d6679","x":-372,"y":-205,"width":872,"height":545,"type":"text","text":"1. change the payload to \n\t```json\n\t{\n\t\"type\": \"structured/unstructured\",\n\t\"input\": \"mongo / blob\",\n\t\"file_path\": \"collection_names / container - folder - file1\",\n\t\"stage\": \"bronze/silver/gold\",\n\t\"id\": \"timestamp\"\n\t}\n```\n\n2. make changes in the bronze processor.\n3. Add the unstructred files here.\n4. Update the status in given schema."}
+	],
+	"edges":[]
+}

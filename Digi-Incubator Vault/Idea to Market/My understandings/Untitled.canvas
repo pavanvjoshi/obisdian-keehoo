@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"2d750eb1e807f41d","x":-180,"y":-260,"width":140,"height":60,"type":"text","text":"Organisation"},
+		{"id":"bac2581c85aa347b","x":-380,"y":-60,"width":95,"height":50,"type":"text","text":"Users"},
+		{"id":"1668d236375e5180","x":-20,"y":-60,"width":102,"height":50,"type":"text","text":"owner"}
+	],
+	"edges":[
+		{"id":"9b5745f391030847","fromNode":"2d750eb1e807f41d","fromSide":"bottom","toNode":"bac2581c85aa347b","toSide":"top","label":"has many"},
+		{"id":"0678b7f97575dc46","fromNode":"2d750eb1e807f41d","fromSide":"bottom","toNode":"1668d236375e5180","toSide":"top","label":"has one"}
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"6130bc7ae59bb58c","x":-180,"y":-260,"width":540,"height":480,"type":"text","text":"1. Clear database\n ```sql\n   BEGIN;\n  DELETE FROM idea_documents;\n  DELETE FROM startup_ideas;\n  DELETE FROM tasks;\n  DELETE FROM user_onboarding;\n  DELETE FROM planning_data;\nCOMMIT;\n ```\n\n2. Clear local storage. \n3. conda activate\n4. docker compse up -d\n5. run backend \"uvicorn app.main:app --reload\"\n6. run frontend \"npm run dev\"\n"}
+	],
+	"edges":[]
+}

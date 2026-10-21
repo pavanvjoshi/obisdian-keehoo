@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"329a7fcc90c11a82","x":-480,"y":-260,"width":880,"height":540,"type":"text","text":"### Creation of edges:\n\n1. **Source to table relationship:** \n\t1. For each table gets its parent id\n\t2. map source name to source id (crm -> s1 )\n\t3. creation of edge:\n\t\tlabel = \"HAS_TABLE\"\n\t\tsource = source_id (e.g. S1)\n\t\ttarget = table_id\n\t4. insert it in document\n2. **Table to column:**\n\t1. For each column gets it parent id\n\t2. look up the parent table details (id and parent id)\n\t3. create and edge:\n\t\tlabel = \"HAS_COLUMN\"\n\t\tsource = table_id\n\t\ttarget = column_id\n\t4. Insert\n3.  **Table to table**\n Look at a table’s `primary_keys_referencing_tables` field.\n   For each reference:\n    1. Get the **target table details** (id, parent_id).\n    2. Decide the **label**:\n            - If both tables have the same `parent_id` → `\"HAS_FOREIGN_KEY\"`.\n            - If they belong to different parents → `\"HAS_CROSS_REFERENCE\"`.\n    3. Create an **edge document** with fields:\n"}
+	],
+	"edges":[]
+}

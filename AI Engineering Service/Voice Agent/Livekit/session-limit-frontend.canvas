@@ -1,0 +1,46 @@
+{
+	"nodes":[
+		{"id":"75eceb76cba3a294","type":"group","x":-680,"y":-400,"width":1360,"height":1519,"label":"Untitled group"},
+		{"id":"5513bff00406fb0d","type":"group","x":1000,"y":-520,"width":600,"height":1639,"label":"Untitled group"},
+		{"id":"08e610e78d926414","type":"group","x":1093,"y":240,"width":404,"height":798,"label":"Untitled group"},
+		{"id":"c3e51dec98a932d7","type":"group","x":1080,"y":-400,"width":417,"height":548,"label":"Untitled group"},
+		{"id":"9a45625027c86a42","type":"group","x":-1540,"y":-440,"width":340,"height":505,"label":"Untitled group"},
+		{"id":"main","type":"text","text":"## Rule\nThe **backend** decides when the call ends.\nThe **frontend** just notices — and cleans up.\nNo timer. No countdown. No guessing, all handled by backend. ","x":-240,"y":-840,"width":500,"height":180},
+		{"id":"s3","type":"text","text":"### 🔌 Frontend Reacts\nCalls `room.disconnect()`\nBrowser leaves the room too","x":360,"y":340,"width":270,"height":210},
+		{"id":"s2","type":"text","text":"### 📡 LiveKit Fires an Event\n`ParticipantDisconnected`\nBuilt-in. Nothing custom needed.","x":360,"y":-67,"width":270,"height":215},
+		{"id":"code","type":"text","text":"## 🛠️ Code to Add — 2 Handlers + 1 Flag\n\n```js\n// Flag — was it the USER who ended the call, or did time run out?\nlet userEndedCall = false; // reset to false at the start of each call\n\n\n// Handler 1 — agent left the room → browser should leave too\nroom.on(RoomEvent.ParticipantDisconnected, () => room.disconnect());\n\n\n// Handler 2 — browser disconnected → clean up the screen\nroom.on(RoomEvent.Disconnected, () => {\n  resetUIToIdle();\n  if (!userEndedCall) showMessage(\"Call ended — session limit reached\");\n});\n\n\n// When user clicks End Call → set userEndedCall = true before disconnecting\n```\n\n> Reference: copy from `startCall()` in the test `index.html`","x":-620,"y":-20,"width":880,"height":560},
+		{"id":"p-livekit","type":"text","text":"### 🔀 LiveKit Server\nMiddleman","x":-100,"y":-360,"width":230,"height":145,"color":"5"},
+		{"id":"s4","type":"text","text":"### 🔔 Disconnected Fires\nReset the screen → show:\n\"Call ended — session limit reached\"","x":360,"y":860,"width":270,"height":222},
+		{"id":"p-frontend","type":"text","text":"### 🖥️ Frontend\nBrowser","x":-1485,"y":-420,"width":230,"height":150,"color":"4"},
+		{"id":"phase1","type":"text","text":"## Phase 1 — Start Call\n*No changes needed*\n\n1. GET `/token` → receive token + URL\n2. Connect to LiveKit\n3. Mic on, play agent audio\n\n✅ Already working. Leave it alone.","x":-1520,"y":-215,"width":300,"height":260},
+		{"id":"s1","type":"text","text":"### ⏱️ Time Runs Out\nBackend kicks **only the agent** out of the room","x":1200,"y":-98,"width":270,"height":163},
+		{"id":"p-agent","type":"text","text":"### 🤖 Agent\nBackend","x":1093,"y":-380,"width":215,"height":133,"color":"2"},
+		{"id":"dos","type":"text","text":"## ✅ Do\n- Add the 2 handlers + flag\n- Keep existing token/connect code\n- Point `/token` at your prod URL","x":1169,"y":263,"width":250,"height":210,"color":"4"},
+		{"id":"donts","type":"text","text":"## ❌ Don't\n- Add a timer in the frontend\n- Add new API calls or endpoints\n- Hardcode the time limit anywhere","x":1169,"y":491,"width":250,"height":220,"color":"1"},
+		{"id":"urls","type":"text","text":"## 🔗 Token URL\n**Test**\n`http://localhost:8000/token`\n\n**Prod**\n`https://voice.keehoo.ai/token`\n\nSession code is identical in both.","x":1169,"y":737,"width":250,"height":284}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"main","fromSide":"bottom","toNode":"p-frontend","toSide":"top"},
+		{"id":"e2","fromNode":"main","fromSide":"bottom","toNode":"p-livekit","toSide":"top"},
+		{"id":"e3","fromNode":"main","fromSide":"bottom","toNode":"p-agent","toSide":"top"},
+		{"id":"e4","fromNode":"p-frontend","fromSide":"bottom","toNode":"phase1","toSide":"top"},
+		{"id":"e5","fromNode":"p-agent","fromSide":"bottom","toNode":"s1","toSide":"top"},
+		{"id":"e7","fromNode":"p-livekit","fromSide":"bottom","toNode":"s2","toSide":"top","label":"notifies"},
+		{"id":"e8","fromNode":"s2","fromSide":"bottom","toNode":"s3","toSide":"top"},
+		{"id":"e9","fromNode":"s3","fromSide":"bottom","toNode":"s4","toSide":"top"},
+		{"id":"e10","fromFloating":false,"toFloating":false,"fromNode":"s4","fromSide":"left","toNode":"code","toSide":"bottom","label":"implemented by"},
+		{
+			"id":"e483d46e64e1ed29",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"dos",
+			"fromSide":"bottom",
+			"toNode":"donts",
+			"toSide":"bottom"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

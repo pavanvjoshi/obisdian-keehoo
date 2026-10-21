@@ -1,0 +1,115 @@
+{
+	"nodes":[
+		{"id":"9270a587d711fd78","type":"group","x":-1200,"y":-640,"width":2880,"height":1600,"label":"Version 1 design "},
+		{"id":"grp_items","type":"group","x":260,"y":-420,"width":620,"height":990,"color":"4","label":"Table 2: blob_items (core table)"},
+		{"id":"b39025f45a33ace6","type":"group","x":-350,"y":-1520,"width":1220,"height":420,"label":"initial thougths"},
+		{"id":"grp_sources","type":"group","x":-1120,"y":-310,"width":480,"height":580,"label":"Sources (source_type values)"},
+		{"id":"grp_runs","type":"group","x":-420,"y":-260,"width":520,"height":480,"color":"4","label":"Table 1: ingestion_runs"},
+		{"id":"grp_legend","type":"group","x":-1120,"y":330,"width":500,"height":480,"color":"3","label":"Notes on scope"},
+		{"id":"grp_open","type":"group","x":1020,"y":-420,"width":440,"height":300,"color":"1","label":"Still Open / Not Decided"},
+		{"id":"grp_caveat","type":"group","x":1020,"y":40,"width":440,"height":300,"color":"1","label":"Caveat / Uncertainty"},
+		{
+			"id":"d0fcf7c0bcbff3e6",
+			"type":"text",
+			"text":"### sources (MS)\n* emails\n* meetings\n* chats\n* onedrive(mostly files)",
+			"styleAttributes":{},
+			"x":-340,
+			"y":-1503,
+			"width":300,
+			"height":200
+		},
+		{
+			"id":"9055c76b6d57ebdd",
+			"type":"text",
+			"text":"### Landing (HQ) \n\n",
+			"styleAttributes":{},
+			"x":100,
+			"y":-1438,
+			"width":240,
+			"height":70,
+			"color":"4"
+		},
+		{
+			"id":"3d086284ea296a74",
+			"type":"text",
+			"text":"* Every data fetched from the source must be stored in blob\n* Design the schema for database",
+			"styleAttributes":{},
+			"x":70,
+			"y":-1243,
+			"width":300,
+			"height":120
+		},
+		{
+			"id":"c35ac9219fc073ed",
+			"type":"text",
+			"text":"### Knowledge Building ",
+			"styleAttributes":{},
+			"x":580,
+			"y":-1323,
+			"width":260,
+			"height":80
+		},
+		{"id":"items_desc","type":"text","text":"Core metadata table — one row per item. Stores WHERE the item lives in blob, not its content.","x":280,"y":-380,"width":580,"height":80,"color":"4"},
+		{"id":"open_q1","type":"text","text":"**OPEN: item-level vs batch-level blob storage**\n\nFor calendar & good_day: will each event/task be stored as its own blob (one row per item, matches current schema), OR as a periodic snapshot/bulk file (one row per batch)?\n\nTeam has not decided yet. Current schema assumes one-row-per-item. If batching is chosen later, blob_items will need a structural revisit.","x":1040,"y":-400,"width":400,"height":260,"color":"1"},
+		{"id":"runs_desc","type":"text","text":"Tracks each ingestion batch/pull — lightweight, not a full job-orchestration system.","x":-400,"y":-220,"width":480,"height":80,"color":"4"},
+		{"id":"runs_table","type":"text","text":"| Column | Type | Notes |\n|---|---|---|\n| run_id | UUID / int, PK | unique ID per run |\n| source_type | text | email, meeting, chat, onedrive_file, calendar, good_day |\n| started_at | timestamp | when the pull began |\n| completed_at | timestamp, nullable | when it finished (null if still running) |\n| items_fetched | int | count of items pulled in this run |","x":-400,"y":-120,"width":480,"height":300,"color":"4"},
+		{"id":"caveat_1","type":"text","text":"**Uncertainty flagged, not resolved:**\n\nsource_external_id assumes every source system exposes a stable unique ID. Confident this holds for Outlook/Teams/OneDrive (Microsoft Graph). NOT confirmed for Good-Day's API/data model — needs checking when ingestion for it is actually built.","x":1040,"y":80,"width":400,"height":220,"color":"1"},
+		{"id":"items_table","type":"text","text":"| Column             | Type                        | Notes                                                                              |\n| ------------------ | --------------------------- | ---------------------------------------------------------------------------------- |\n| item_id            | UUID / int, PK              | unique ID per item                                                                 |\n| run_id             | FK -> ingestion_runs.run_id | which run brought this item in                                                     |\n| source_type        | text                        | duplicated here too, avoids join for common queries                                |\n| source_external_id | text                        | original system's ID (e.g. Outlook message ID, Teams meeting ID, OneDrive file ID) |\n| **blob_path**      | **text**                    | **where it landed in Azure Blob Storage**                                          |\n| fetched_at         | timestamp                   | when this item was stored                                                          |\n| source_created_at  | timestamp, nullable         | when item was originally created in its source system                              |","x":280,"y":-270,"width":580,"height":490,"color":"4"},
+		{"id":"items_no_status","type":"text","text":"No processing/status field included (e.g. not-yet-processed, sent-to-knowledge-building). Explicitly deferred — not needed yet per current decision.","x":280,"y":410,"width":580,"height":100,"color":"4"},
+		{"id":"legend_1","type":"text","text":"**Scope of this canvas:** Landing/HQ metadata layer only (per original 'sources -> Landing (HQ) -> Knowledge Building' diagram).\n\nDoes NOT cover Knowledge Building, Enterprise Knowledge, or Graphiti — those are separate, later design discussions.","x":-1100,"y":370,"width":440,"height":220,"color":"3"},
+		{"id":"legend_2","type":"text","text":"**Rule carried over from original diagram:** every piece of data fetched from a source must be stored in blob storage first — this schema only tracks metadata about that blob storage, never the content itself.","x":-1100,"y":630,"width":440,"height":140,"color":"3"},
+		{"id":"src_unstructured","type":"text","text":"**Communication (originally unstructured)**\n* email\n* meeting\n* chat\n* onedrive_file","x":-1100,"y":-290,"width":440,"height":180},
+		{"id":"src_structured","type":"text","text":"**Action (originally structured, still lands in blob)**\n* calendar\n* good_day\n\n(Good-Day = task/goals tracking tool)","x":-1100,"y":-90,"width":440,"height":200},
+		{"id":"src_note","type":"text","text":"All 6 source types share ONE approach: single generic table, not one table per source. Decided to keep schema simple.","x":-1100,"y":130,"width":440,"height":120},
+		{"id":"items_assumption","type":"text","text":"**Design choice, not a fact:** source_type is duplicated in both tables (denormalized) purely to avoid a join for simple queries. A valid alternative is to normalize it out — flagged as a trade-off, not a forced decision.","x":280,"y":260,"width":580,"height":110,"color":"4"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"src_unstructured","fromSide":"right","toNode":"runs_table","toSide":"left"},
+		{"id":"e2","fromNode":"src_structured","fromSide":"right","toNode":"runs_table","toSide":"left"},
+		{"id":"e3","fromNode":"runs_table","fromSide":"right","toNode":"items_table","toSide":"left","fromEnd":"arrow","label":"run_id FK"},
+		{"id":"e4","fromNode":"items_table","fromSide":"right","toNode":"open_q1","toSide":"left"},
+		{"id":"e5","fromNode":"items_table","fromSide":"right","toNode":"caveat_1","toSide":"left"},
+		{"id":"e6","fromNode":"items_assumption","fromSide":"top","toNode":"items_table","toSide":"bottom"},
+		{"id":"e7","fromNode":"items_no_status","fromSide":"top","toNode":"items_assumption","toSide":"bottom"},
+		{
+			"id":"145c092fee827950",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d0fcf7c0bcbff3e6",
+			"fromSide":"right",
+			"toNode":"9055c76b6d57ebdd",
+			"toSide":"left"
+		},
+		{
+			"id":"33c1a3328e093a4c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"9055c76b6d57ebdd",
+			"fromSide":"right",
+			"toNode":"c35ac9219fc073ed",
+			"toSide":"left"
+		},
+		{
+			"id":"bfc8db6704560eac",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"9055c76b6d57ebdd",
+			"fromSide":"bottom",
+			"toNode":"3d086284ea296a74",
+			"toSide":"top"
+		},
+		{
+			"id":"be17e31e32f1f90b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"3d086284ea296a74",
+			"fromSide":"right",
+			"toNode":"c35ac9219fc073ed",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

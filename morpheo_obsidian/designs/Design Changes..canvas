@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"aa3109b299d3920e","x":-588,"y":-244,"width":1248,"height":544,"type":"group","label":"Change in Payload Structure."},
+		{"id":"266578958cf29ec3","x":-568,"y":-224,"width":1208,"height":504,"type":"text","text":""},
+		{"id":"92ca36475ec96137","x":-540,"y":-200,"width":540,"height":460,"type":"text","text":"Payload Version 1: \n```json\n{\n\t\"schema_type\": \"bronze/silver/gold\"\n}\n```\n\nPayload Version 2:\n```json\n{\n\t\"process_id\": \"123\",\n\t\"type\": \"structured/unstructured\",\n\t\"stage\": \"bronze/silver/gold\",\n\t\"file_path\": \"\",\n\t\"input\": \"mongo/blob\"\n}\n```\n\nPayload Version 3:\n```json\n{\n\t\"process_id\": \"123\",\n\t\"type\": \"structured/unstructured\",\n\t\"stage\": \"bronze/silver/gold\",\n\t\"file_path\": \"\",\n\t\"input\": \"mongo/blob\",\n\t\"source_id\": [\"s_crm\", \"s_ga4\"],\n\t\"job_id\": \"xyz12kc\"\n}\n```"},
+		{"id":"59806481a3bce4c9","x":36,"y":-200,"width":564,"height":460,"type":"text","text":"*Payload version 3:*\n1. There will be addition of two more inputs.\n2. source_id is list.\n\n\n*Logic for Inference:*\n1. get the source_id from the payload.\n2. Make source inference of only received source_id 's.\n3. Infer the tables only on children of received sources\n4. Do the same for columns."}
+	],
+	"edges":[]
+}

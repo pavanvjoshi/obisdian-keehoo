@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"41af96f515164419","type":"text","text":"Process kicks in","x":-353,"y":-172,"width":273,"height":52},
+		{"id":"7e000864a2c505d8","type":"text","text":"get tables names and embedding through source id","x":0,"y":-188,"width":250,"height":88},
+		{"id":"7fde0dc1c6f00cf0","type":"text","text":"filter unread relation docs","x":376,"y":-169,"width":250,"height":60},
+		{"id":"12c8cc156cf97a46","type":"text","text":"get business fields for unread docs\n","x":793,"y":-194,"width":250,"height":60},
+		{"id":"fb2851019f92bb7f","x":-426,"y":-2162,"width":586,"height":222,"type":"text","text":"1. iterate the tables and check whther it has concept it if yes skip \n\t1. get table embedding input and name, business context.\n\t2. generate search query via llm. \n\t3. add check for it whethter the kiknd is entity\n\t4. get top 2 values\n\t5. pass those results to llm to select top 1 concept\n\t6. then add that concept to the table metadata."}
+	],
+	"edges":[
+		{"id":"ca8901a70f7d3154","fromNode":"41af96f515164419","fromSide":"right","toNode":"7e000864a2c505d8","toSide":"left"},
+		{"id":"b1336b0e5c304e11","fromNode":"7e000864a2c505d8","fromSide":"right","toNode":"7fde0dc1c6f00cf0","toSide":"left"},
+		{"id":"0be52ebce115b5d1","fromNode":"7fde0dc1c6f00cf0","fromSide":"right","toNode":"12c8cc156cf97a46","toSide":"left"}
+	]
+}

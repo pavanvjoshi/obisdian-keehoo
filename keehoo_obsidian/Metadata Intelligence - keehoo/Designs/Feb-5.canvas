@@ -1,0 +1,45 @@
+{
+	"nodes":[
+		{"id":"9c5c36269a3395c2","x":3475,"y":240,"width":2523,"height":646,"type":"group","label":"If DDL is provided"},
+		{"id":"da1499b5d40f9896","x":3608,"y":-576,"width":1961,"height":556,"type":"group","label":"If DDL is not given "},
+		{"id":"8cd146a9082fd0dc","type":"group","x":4100,"y":-556,"width":1080,"height":116,"label":"Inference Agent"},
+		{"id":"d66a5e358eaccbc6","type":"group","x":4560,"y":320,"width":1058,"height":101,"label":"Inference agent"},
+		{"id":"8735b204f6ccfbc2","type":"text","text":"Raw Metadata input from  **MongoDB source**","x":3753,"y":-536,"width":247,"height":76},
+		{"id":"72245ff1bf9a02a1","type":"text","text":"Source, table and column level inferences","x":4120,"y":-536,"width":260,"height":76},
+		{"id":"a47597988e687fd1","type":"text","text":"Derive Relationship ","x":4520,"y":-536,"width":250,"height":76},
+		{"id":"533ce5c2f827b742","type":"text","text":"Generate embedding Summary  ","x":4900,"y":-536,"width":260,"height":76},
+		{"id":"8ec0fd0ab215a0d4","type":"text","text":"Store the Inferred metadata in the same mongoDB","x":5280,"y":-536,"width":269,"height":76},
+		{"id":"b116b04e3d932f97","type":"text","text":"Human in the loop/ Human on the loop (This needs to be designed)","x":4713,"y":-120,"width":375,"height":80},
+		{"id":"565d7dc53cb2931f","type":"text","text":"Derive relationship ","x":4944,"y":340,"width":250,"height":60},
+		{"id":"991912cf63abaedb","type":"text","text":"Human in the loop / Human on the loop","x":5056,"y":806,"width":250,"height":60},
+		{"id":"ca68fbaa357d62de","type":"text","text":"Generate embedding summary","x":5348,"y":341,"width":250,"height":60},
+		{"id":"dd507f70f8f4471c","type":"text","text":"store the inferred metadata in the same mongodb","x":5728,"y":341,"width":250,"height":60},
+		{"id":"b2356e8ded085d62","type":"text","text":"DDL inputs","x":3608,"y":342,"width":140,"height":60},
+		{"id":"5a5bff46881eed64","type":"text","text":" parser and Normalizer ","x":3848,"y":342,"width":250,"height":60},
+		{"id":"21040b0865a856ca","type":"text","text":"Extract Metadata Schema","x":4208,"y":342,"width":250,"height":60},
+		{"id":"d53e6a43957652cf","type":"text","text":"Source, table and column level inference","x":4580,"y":341,"width":250,"height":60},
+		{"id":"162b0a24da9f78b5","x":3495,"y":500,"width":366,"height":120,"type":"text","text":"Considering the DDLs are in local, need discussion on DDL's orchestration for fetching the DDLs"},
+		{"id":"7da5ffc6faa7f52d","x":1967,"y":320,"width":653,"height":1780,"type":"text","text":"```mermaid\nflowchart LR\n\nsubgraph S1[\"DDL Not Available\"]\n    A[\"Raw Metadata from MongoDB\"]\n\n    subgraph MIS1[\"Metadata Inference Service\"]\n        B[\"Source, Table, and Column Inference\"]\n        C[\"Relationship Derivation Engine\"]\n        D[\"Embedding Summary Generation\"]\n        E[\"Persist Enriched Metadata to MongoDB\"]\n    end\n\n    F[\"Human-in-the-Loop Validation Layer\\n(Design Pending)\"]\n\n    A --> B --> C --> D --> E\n    E -->|User Feedback Interaction| F\n    F -->|User Feedback Interaction| C\nend\n\n\nsubgraph S2[\"DDL Available\"]\n    G[\"DDL Input Sources\\n\\nNote: DDLs are locally stored;\\norchestration required for retrieval\"]\n    H[\"DDL Parsing and Normalization\"]\n    I[\"Metadata Schema Extraction\"]\n\n    subgraph MIS2[\"Metadata Inference Service\"]\n        J[\"Source, Table, and Column Inference\"]\n        K[\"Relationship Derivation Engine\"]\n        L[\"Embedding Summary Generation\"]\n        M[\"Persist Enriched Metadata to MongoDB\"]\n    end\n\n    N[\"Human-in-the-Loop Validation Layer\\n(Design Pending)\"]\n\n    G --> H --> I --> J --> K --> L --> M\n    M -->|User Feedback Interaction| N\n    N -->|User Feedback Interaction| K\nend\n\n```"}
+	],
+	"edges":[
+		{"id":"ba144f4fcfc4f223","fromNode":"8735b204f6ccfbc2","fromSide":"right","toNode":"72245ff1bf9a02a1","toSide":"left"},
+		{"id":"0d14b579c6018845","fromNode":"72245ff1bf9a02a1","fromSide":"right","toNode":"a47597988e687fd1","toSide":"left"},
+		{"id":"6411f31b0a78e54d","fromNode":"a47597988e687fd1","fromSide":"right","toNode":"533ce5c2f827b742","toSide":"left"},
+		{"id":"5ce873032550e320","fromNode":"533ce5c2f827b742","fromSide":"right","toNode":"8ec0fd0ab215a0d4","toSide":"left"},
+		{"id":"32e369ff8f040d8e","fromNode":"8ec0fd0ab215a0d4","fromSide":"bottom","toNode":"b116b04e3d932f97","toSide":"right","label":"user interaction"},
+		{"id":"8ce3149732baa3b1","fromNode":"b116b04e3d932f97","fromSide":"left","toNode":"8cd146a9082fd0dc","toSide":"bottom"},
+		{"id":"dcca7c484e9b90d0","fromNode":"b2356e8ded085d62","fromSide":"right","toNode":"5a5bff46881eed64","toSide":"left"},
+		{"id":"a03aac7a5b0425c7","fromNode":"5a5bff46881eed64","fromSide":"right","toNode":"21040b0865a856ca","toSide":"left"},
+		{"id":"b0451cd76f332a46","fromNode":"21040b0865a856ca","fromSide":"right","toNode":"d53e6a43957652cf","toSide":"left"},
+		{"id":"4a1b532ae1eea98d","fromNode":"d53e6a43957652cf","fromSide":"right","toNode":"565d7dc53cb2931f","toSide":"left"},
+		{"id":"df634b57737fb116","fromNode":"565d7dc53cb2931f","fromSide":"right","toNode":"ca68fbaa357d62de","toSide":"left"},
+		{"id":"ad374474b8c3f136","fromNode":"ca68fbaa357d62de","fromSide":"right","toNode":"dd507f70f8f4471c","toSide":"left"},
+		{"id":"ed2d2898c936ba4f","fromNode":"dd507f70f8f4471c","fromSide":"bottom","toNode":"991912cf63abaedb","toSide":"right","label":"user interaction"},
+		{"id":"d4891a6fc39b53e1","fromNode":"991912cf63abaedb","fromSide":"left","toNode":"d66a5e358eaccbc6","toSide":"bottom"},
+		{"id":"6c2cad6fa7d14987","fromNode":"b2356e8ded085d62","fromSide":"bottom","toNode":"162b0a24da9f78b5","toSide":"top"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

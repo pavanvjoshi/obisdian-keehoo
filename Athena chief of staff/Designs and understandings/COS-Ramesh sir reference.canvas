@@ -1,0 +1,49 @@
+{
+	"nodes":[
+		{"id":"4ad10c97036f5d37","type":"group","x":-260,"y":-1582,"width":420,"height":453,"label":"Context Store/Organisation Memory"},
+		{"id":"9c8c569dd361af64","type":"group","x":-84,"y":-42,"width":292,"height":482,"label":"Work Streams"},
+		{"id":"5bd7dc6aaecc2f58","type":"group","x":-800,"y":-1460,"width":290,"height":366,"label":"Delta Sync"},
+		{"id":"ffdc7594dcf81484","type":"group","x":307,"y":-1572,"width":290,"height":224,"label":"Usage Layer"},
+		{"id":"12f92e851f9890c7","type":"group","x":-230,"y":-1409,"width":290,"height":192,"label":"Vector Store"},
+		{"id":"f1595234e2761132","type":"text","text":"Force Prompt - Conversation Window","x":-780,"y":-1440,"width":250,"height":85},
+		{"id":"2418d4b40d3d519d","type":"text","text":"**Communications**\n\n1. Individual level ( Lead Level)\n2. Trigger/Frequency Level - Report etc","x":-780,"y":-1332,"width":250,"height":198},
+		{"id":"7111594ce1dc8b3b","type":"text","text":"One Time","x":-799,"y":-1617,"width":250,"height":60},
+		{"id":"14ea8bf0983820af","type":"text","text":"One Time\n\n- Board Intelligence\n\n- Current Team Intelligence\n\t- Good Day ( Strucutured)\n- Evolving Intelligence\n\t- Delta\n\t\t- Unstrucutred\n\t\t- Structured ( Good Day)\n- Role based context management\n\t- Edit\n\t- Read\n- Irrelevant Context","x":-820,"y":-750,"width":393,"height":388},
+		{"id":"9a72702c15e6dfd1","type":"text","text":"Query Layer\n\n- Role based\n- Risk analysis\n- Work queue details\n- Reports\n- Impacts\n","x":-760,"y":-212,"width":250,"height":280},
+		{"id":"7c8f30804c065d9f","type":"text","text":"Tasks","x":-230,"y":-1552,"width":250,"height":60},
+		{"id":"7c23ef3fc18ff256","type":"text","text":"Organisation Memory\n\n- Unstructured\n\t- Vision\n\t- Conversation/Meetings\n\t- Architecture\n\t- Requirements\n\t- eMails  ( context inside it)\n- Structured\n\t- Tasks ( good day) ( Unstructured --> Strcutured)\n\t- Communications\n\t\t- eMails ( email Id)\n\t\t- meeting context \n\t\t- Summary\n\t\t\t- Action\n\t\t\t\t- Tasks\n\t","x":-60,"y":-810,"width":560,"height":509},
+		{"id":"3ab815b8b5d5c9f2","type":"text","text":"Context Management - Role Based","x":-62,"y":-22,"width":250,"height":60},
+		{"id":"da3e62ec18666d14","type":"text","text":"Main Orchestrator\n\nMulti - Turn\n\n- Role\n\t- Get query\n\t- Adding the context\n\n\n- Add tasks\n- Add context\n- send eMail","x":-720,"y":585,"width":250,"height":344},
+		{"id":"81877c8d43146f51","type":"text","text":"Board","x":-210,"y":-1389,"width":250,"height":60},
+		{"id":"032406aa82967103","type":"text","text":"Conversation window","x":327,"y":-1552,"width":250,"height":60},
+		{"id":"840d601aaa5b99b7","type":"text","text":"Other Head Quarters","x":-210,"y":-1297,"width":250,"height":60},
+		{"id":"b860e1248deee983","type":"text","text":"Role Based - Prompts","x":327,"y":-1428,"width":250,"height":60},
+		{"id":"34040ff08dbfcb94","type":"text","text":"Role Based","x":-62,"y":320,"width":250,"height":60},
+		{"id":"4c7820a22a14c153","type":"text","text":"Collabrative chat engine","x":-1200,"y":1048,"width":250,"height":60},
+		{"id":"a852e7401b8d501d","type":"text","text":"Orchestrator - Context Management","x":-220,"y":585,"width":250,"height":123},
+		{"id":"4fe77521b9fc572d","type":"text","text":"**Organisational Memory**\n\n- Mongo\n\t- Direct Store\n\t\t- Ids\n\t\t- eMail Ids\n\t\t- \n\t- Vector Store\n\t- Team Members\n- Good Day/Task Management\n- Sharepoint\n\t- Board Vision\n\t- Daily Reports ( Teams Co -pilot - )\n\t\t- Manual or \n\t\t- Agent\n\t- Weekly Report\n- Communication Engine\n\t- eMails\n\t","x":200,"y":646,"width":396,"height":512},
+		{"id":"08cfea5e2bf16a49","type":"text","text":"1. Ranking \n\t1. Adapting to BM25 ranking.","x":800,"y":988,"width":400,"height":170},
+		{"id":"f4ba6fcb0d731602","type":"text","text":"- Enterprise\n\t- Security\n\t\t- Local LLMs\n\t\t\t- Options\n\t\t\t\t-Option 1 -  Public LLMs\n\t\t\t\t- Option 2 - India Data centere with GPUs - LLama\n\t\t\t\t- Option 3 - AWS, Azure\n\t\t\t\t\t- GPUs/Nvidia\n\t\t\t\t\t\t- LLama \n\t\t\t\t- Option 4 - Their Infra\n\t\t\t\t","x":800,"y":1238,"width":700,"height":322},
+		{"id":"80ff56a7ef6832bc","type":"text","text":"Green Field implementation - Faster\n\nExisting usage of application - Next phase","x":800,"y":631,"width":396,"height":252},
+		{"id":"76656d8ac3ecd3ee","type":"text","text":"Orchestrator - Query\n\nAgent\n\t- Role\n\t- Query\n\t- Takes Descision\n\t\t- What tools it has tirggered\n\t\t\t- checks with Mongo on the context\n\t\t\t- It does tool calling with MCPs\n\t\t\t\t- eMails\n\t\t\t- It does MCP calling with our Task Tool","x":-470,"y":1020,"width":329,"height":380},
+		{"id":"7b1a8e90864c1943","type":"text","text":"Collabrative Engine\n- Role based\n\t- Edit \n\t- query","x":-62,"y":100,"width":250,"height":172}
+	],
+	"edges":[
+		{"id":"f43f87166ae25f63","fromNode":"4ad10c97036f5d37","fromSide":"right","toNode":"ffdc7594dcf81484","toSide":"left"},
+		{"id":"5f7676938cb51f6e","fromNode":"5bd7dc6aaecc2f58","fromSide":"right","toNode":"4ad10c97036f5d37","toSide":"left"},
+		{"id":"46e4a9beccad7bb0","fromNode":"7111594ce1dc8b3b","fromSide":"right","toNode":"4ad10c97036f5d37","toSide":"left"},
+		{"id":"aa70e2087e2a3485","fromNode":"14ea8bf0983820af","fromSide":"right","toNode":"7c23ef3fc18ff256","toSide":"left","label":"Orchestrator"},
+		{"id":"2f99574163fdd3d9","fromNode":"7c23ef3fc18ff256","fromSide":"bottom","toNode":"9a72702c15e6dfd1","toSide":"right"},
+		{"id":"da44e0c36385db1c","fromNode":"a852e7401b8d501d","fromSide":"right","toNode":"4fe77521b9fc572d","toSide":"left"},
+		{"id":"c0989c77988e9ae6","fromNode":"da3e62ec18666d14","fromSide":"right","toNode":"a852e7401b8d501d","toSide":"left"},
+		{"id":"f2d537bf3db0b9f4","fromNode":"da3e62ec18666d14","fromSide":"right","toNode":"76656d8ac3ecd3ee","toSide":"top"},
+		{"id":"151321f250cec41d","fromNode":"4c7820a22a14c153","fromSide":"right","toNode":"da3e62ec18666d14","toSide":"left","label":"Role + query"},
+		{"id":"6ad9062ed11cf2df","fromNode":"4fe77521b9fc572d","fromSide":"bottom","toNode":"76656d8ac3ecd3ee","toSide":"bottom"},
+		{"id":"44452cf9faac74e1","fromNode":"76656d8ac3ecd3ee","fromSide":"right","toNode":"4fe77521b9fc572d","toSide":"left","label":"Get the relevant Context"},
+		{"id":"df6cb4061cee6c3a","fromNode":"76656d8ac3ecd3ee","fromSide":"bottom","toNode":"4c7820a22a14c153","toSide":"left"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

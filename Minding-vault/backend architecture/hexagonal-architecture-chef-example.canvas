@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# Hexagonal Architecture — Chef Example\n\nThink of software like a restaurant kitchen.","x":80,"y":-840,"width":900,"height":100},
+		{"id":"chef","type":"text","text":"## Domain\n**Chef**\n\nKnows:\n- How to cook\n- Cooking rules\n- What a good dish means\n\n**Tech:** Business rules / domain logic","x":-20,"y":-602,"width":240,"height":382},
+		{"id":"ports","type":"text","text":"## Ports\n**Standard ways to interact**\n\nChef needs:\n- Get order\n- Get ingredients\n- Save result\n\n**Tech:** Interfaces / contracts","x":710,"y":-602,"width":240,"height":382},
+		{"id":"usecase","type":"text","text":"## Application / Use Case\n**Recipe + cooking process**\n\nExample:\n1. Take order\n2. Prepare dish\n3. Cook\n4. Serve\n\n**Tech:** Use cases / application logic","x":340,"y":-594,"width":240,"height":367},
+		{"id":"input","type":"text","text":"## Input Adapter\n**Waiter**\n\nCustomer says:\n“Give me a pizza.”\n\nWaiter converts customer request into the format the kitchen understands.\n\n**Tech:** API / Controller","x":-300,"y":-90,"width":300,"height":340},
+		{"id":"core","type":"text","text":"## Application Core\n**Chef + Kitchen process**\n\nThe chef should not care whether the order came from:\n- Waiter\n- Phone\n- Website\n\n**Tech:** Domain + Application","x":170,"y":-90,"width":300,"height":340},
+		{"id":"output","type":"text","text":"## Output Adapter\n**Delivery / Serving staff**\n\nTakes the cooked dish and sends it to the customer.\n\n**Tech:** Repository / External service adapter","x":620,"y":-90,"width":300,"height":340},
+		{"id":"external","type":"text","text":"## External Systems\n\n- Swiggy / Zomato\n- Payment gateway\n- SMS / Email\n- CRM\n\nThese can change without changing the chef's cooking rules.","x":1040,"y":-90,"width":300,"height":340},
+		{"id":"infra","type":"text","text":"## Infrastructure\n**Physical kitchen tools**\n\n- Oven\n- Gas stove\n- Fridge\n- Storage\n\n**Tech:** DB, API clients, queues, external services","x":1775,"y":-90,"width":240,"height":340},
+		{"id":"mapping","type":"text","text":"## Direct Mapping\n\n| Chef world | Tech world |\n|---|---|\n| Chef | Domain |\n| Cooking process | Use Case / Application |\n| Kitchen rules | Business rules |\n| Standard order/inventory request | Port / Interface |\n| Waiter | Input Adapter / Controller |\n| Delivery person | Output Adapter |\n| Oven, fridge, stove | Infrastructure |\n| Ingredient store | Database |\n| Swiggy / payment / email | External systems |\n\n### Main idea\n**The chef should focus on cooking, not on who placed the order or which brand of oven is used.**\n\nThat is the main idea of Hexagonal Architecture:\n**Business logic stays in the center. External technology stays outside.**","x":210,"y":320,"width":770,"height":600},
+		{"id":"db","type":"text","text":"## Database\n**Ingredient / order storage**\n\nThe chef does not talk directly to the database.\n\nA port defines what is needed; an adapter handles the actual database.","x":1420,"y":-90,"width":240,"height":340},
+		{"id":"realtime","type":"text","text":"## Real-Time Example: CRM — Create Lead\n\n**1. User sends request**\n`POST /leads`\n→ API Controller\n\n**2. Controller calls use case**\n`CreateLead`\n\n**3. Use case applies business rules**\n- Is email valid?\n- Does lead already exist?\n- What status should it get?\n\n**4. Use case uses a port**\n`LeadRepository.save()`\n\n**5. Database adapter implements the port**\nPostgreSQL adapter saves the lead.\n\n**6. Response goes back**\nDatabase → Adapter → Use Case → Controller → User\n\nThe use case does not know PostgreSQL details.","x":2180,"y":-820,"width":430,"height":730}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"input","fromSide":"right","toNode":"core","toSide":"left"},
+		{"id":"e2","fromNode":"core","fromSide":"right","toNode":"output","toSide":"left"},
+		{"id":"e3","fromNode":"core","fromSide":"top","toNode":"ports","toSide":"bottom"},
+		{"id":"e4","fromNode":"ports","fromSide":"bottom","toNode":"infra","toSide":"top"},
+		{"id":"e5","fromNode":"ports","fromSide":"bottom","toNode":"db","toSide":"top"},
+		{"id":"e6","fromNode":"ports","fromSide":"bottom","toNode":"external","toSide":"top"},
+		{"id":"e7","fromNode":"chef","fromSide":"right","toNode":"usecase","toSide":"left"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

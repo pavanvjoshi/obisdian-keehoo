@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{
+			"id":"f65e0df25071fd74",
+			"type":"text",
+			"text":"![[Code level understanding.png]]",
+			"styleAttributes":{},
+			"x":-580,
+			"y":-280,
+			"width":940,
+			"height":620
+		},
+		{
+			"id":"ee955801192ba9a4",
+			"type":"text",
+			"text":"![[Architecture understanding.png]]",
+			"styleAttributes":{},
+			"x":79320,
+			"y":-280,
+			"width":1100,
+			"height":620
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

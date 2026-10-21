@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"3ca22f4717b4d40e","x":-340,"y":-260,"width":680,"height":460,"type":"text","text":"1. You will be provided with a set or list of business rules, and your task is to infer data quality rules among them.\n\t1. Where are the context rules stored?\n\t\t1.  **MongoDB**\n\t2. Does the context contain only business rules, or does it include other types of information as well?\n\t\t1. **Context may contain both business rules and context related to business rules.**\n\t\t2. If the context includes both business rules and other information, can the entire context be sent to the LLM?\n\t\t3. What if the context is very large, for example, around 1000 lines?\n\t\t4. In that case, we need to implement a RAG approach and create chunks from the context.\n\t4. What should the RAG be built upon?"},
+		{"id":"cf036b2ca16d5782","x":-840,"y":580,"width":920,"height":300,"type":"text","text":"1. In the worst scenario i may get context of existing business rules and business rules both.\n\t1. We are not sure from where we get the input from \n\t2. as of now we will assume the context is stored in the mongo collection in future it may be stored in file also\n2. Entire context should not be sent to the LLM\n\t1. We intelligently chunk the received input from the collection (similar to the unstructured chunking strategy)\n\t2. get the business rules from the input\n\t3. call the rule add api or function for that\n\t\t1. change the rule add api from str to list\n\t\t2. write the chunking logic in separate file do not bombard in the same code\n\t\t3. there is a separate trigger for pre-defined data quality rules."},
+		{"id":"b71329c47988187b","x":520,"y":360,"width":640,"height":420,"type":"text","text":"**Chunking Strategy:**\n\n"}
+	],
+	"edges":[
+		{"id":"451ec16f9b14d635","fromNode":"3ca22f4717b4d40e","fromSide":"bottom","toNode":"cf036b2ca16d5782","toSide":"top","label":"Answers"}
+	]
+}

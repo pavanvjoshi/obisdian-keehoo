@@ -1,0 +1,180 @@
+{
+	"nodes":[
+		{"id":"8b37e5a191713b33","type":"group","x":-760,"y":-320,"width":1400,"height":1200,"label":"feature/data-collection"},
+		{
+			"id":"fed82dde8faed6ca",
+			"type":"text",
+			"text":"User message",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-120,
+			"y":-260,
+			"width":160,
+			"height":60
+		},
+		{
+			"id":"da88ccde31c43176",
+			"type":"text",
+			"text":"is it a greeting or small talk?",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-165,
+			"y":-20,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"8d601c10f1d56421",
+			"type":"text",
+			"text":"Reject to answer",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-660,
+			"y":-260,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"82965754a19d012f",
+			"type":"text",
+			"text":"respond warmly",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-370,
+			"y":142,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"1ce68d18d89eec40",
+			"type":"text",
+			"text":"Exit ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-375,
+			"y":296,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"193f1e8dced2efa4",
+			"type":"text",
+			"text":"make a tool call that is search_knowledge_base",
+			"styleAttributes":{"textAlign":"center"},
+			"x":10,
+			"y":142,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"d17a3be91d8c54c0",
+			"type":"text",
+			"text":"collect user info",
+			"styleAttributes":{
+				"textAlign":"center",
+				"border":null
+			},
+			"x":210,
+			"y":550,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"a055a91476b3672d",
+			"type":"text",
+			"text":"Store the data in database. ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":210,
+			"y":670,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"dbe4fecea59edced",
+			"type":"text",
+			"text":"Exit ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-155,
+			"y":580,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"56230a65256894c7",
+			"type":"text",
+			"text":"Found relevant answer?",
+			"styleAttributes":{"textAlign":"center"},
+			"x":10,
+			"y":296,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"12c2b09976801dd7",
+			"type":"text",
+			"text":"Answer directly and wait for next conversation",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-150,
+			"y":459,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"76f660928f63c20b",
+			"type":"text",
+			"text":"Make call of data_collector tool",
+			"styleAttributes":{"textAlign":"center"},
+			"x":210,
+			"y":459,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"c7c1e742deee06ee",
+			"type":"text",
+			"text":"Exit ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":205,
+			"y":790,
+			"width":260,
+			"height":60
+		}
+	],
+	"edges":[
+		{"id":"be4985e8df713ce8","fromNode":"fed82dde8faed6ca","fromSide":"bottom","toNode":"da88ccde31c43176","toSide":"top","label":"related to temple?"},
+		{"id":"80648e6082fa6207","fromNode":"fed82dde8faed6ca","fromSide":"left","toNode":"8d601c10f1d56421","toSide":"right","label":"other topic"},
+		{"id":"31c8581315e5d897","fromNode":"da88ccde31c43176","fromSide":"bottom","toNode":"82965754a19d012f","toSide":"top","label":"yes"},
+		{"id":"a9db08e3ad2e6a31","fromNode":"da88ccde31c43176","fromSide":"bottom","toNode":"193f1e8dced2efa4","toSide":"top","label":"no"},
+		{"id":"55ede1e43588bf9b","fromNode":"193f1e8dced2efa4","fromSide":"bottom","toNode":"56230a65256894c7","toSide":"top"},
+		{"id":"2357738b92bde234","fromNode":"56230a65256894c7","fromSide":"bottom","toNode":"12c2b09976801dd7","toSide":"top","label":"yes"},
+		{"id":"737ba4120cefa541","fromNode":"56230a65256894c7","fromSide":"bottom","toNode":"76f660928f63c20b","toSide":"top","label":"no"},
+		{"id":"2c19797dabb6030f","fromNode":"76f660928f63c20b","fromSide":"bottom","toNode":"d17a3be91d8c54c0","toSide":"top"},
+		{"id":"33a5712b5160b5ef","fromNode":"d17a3be91d8c54c0","fromSide":"bottom","toNode":"a055a91476b3672d","toSide":"top"},
+		{
+			"id":"12ef8b57c47ad34c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"82965754a19d012f",
+			"fromSide":"bottom",
+			"toNode":"1ce68d18d89eec40",
+			"toSide":"top"
+		},
+		{
+			"id":"adeb9997dd7d46ac",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"12c2b09976801dd7",
+			"fromSide":"bottom",
+			"toNode":"dbe4fecea59edced",
+			"toSide":"top"
+		},
+		{
+			"id":"f3ff2c8ad9a5ad70",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a055a91476b3672d",
+			"fromSide":"bottom",
+			"toNode":"c7c1e742deee06ee",
+			"toSide":"top"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

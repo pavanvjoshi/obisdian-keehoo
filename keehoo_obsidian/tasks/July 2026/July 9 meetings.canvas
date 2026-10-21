@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"258f65dfd207cbd6",
+			"type":"text",
+			"text":"1.  Board  - Agents\n2. PMO - Agents\n3. Product - Agent\n\n\n\n\n(Athena)\nGive me weekly report\nGive me today's report\n",
+			"styleAttributes":{},
+			"x":-520,
+			"y":-300,
+			"width":640,
+			"height":400
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

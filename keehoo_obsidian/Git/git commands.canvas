@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"076139e6706bdc8e","type":"text","text":"#### Step 1: Initialize Git\n\n```bash\ngit init\n```\n\nStep 2: Add files:\n\n```bash\ngit add.\n```\n\nStep 3: First commit\n\n```bash\ngit commit -m \"Initial commit\"\n```\n\nIf Git asks for identity:\n\n```bash\ngit config --global user.name \"Pavan23\"\ngit config --global user.email \"pavanjoshi2311@gmail.com\"\n```\n\n\nStep 4 — Create a New Branch (Instead of Using main)\n\nCreate and switch immediately:\n\n```bash\ngit checkout -b feature/initial-setup\n```\n\nNow your current branch is:\n\n```code\nfeature/initial-setup\n```\n\nYou are NOT on main.\n\n\n\nStep 4 — Add GitHub Remote:\n\n```bash\ngit remote add origin git@github.com:YOUR_USERNAME/Market_research_agent.git\n```\n\nverify:\n```bash\ngit remote -v\n```\n\nStep 6 — Push to GitHub\n\n```bash\ngit push -u origin main\n```\n\n```bash\ngit push\n```\n\n\n\n# 🚀 Full Clean Command Flow\n\n```bash\ngit init  \ngit add .  \ngit commit -m \"Initial commit\"  \ngit branch -M main  \ngit remote add origin git@github.com:YOUR_USERNAME/Market_research_agent.git  \ngit push -u origin main\n```","x":-1120,"y":-200,"width":640,"height":1220},
+		{"id":"384882039f6eb00d","type":"text","text":"**If you want to push to the existing branch:**\n\n```bash\ngit add .\ngit commit -m \"message\"\ngit push\n```\n\n**If you want to make new branch and push it:**\n\n```bash\ngit checkout main\ngit pull origin main\ngit checkout -b feature/xyz\ngit add .\ngit commit -m \"message\"\ngit push -u origin feature/xyz\n```\n\n**If you want to push directly to the main:**\n\n```bash\ngit checkout main\ngit pull origin main\ngit add .\ngit commit -m \"Your message\"\ngit push\n```","x":-460,"y":-200,"width":806,"height":1020}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

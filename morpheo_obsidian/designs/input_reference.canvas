@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"72a838736454bace","x":-200,"y":-300,"width":414,"height":191,"type":"text","text":"Need to Add the field \"input_reference\" that \nincludes the path of the file and context from \nused while inferring the metadata."},
+		{"id":"e7c8333adb9925b9","x":-580,"y":40,"width":419,"height":220,"type":"text","text":"Scope level Source\n\n{\n\"input_reference\": \"....\"\n}"},
+		{"id":"014263affad95a2a","type":"text","text":"Scope level Table\n\n{\n\"input_reference\": \"....\"\n}","x":-100,"y":40,"width":400,"height":220},
+		{"id":"a6c2a81d82b41f3a","type":"text","text":"Scope level Column\n\n{\n\"input_reference\": \"....\"\n}","x":340,"y":40,"width":380,"height":220},
+		{"id":"a206d3a0b118b80f","x":-260,"y":420,"width":780,"height":50,"type":"text","text":"input_reference includes the file path and context taken while inferring the metadata."}
+	],
+	"edges":[
+		{"id":"91fc2237256de1c0","fromNode":"72a838736454bace","fromSide":"bottom","toNode":"e7c8333adb9925b9","toSide":"top"},
+		{"id":"51df02ccee98368c","fromNode":"72a838736454bace","fromSide":"bottom","toNode":"014263affad95a2a","toSide":"top"},
+		{"id":"05c22b3fe06aec8b","fromNode":"72a838736454bace","fromSide":"bottom","toNode":"a6c2a81d82b41f3a","toSide":"top"}
+	]
+}

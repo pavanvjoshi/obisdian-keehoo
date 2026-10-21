@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"05164bd819380fa8","x":-620,"y":-280,"width":416,"height":398,"type":"text","text":"## Layer - 1\n\n#### Entity Graph\n\n* Memory system\n* the engine stores:\n\t* companies\n\t* founders\n\t* investors\n\t* employees\n\t* sectors\n\t* regions\n\t* technologies\n* it remembers relationships.\n* Example:\n\t* founder -> startup -> investor -> hiring -> market\n"},
+		{"id":"8ebdeea4ac73f29b","type":"text","text":"## Layer - 2\n\n#### Signal detection\n\n* this layer watches for changes.\n* the engine constantly asks:\n\t* what changed recently?\n* not\n\t* who exists?\n* Examples:\n\t* hiring signals\n\t\t* company starts hiring\n\t\t\t* SDRs\n\t\t\t* marketers\n\t\t\t* AI engineers\n\t\t\t* devops engineers\n\t\t* this usually means:\n\t\t\t* growth\n\t\t\t* expansion\n\t\t\t* scaling pressure\n\t* Funding signals\n\t\t* the company:\n\t\t\t* raises seed funding\n\t\t\t* announces series A\n\t\t\t* gets investor attention\n\t\t* this often creates urgency:\n\t\t\t* scale faster\n\t\t\t* build pipeline\n\t\t\t* increase revenue\n\t* behavioral signals\n\t\t* the founder:\n\t\t\t* posts on linkedin\n\t\t\t* tweets frustrations\n\t\t\t* talks about scaling\n\t\t\t* discusses inefficiences\n\t\t* this reveals:\n\t\t\t* pain points\n\t\t\t* current priorities\n\t\t\t* emotional states\n\t* technical signals\n\t\t* the company:\n\t\t\t* adopts AI tools\n\t\t\t* changes infrastructures\n\t\t\t* migrates cloud systems\n\t\t\t* integrates automation\n\t\t* this may indicate:\n\t\t\t* operational challenges\n\t\t\t* modernization efforts\n\t\t\t* internal pressure","x":-180,"y":-280,"width":416,"height":398},
+		{"id":"cd0bf05980bb50a0","type":"text","text":"## Layer - 3\n\n#### Pain inference Engine\n\n* signals alone are not enough\n* engine must understand \n\t* what problem is this company probably facing?\n* this is called pain inference\n* Example:\n\t* signal:\n\t\t* hiring 5 SDRs\n\t* possible hidden pain:\n\t\t* lead qualification overload\n\t\t* outbound scaling problem\n\t\t* CRM chaos\n\t\t* pipeline management issues\n* the engine is not detecting companies\n* it is detecting operational pressure\n* that is valuable part","x":260,"y":-280,"width":416,"height":398},
+		{"id":"feaf8445bbaa7089","type":"text","text":"## Layer - 4\n\n#### Product matchmaking\n\n* now the engine asks:\n\t* which of our products fits this situation?\n* not every company needs every product\n* the engine scores:\n\t* urgency\n\t* relevance\n\t* buying probability\n\t* timing","x":760,"y":-280,"width":416,"height":398},
+		{"id":"5bd39644f9b39dd9","type":"text","text":"## Layer - 5\n\n#### Narrative generation\n\n* This is where messaging is created\n* most ai tools fail here because they generate generic spam\n","x":1220,"y":-280,"width":416,"height":398},
+		{"id":"b1b99346444f852d","x":300,"y":200,"width":487,"height":224,"type":"text","text":"## Final Summary:\n\n```\nA system that watches the market,\ndetects changes,\nunderstands probable problems,\nmatches products to those problems,\nand creates highly relevant outreach.\n```"},
+		{"id":"13eaca65c5b2c986","x":259,"y":477,"width":709,"height":83,"type":"text","text":"chatgpt conversation link https://chatgpt.com/share/6a085b9d-2a78-8320-9c4c-66253a4f8964\n"}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

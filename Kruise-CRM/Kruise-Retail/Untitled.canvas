@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"c065594f12c00aa3","x":-1340,"y":-460,"width":555,"height":507,"type":"text","text":"1. My stock\n\t1. Get Stocks from stocks via ORG ID\n2. Stock Request\n\t1. Get Stocks from stocks via ORG ID\n\t2. Request stocks (POST) from stocks via ORG ID\n3. Sell/POS\n\t1. Own APIs\n4. Returns\n\t1. Own APIs\n5. Till and shift\n\t1. Own APIs\n6. Sales History\n\t1. Own APIs\n7. Customer\n\t1. Get customers from master data\n8. Reports\n\t1. Own APIs"}
+	],
+	"edges":[]
+}

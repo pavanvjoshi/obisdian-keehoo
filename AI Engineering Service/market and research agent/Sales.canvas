@@ -1,0 +1,43 @@
+{
+	"nodes":[
+		{"id":"72c92dd65574232d","x":-140,"y":1100,"width":1260,"height":800,"type":"group","label":"Application"},
+		{"id":"e7d20958b95f8c77","x":-520,"y":-220,"width":872,"height":320,"type":"group","label":"Sales"},
+		{"id":"7c9a29839b1ca5d5","x":-500,"y":-200,"width":160,"height":260,"type":"text","text":"Contacts \n\nLead Generation\n\n- Via Events\n- Personal Meets\n- Scraping"},
+		{"id":"70bbd22e8bcc33aa","x":-248,"y":-200,"width":250,"height":157,"type":"text","text":"Contact stage - Cold eMail\n- Email\n- Watsapp\n- Mobile\n"},
+		{"id":"a1146f9cec36d32d","x":82,"y":-122,"width":250,"height":182,"type":"text","text":"Show interest\n\n- Respond\n- More details\n- Prospect might ask for a call"},
+		{"id":"62ea9b3931736f1f","x":-912,"y":-220,"width":250,"height":320,"type":"text","text":"**Pre Sales**\n\n- Attending Events\n- Going for Personal\n- Content Preparation\n- Marketing \n- Campaining\n\t- Awareness\n\t"},
+		{"id":"17123653eab17b8e","x":100,"y":266,"width":250,"height":166,"type":"text","text":"Follow ups"},
+		{"id":"5a6abf31ed5becce","x":-149,"y":266,"width":169,"height":128,"type":"text","text":"Call Schedule"},
+		{"id":"1125e24c931daf0d","x":-496,"y":244,"width":250,"height":188,"type":"text","text":"Deal\n\n- Negoitations\n- Contract\n- "},
+		{"id":"7e53de27c46df1a2","x":-900,"y":234,"width":250,"height":208,"type":"text","text":"Customer\n\n- CRM\n\t- Service Desk\n\t- Customer Support"},
+		{"id":"bf532c3755dcd74f","x":-1193,"y":625,"width":250,"height":335,"type":"text","text":"- Excel Sheet\n- Applications\n- Can buy these tools\n- Agents\n- Flow\n\t- Agents\n\t\t- Human approved\n\t"},
+		{"id":"ef908bd2c9ea970b","x":-731,"y":582,"width":391,"height":358,"type":"text","text":"Flow\n- Chain the tasks\n- Human in the Loop\n- Adapt to the UI\n- We don't have\n\t- Parallel agents\n\t\t- Feed the database"},
+		{"id":"f316004418eb80c8","x":-149,"y":589,"width":356,"height":371,"type":"text","text":"**Pre Sales**\n- Creation of Content\n\t- Flow by itself\n- Target the segment/sector/Customer\n\t- Market Research\n\t- Separate Flow\n\t\n- Push it to media ( Separate Flow)\n\t- Social Media\n\t- Cold eMails\n\t- Paper Media\n\t- TV\n\t- \n"},
+		{"id":"feff7195037ef84e","x":280,"y":595,"width":300,"height":365,"type":"text","text":"**Sales**\n\n- Prospect showing interest\n- Schedule a call\n- "},
+		{"id":"ebd69103e6d5af6e","x":661,"y":593,"width":279,"height":367,"type":"text","text":"**After Sales**"},
+		{"id":"2c8355c7e668c13a","x":-1512,"y":-53,"width":250,"height":113,"type":"text","text":"**Visitor IQ**\n- CRM\n- QR Code"},
+		{"id":"450f6d144ce79976","x":801,"y":1120,"width":250,"height":280,"type":"text","text":"F3 - Push to media\n\n- Get the contacts\n- Buckets the contacts\n- Push the Content\n\n**Analogy**\n- Scrape or Visitor IQ\n- Outlook"},
+		{"id":"b8715b191b7c6870","type":"text","text":"F2.1 - get Contacts\n\n- Visitor IQ\n\t- Via Events\n\t- Data buying\n\t- Scraping\n","x":500,"y":1145,"width":250,"height":230},
+		{"id":"936a371e9c386663","x":-687,"y":1100,"width":487,"height":440,"type":"text","text":"- Person Research\n- Entity Research\n\n**Sales Team**\n- Market research\n\t- Current Sentiment ( Region, Tech Sector, sentiment )\n\t\t- Based on the current Sentiment\n\t\t\t- We make the Content\n- \n"},
+		{"id":"5cbb653def42f437","x":209,"y":1145,"width":250,"height":230,"type":"text","text":"F2 - Create Content\n\n- Creates content\n- stores\n\n**Analogy**\n- Story Viewer"},
+		{"id":"0ea0bd3f64d1a19a","type":"text","text":"F1 - Market research\n\n- Content is available\n- Market research\n- Get Contacts\n\n**Analogy**\n- Digi Incubator","x":-96,"y":1145,"width":250,"height":230},
+		{"id":"cc901e1c46cc7202","x":801,"y":1540,"width":250,"height":300,"type":"text","text":"F4 - Schedule calls + attaching content\n\n- Schedule the meet\n\t- with right content\n\n**Tech Spec**\n\n- Agent reads that eMail and applies .. label the email this.show intesest\n- Schedule a meet"},
+		{"id":"6999976a942b9668","x":-96,"y":1690,"width":250,"height":60,"type":"text","text":"Mongo Repos"}
+	],
+	"edges":[
+		{"id":"cc9bcaf73ebcf5be","fromNode":"7c9a29839b1ca5d5","fromSide":"right","toNode":"70bbd22e8bcc33aa","toSide":"left"},
+		{"id":"68a3f6080c7dbeb5","fromNode":"70bbd22e8bcc33aa","fromSide":"right","toNode":"a1146f9cec36d32d","toSide":"left"},
+		{"id":"ab58c681b483c86b","fromNode":"a1146f9cec36d32d","fromSide":"bottom","toNode":"17123653eab17b8e","toSide":"top","label":"No Response"},
+		{"id":"32e402f8b5841530","fromNode":"a1146f9cec36d32d","fromSide":"bottom","toNode":"5a6abf31ed5becce","toSide":"top"},
+		{"id":"99b9d055437cab24","fromNode":"5a6abf31ed5becce","fromSide":"left","toNode":"1125e24c931daf0d","toSide":"right"},
+		{"id":"c8799c892e0883ad","fromNode":"1125e24c931daf0d","fromSide":"left","toNode":"7e53de27c46df1a2","toSide":"right"},
+		{"id":"7adc9f98dafef088","fromNode":"5cbb653def42f437","fromSide":"bottom","toNode":"6999976a942b9668","toSide":"top"},
+		{"id":"c0d3c73a35f97d04","fromNode":"0ea0bd3f64d1a19a","fromSide":"bottom","toNode":"6999976a942b9668","toSide":"top"},
+		{"id":"eb7fee828e56c4f0","fromNode":"450f6d144ce79976","fromSide":"bottom","toNode":"6999976a942b9668","toSide":"top"},
+		{"id":"74c968ae8c6cb767","fromNode":"cc901e1c46cc7202","fromSide":"left","toNode":"6999976a942b9668","toSide":"top"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

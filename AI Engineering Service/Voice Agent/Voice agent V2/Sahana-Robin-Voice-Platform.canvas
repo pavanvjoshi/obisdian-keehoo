@@ -1,0 +1,1520 @@
+{
+	"nodes": [
+		{
+			"id": "3899754d3e10de82",
+			"type": "group",
+			"label": "20. Glossary",
+			"x": 2370,
+			"y": 8788,
+			"width": 720,
+			"height": 831
+		},
+		{
+			"id": "5b65d19f1b128b0d",
+			"type": "group",
+			"label": "19. Decision log",
+			"x": 1460,
+			"y": 8788,
+			"width": 800,
+			"height": 776,
+			"color": "5"
+		},
+		{
+			"id": "a09575d96771e985",
+			"type": "group",
+			"label": "18. Roadmap",
+			"x": -50,
+			"y": 8788,
+			"width": 1400,
+			"height": 423,
+			"color": "3"
+		},
+		{
+			"id": "576a10ac69a6a8f9",
+			"type": "group",
+			"label": "17. Gemini and LiveKit limits",
+			"x": 1880,
+			"y": 7407,
+			"width": 720,
+			"height": 1231,
+			"color": "6"
+		},
+		{
+			"id": "6a3c05bbf971d3d4",
+			"type": "group",
+			"label": "16. Many users at once",
+			"x": -50,
+			"y": 7407,
+			"width": 1820,
+			"height": 941,
+			"color": "2"
+		},
+		{
+			"id": "24ebef27f81f67bb",
+			"type": "group",
+			"label": "One backend (one worker program)",
+			"x": 0,
+			"y": 7557,
+			"width": 360,
+			"height": 540
+		},
+		{
+			"id": "855ef7b534cea4ca",
+			"type": "group",
+			"label": "15. Listening quality",
+			"x": 1590,
+			"y": 6401,
+			"width": 860,
+			"height": 671,
+			"color": "3"
+		},
+		{
+			"id": "7c53a78a721517a5",
+			"type": "group",
+			"label": "14. Running it",
+			"x": 760,
+			"y": 6401,
+			"width": 720,
+			"height": 856
+		},
+		{
+			"id": "f719a60fa888bdb8",
+			"type": "group",
+			"label": "13. Test frontend",
+			"x": -50,
+			"y": 6401,
+			"width": 700,
+			"height": 560
+		},
+		{
+			"id": "4185947d72c27fee",
+			"type": "group",
+			"label": "12. Verification",
+			"x": 2300,
+			"y": 4987,
+			"width": 740,
+			"height": 1264,
+			"color": "4"
+		},
+		{
+			"id": "78a8e081db51207d",
+			"type": "group",
+			"label": "11. Fixes included",
+			"x": 1450,
+			"y": 4987,
+			"width": 740,
+			"height": 806,
+			"color": "4"
+		},
+		{
+			"id": "c7be1bba3bb991d9",
+			"type": "group",
+			"label": "10. Adding an application",
+			"x": 720,
+			"y": 4987,
+			"width": 620,
+			"height": 586,
+			"color": "4"
+		},
+		{
+			"id": "2016f56033e7ede9",
+			"type": "group",
+			"label": "9. Code layout",
+			"x": -50,
+			"y": 4987,
+			"width": 660,
+			"height": 786
+		},
+		{
+			"id": "edd667236f7e61d8",
+			"type": "group",
+			"label": "8. Routes and messages",
+			"x": 1960,
+			"y": 3771,
+			"width": 1400,
+			"height": 1066
+		},
+		{
+			"id": "31e0845ca34d0c7e",
+			"type": "group",
+			"label": "7. How a call works",
+			"x": -50,
+			"y": 3771,
+			"width": 1900,
+			"height": 502,
+			"color": "5"
+		},
+		{
+			"id": "33f32367d136471a",
+			"type": "group",
+			"label": "6c. Parts",
+			"x": 2600,
+			"y": 2538,
+			"width": 800,
+			"height": 1083
+		},
+		{
+			"id": "6bfd5a5e4f856d0f",
+			"type": "group",
+			"label": "6b. Architecture — AFTER: one backend, the route decides",
+			"x": 870,
+			"y": 2538,
+			"width": 1620,
+			"height": 1006,
+			"color": "4"
+		},
+		{
+			"id": "51982ca399079642",
+			"type": "group",
+			"label": "voice_backend (one backend)",
+			"x": 1300,
+			"y": 2608,
+			"width": 770,
+			"height": 760,
+			"color": "4"
+		},
+		{
+			"id": "dc18f817eff95d9d",
+			"type": "group",
+			"label": "Application agents",
+			"x": 1690,
+			"y": 2978,
+			"width": 340,
+			"height": 350
+		},
+		{
+			"id": "d9f2aaf151dfbd7b",
+			"type": "group",
+			"label": "6a. Architecture — BEFORE: two backends",
+			"x": -50,
+			"y": 2548,
+			"width": 760,
+			"height": 1016,
+			"color": "1"
+		},
+		{
+			"id": "cc01e9ee4f708bef",
+			"type": "group",
+			"label": "HelpDesk backend (copy of Digidevalaya)",
+			"x": 330,
+			"y": 2958,
+			"width": 320,
+			"height": 260
+		},
+		{
+			"id": "12898ee82a4b8a7c",
+			"type": "group",
+			"label": "Digidevalaya backend",
+			"x": 330,
+			"y": 2618,
+			"width": 320,
+			"height": 260
+		},
+		{
+			"id": "5da23328a75e64bd",
+			"type": "group",
+			"label": "5. What we did (in order)",
+			"x": -50,
+			"y": 1731,
+			"width": 2620,
+			"height": 657,
+			"color": "5"
+		},
+		{
+			"id": "ab690da061c9b963",
+			"type": "group",
+			"label": "4. Requirements",
+			"x": 2690,
+			"y": 593,
+			"width": 720,
+			"height": 988,
+			"color": "4"
+		},
+		{
+			"id": "4bb420f6637118c9",
+			"type": "group",
+			"label": "3. Problem statement",
+			"x": 1160,
+			"y": 593,
+			"width": 1420,
+			"height": 758,
+			"color": "1"
+		},
+		{
+			"id": "180d8336ca7a4776",
+			"type": "group",
+			"label": "2. Background",
+			"x": -50,
+			"y": 593,
+			"width": 1100,
+			"height": 704
+		},
+		{
+			"id": "c82561ec215a6e31",
+			"type": "text",
+			"text": "# Sahana & Robin Voice Platform\n\nHow two separate voice-agent backends, for the **Digidevalaya** and **HelpDesk** applications, became **one backend** where the route you call decides which agent answers.\n\n| | |\n|---|---|\n| **Dates** | 24–25 September 2026 |\n| **Agents** | **Sahana** (Digidevalaya, Kannada) · **Robin** (HelpDesk, English) |\n| **Status** | Working locally · 83 backend tests passing · HelpDesk tickets in demo mode |\n| **Code** | `~/VoiceAgent__/voice_backend` (backend) · `~/VoiceAgent__/voice-frontend` (test frontend) |",
+			"x": 0,
+			"y": 0,
+			"width": 900,
+			"height": 443,
+			"color": "6"
+		},
+		{
+			"id": "a6bbc91ae73dd21c",
+			"type": "text",
+			"text": "## 1. Summary\n\n- Two voice agents in two backends → merged into **one backend** (`voice_backend/`).\n- `GET /token/digidevalaya` → **Sahana** · `GET /token/helpdesk` → **Robin**. The route alone decides.\n- Both agents behave exactly as before: prompts, tools and rules copied unchanged and checked line by line.\n- A third application = **one folder + one line** in a list. No routing code changes.\n- Every user gets a private room and a private copy of the agent. Conversations cannot mix.\n- A React test frontend calls both agents, with a pitch-black interface.\n- **Next:** listening-quality fixes, then a server and production LiveKit before real users.",
+			"x": 1000,
+			"y": 0,
+			"width": 760,
+			"height": 418
+		},
+		{
+			"id": "4443aee183b279f7",
+			"type": "text",
+			"text": "> **Goal:** One backend that holds every application's voice agent. The only thing that decides which agent joins a call is the route the frontend calls.",
+			"x": 1860,
+			"y": 0,
+			"width": 560,
+			"height": 161,
+			"color": "4"
+		},
+		{
+			"id": "ed23e9d533a3992b",
+			"type": "text",
+			"text": "### ⚠️ Security\n\nThe original project folders still contain the **Google API key** and **MongoDB password** in plain text.\n\n**Change both**, even after the old folders are deleted.",
+			"x": 1860,
+			"y": 201,
+			"width": 560,
+			"height": 233,
+			"color": "1"
+		},
+		{
+			"id": "b555773768bc1a67",
+			"type": "text",
+			"text": "### 🟡 Sahana\n**Application:** Digidevalaya (temple help)\n**Language:** Kannada\n**Users:** Anyone, no login\n\nAnswers devotees' questions about sevas, bookings and temple services from a temple FAQ. If she doesn't know the answer, she takes the caller's name, 10-digit mobile number and question, and saves it to **MongoDB** for a callback.",
+			"x": 0,
+			"y": 663,
+			"width": 480,
+			"height": 343,
+			"color": "#C9A227"
+		},
+		{
+			"id": "c364e7cd25ef8288",
+			"type": "text",
+			"text": "### 🔵 Robin\n**Application:** HelpDesk (support tickets)\n**Language:** English\n**Users:** Logged-in employees\n\nListens to an employee's problem and prepares a support ticket: title, department, category and priority. Confirms with the user, then hands the ticket to the website, which saves it in the company's Helpdesk system.\n\n*Named Robin during this work (it previously had no name).*",
+			"x": 520,
+			"y": 663,
+			"width": 480,
+			"height": 408,
+			"color": "#3B82F6"
+		},
+		{
+			"id": "5849253c0c07f889",
+			"type": "text",
+			"text": "**Shared technology:** **LiveKit** carries live audio between the browser and the agent · **Google Gemini Live** listens and speaks.",
+			"x": 0,
+			"y": 1111,
+			"width": 1000,
+			"height": 136
+		},
+		{
+			"id": "b673e0e04fef7b45",
+			"type": "text",
+			"text": "### Main problems\n\n| Problem | In practice |\n|---|---|\n| **Two backends to run and maintain** | Two token servers, two agent programs, two `.env` files. Six terminals locally. Every fix made twice. |\n| **The wrong agent could answer** | No agent names in LiveKit → LiveKit sent whichever was free. A HelpDesk user could get the Kannada temple agent. |\n| **Couldn't run side by side** | Same container names and same LiveKit port (7880). |\n| **No shared way to reach both agents** | No frontend in either project, no single entry point. |",
+			"x": 1210,
+			"y": 663,
+			"width": 640,
+			"height": 543,
+			"color": "2"
+		},
+		{
+			"id": "c1aae165bc91698a",
+			"type": "text",
+			"text": "### Hidden problems found in the code\n\n| Found | Effect |\n|---|---|\n| Old LiveKit event names | HelpDesk status messages never fired; ticket transcripts always empty. |\n| Log line above Sahana's tool description | Gemini never got the tool description (\"translate to English\", \"only after search found nothing\"). |\n| MongoDB address logged | DB password in log files. |\n| Real API key + DB password in Docker files | Secrets in plain text. |\n| No default `SESSION_LIMIT_SEC` | Sahana crashed if missing. |\n| HelpDesk FAQ named `temple_faq.md` | Leftover name from the copy. |\n| Outdated architecture docs | Described things that didn't exist. |",
+			"x": 1890,
+			"y": 663,
+			"width": 640,
+			"height": 638,
+			"color": "2"
+		},
+		{
+			"id": "ee0a0cce58d81229",
+			"type": "text",
+			"text": "### Requirements (agreed with product owner)\n\n- **Application agent:** one application's voice assistant.\n- **Route:** the web address a frontend calls.\n\n| # | Requirement |\n|---|---|\n| R1 | One backend with all application agents. |\n| R2 | The route picks the agent. Only token route: `GET /token/{application}`. |\n| R3 | Dynamic: no app-specific routing code. New app = one folder + one registry line. |\n| R4 | Each app keeps its own frontend in production. Combined frontend is test-only. |\n| R5 | Build in a new folder; originals untouched as reference. |\n| R6 | Agents behave exactly as before. |\n| R7 | Fixes: no secrets in Docker, one Docker setup, default call limit, current LiveKit events. |\n| R8 | HelpDesk tickets in demo mode on test frontend. Local only for now. |",
+			"x": 2740,
+			"y": 663,
+			"width": 620,
+			"height": 868
+		},
+		{
+			"id": "85386162967e21a9",
+			"type": "text",
+			"text": "**1. Studied both backends**\n*24 Sep*\n\nRead every file in `digidevalaya_VA/` and `HelpDesk_VA/`; wrote five context docs (overview, one per agent, frontend contract, planning + risks).",
+			"x": 0,
+			"y": 1801,
+			"width": 300,
+			"height": 246
+		},
+		{
+			"id": "74093b06c6ea7fbf",
+			"type": "text",
+			"text": "**2. Named token routes + agents**\n*24 Sep*\n\nEach agent got a LiveKit name; each token server asked for it. Later replaced by the single backend.",
+			"x": 370,
+			"y": 1801,
+			"width": 300,
+			"height": 246
+		},
+		{
+			"id": "cb2abde5a8b30913",
+			"type": "text",
+			"text": "**3. React test frontend**\n*24 Sep*\n\nOne page, a card per agent, live call screen, transcript, countdown. Uses LiveKit's built-in signals.",
+			"x": 740,
+			"y": 1801,
+			"width": 300,
+			"height": 246
+		},
+		{
+			"id": "3f538a3c75f1c564",
+			"type": "text",
+			"text": "**4. Decided: HelpDesk demo mode**\n*24 Sep*\n\nFrontend sends Robin a fake category list and fake ticket numbers (`DEMO-0001`).",
+			"x": 1110,
+			"y": 1801,
+			"width": 300,
+			"height": 246
+		},
+		{
+			"id": "4770005b2b37ae13",
+			"type": "text",
+			"text": "**5. Change of plan: one backend**\n*24 Sep*\n\nAgreed requirements, `GET /token/{application}` as the only token route.",
+			"x": 1480,
+			"y": 1801,
+			"width": 300,
+			"height": 246,
+			"color": "5"
+		},
+		{
+			"id": "286f32e353ffd166",
+			"type": "text",
+			"text": "**6. Built `voice_backend/`**\n*24 Sep*\n\nRegistry, one token server, one worker. Agents moved unchanged (auto-compared). Fixes applied. Frontend pointed at new routes.",
+			"x": 1850,
+			"y": 1801,
+			"width": 300,
+			"height": 246,
+			"color": "5"
+		},
+		{
+			"id": "714883643bafdf1b",
+			"type": "text",
+			"text": "**7. Verified with real parts**\n*24 Sep*\n\nReal token server + worker + local LiveKit. Right agent every time.",
+			"x": 2220,
+			"y": 1801,
+			"width": 300,
+			"height": 246
+		},
+		{
+			"id": "8f3556300b355d9d",
+			"type": "text",
+			"text": "**8. Shared with frontend team**\n*24 Sep*\n\nOpened on office network at `http://192.168.4.136:8080` + integration note.",
+			"x": 0,
+			"y": 2117,
+			"width": 300,
+			"height": 221
+		},
+		{
+			"id": "480ddcae2e46248f",
+			"type": "text",
+			"text": "**9. Named the agent Robin**\n*24 Sep*\n\nAdded \"Your name is Robin.\" to its instructions.",
+			"x": 370,
+			"y": 2117,
+			"width": 300,
+			"height": 221
+		},
+		{
+			"id": "55668fbb5711721c",
+			"type": "text",
+			"text": "**10. Investigated listening problems**\n*24–25 Sep*\n\nWhy Robin showed Chinese/Japanese text and misheard on laptop speakers.",
+			"x": 740,
+			"y": 2117,
+			"width": 300,
+			"height": 221
+		},
+		{
+			"id": "4962b01834ed04e3",
+			"type": "text",
+			"text": "**11. Redesigned test frontend**\n*25 Sep*\n\nPitch-black UI, gold/blue, status ring, mic meter, ticket tracker, friendlier errors.",
+			"x": 1110,
+			"y": 2117,
+			"width": 300,
+			"height": 221
+		},
+		{
+			"id": "3424fae52c20d1e8",
+			"type": "text",
+			"text": "**12. Checked HelpDesk knowledge**\n*25 Sep*\n\nRobin receives exactly the same knowledge as before.",
+			"x": 1480,
+			"y": 2117,
+			"width": 300,
+			"height": 221
+		},
+		{
+			"id": "b00ea3d7900b7036",
+			"type": "text",
+			"text": "**13. Researched many users at once**\n*25 Sep*\n\nHow LiveKit isolates calls and what limits capacity.",
+			"x": 1850,
+			"y": 2117,
+			"width": 300,
+			"height": 221
+		},
+		{
+			"id": "a9708074d1748b46",
+			"type": "text",
+			"text": "**Digidevalaya app**",
+			"x": 0,
+			"y": 2668,
+			"width": 240,
+			"height": 70
+		},
+		{
+			"id": "d97974a68fdda84d",
+			"type": "text",
+			"text": "**HelpDesk app**",
+			"x": 0,
+			"y": 3008,
+			"width": 240,
+			"height": 70
+		},
+		{
+			"id": "df7d695f3c9e0cd9",
+			"type": "text",
+			"text": "**Token server** :8080",
+			"x": 360,
+			"y": 2668,
+			"width": 260,
+			"height": 70
+		},
+		{
+			"id": "774a295057a5523b",
+			"type": "text",
+			"text": "**Agent program: Sahana**",
+			"x": 360,
+			"y": 2778,
+			"width": 260,
+			"height": 70,
+			"color": "#C9A227"
+		},
+		{
+			"id": "fd77f9a79f85cdec",
+			"type": "text",
+			"text": "**Token server** :8081",
+			"x": 360,
+			"y": 3008,
+			"width": 260,
+			"height": 70
+		},
+		{
+			"id": "a1d07c0e006cc171",
+			"type": "text",
+			"text": "**Agent program: HelpDesk**",
+			"x": 360,
+			"y": 3118,
+			"width": 260,
+			"height": 70,
+			"color": "#3B82F6"
+		},
+		{
+			"id": "56fe41a310874b33",
+			"type": "text",
+			"text": "**LiveKit server**",
+			"x": 0,
+			"y": 3288,
+			"width": 240,
+			"height": 70
+		},
+		{
+			"id": "199a8fdc7cffc238",
+			"type": "text",
+			"text": "*Two copies of everything. With no agent names, a shared LiveKit server could send either agent to any call.*",
+			"x": 0,
+			"y": 3408,
+			"width": 660,
+			"height": 106,
+			"color": "1"
+		},
+		{
+			"id": "ae3d6249f9b15d72",
+			"type": "text",
+			"text": "**Digidevalaya app**",
+			"x": 920,
+			"y": 2668,
+			"width": 240,
+			"height": 70
+		},
+		{
+			"id": "c815601c20562718",
+			"type": "text",
+			"text": "**HelpDesk app**",
+			"x": 920,
+			"y": 2908,
+			"width": 240,
+			"height": 70
+		},
+		{
+			"id": "30a70bd7077f1149",
+			"type": "text",
+			"text": "**LiveKit server**\nexternal",
+			"x": 920,
+			"y": 3188,
+			"width": 240,
+			"height": 90
+		},
+		{
+			"id": "89d05aa8c665aa48",
+			"type": "text",
+			"text": "**Token server**\n`app/main.py`",
+			"x": 1340,
+			"y": 2668,
+			"width": 280,
+			"height": 90
+		},
+		{
+			"id": "bfe601116bad237e",
+			"type": "text",
+			"text": "**Application registry**\n`app/registry.py`",
+			"x": 1340,
+			"y": 2888,
+			"width": 280,
+			"height": 90
+		},
+		{
+			"id": "3948aeae31435377",
+			"type": "text",
+			"text": "**Worker: voice-backend**\n`app/worker.py`",
+			"x": 1340,
+			"y": 3108,
+			"width": 280,
+			"height": 90
+		},
+		{
+			"id": "225442aef9376ae7",
+			"type": "text",
+			"text": "**Sahana**\n`applications/digidevalaya`",
+			"x": 1720,
+			"y": 3028,
+			"width": 280,
+			"height": 90,
+			"color": "#C9A227"
+		},
+		{
+			"id": "3e032e4ef1df6412",
+			"type": "text",
+			"text": "**Robin**\n`applications/helpdesk`",
+			"x": 1720,
+			"y": 3208,
+			"width": 280,
+			"height": 90,
+			"color": "#3B82F6"
+		},
+		{
+			"id": "78c5c98477e09bda",
+			"type": "text",
+			"text": "**Google Gemini Live**",
+			"x": 2180,
+			"y": 3228,
+			"width": 260,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "27c5450c5dfd70d6",
+			"type": "text",
+			"text": "**Gemini Files + flash-lite**",
+			"x": 2180,
+			"y": 3028,
+			"width": 260,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "c64f87bc1ab25668",
+			"type": "text",
+			"text": "**MongoDB**",
+			"x": 2180,
+			"y": 2848,
+			"width": 260,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "7bd78988d630c089",
+			"type": "text",
+			"text": "*One token server, one worker. The token carries a note with the application name, and the worker starts the matching agent.*",
+			"x": 920,
+			"y": 3388,
+			"width": 800,
+			"height": 106,
+			"color": "4"
+		},
+		{
+			"id": "f917bd5beb176a5e",
+			"type": "text",
+			"text": "### The parts\n\n| Part | File | Job |\n|---|---|---|\n| **Token server** | `app/main.py` | The reception desk. Checks the application name, creates a private room, returns a pass with a note saying which agent to send. |\n| **Registry** | `app/registry.py` | The list of applications. Token server and worker look agents up here by name. |\n| **Worker** | `app/worker.py` | Does the talking. Registers with LiveKit as `voice-backend`, reads the note, loads that agent, connects to Gemini. |\n| **Application agents** | `app/applications/<name>/` | Instructions, voice, language, tools and knowledge files. |\n| **Shared helpers** | `app/shared/` | Agent contract, status/transcript messages, call limit, knowledge search. |\n| **LiveKit server** | external | Live audio + messages, one private room per call. |\n| **Google Gemini Live** | external | Listens and speaks the reply, in one step. |",
+			"x": 2650,
+			"y": 2608,
+			"width": 700,
+			"height": 963
+		},
+		{
+			"id": "2a1aa3927c0caff0",
+			"type": "text",
+			"text": "**1. Browser → Token server**\n\nFrontend calls `GET /token/helpdesk`. Token server checks *helpdesk* is in the registry and creates room `helpdesk-1a2b3c4d`.",
+			"x": 0,
+			"y": 3841,
+			"width": 320,
+			"height": 261
+		},
+		{
+			"id": "65596aa7231b3707",
+			"type": "text",
+			"text": "**2. Token server → Browser**\n\nReturns a pass that only opens that room, with a note:\n`{\"application\": \"helpdesk\", \"language\": \"en\"}`",
+			"x": 370,
+			"y": 3841,
+			"width": 320,
+			"height": 261
+		},
+		{
+			"id": "c9f5661a66ff0517",
+			"type": "text",
+			"text": "**3. Browser → LiveKit → Worker**\n\nBrowser joins the room. LiveKit tells the worker about the new call and passes the note along.",
+			"x": 740,
+			"y": 3841,
+			"width": 320,
+			"height": 261
+		},
+		{
+			"id": "8d78bf78f2508406",
+			"type": "text",
+			"text": "**4. Worker loads Robin**\n\nWorker reads the note, loads Robin's agent and connects it to Gemini with Robin's voice and language.",
+			"x": 1110,
+			"y": 3841,
+			"width": 320,
+			"height": 261
+		},
+		{
+			"id": "3b38947218d23e6d",
+			"type": "text",
+			"text": "**5. Conversation loop**\n\nUser speaks → LiveKit → Worker → Gemini → spoken reply → LiveKit → browser.\n\nRuns until hang-up or the **3-minute limit**, then the agent leaves.",
+			"x": 1480,
+			"y": 3841,
+			"width": 320,
+			"height": 261,
+			"color": "4"
+		},
+		{
+			"id": "29d005a53897f184",
+			"type": "text",
+			"text": "*The flow is the same for every application. Only the name in the route changes.*",
+			"x": 0,
+			"y": 4142,
+			"width": 1800,
+			"height": 81
+		},
+		{
+			"id": "ae25d99bd88d072e",
+			"type": "text",
+			"text": "### Routes\n\n| Route | Returns |\n|---|---|\n| `GET /token/digidevalaya` | A pass for a new room with Sahana (Kannada). |\n| `GET /token/helpdesk` | A pass for a new room with Robin (English). |\n| `GET /token/<other>` | `404` \"Unknown application. Available: digidevalaya, helpdesk\". |\n| `GET /applications` | List of applications and languages. |\n| `GET /health` | `{\"status\": \"ok\"}` |\n\nOptional `?language=` falls back to the app's default if unsupported. Frontend connects with `livekit-client` using `url` + `token`.",
+			"x": 2010,
+			"y": 3841,
+			"width": 620,
+			"height": 548
+		},
+		{
+			"id": "57dc9a5a23ba07b2",
+			"type": "text",
+			"text": "### Token response\n\n```json\n{\n  \"token\": \"<LiveKit pass, valid 1 hour, one room only>\",\n  \"url\": \"ws://192.168.4.136:7880\",\n  \"room\": \"helpdesk-1a2b3c4d\",\n  \"application\": \"helpdesk\",\n  \"language\": \"en\"\n}\n```",
+			"x": 2010,
+			"y": 4429,
+			"width": 620,
+			"height": 358
+		},
+		{
+			"id": "4bd03584939f0984",
+			"type": "text",
+			"text": "### Messages during a call\n\n| Direction | Message | Used by |\n|---|---|---|\n| Agent → page | `agent_state`: listening / thinking / speaking | Both |\n| Agent → page | `transcript`: who said what | Both |\n| Page → Robin | `category_catalog`: ticket categories | Robin |\n| Robin → page | `ticket_draft_ready`: prepared ticket | Robin |\n| Page → Robin | `ticket_created` / `ticket_create_failed` | Robin |\n\nRobin waits up to **8 s** for the category list and **30 s** for the ticket reply. In demo mode the test frontend sends both straight away with fake data.",
+			"x": 2670,
+			"y": 3841,
+			"width": 640,
+			"height": 623,
+			"color": "#3B82F6"
+		},
+		{
+			"id": "3d3b845bd0ec16c3",
+			"type": "text",
+			"text": "```\nvoice_backend/\n├── app/\n│   ├── main.py        token server\n│   ├── worker.py      the one worker\n│   ├── registry.py    list of applications\n│   ├── settings.py    one .env, defaults\n│   │                  (180 s, \"voice-backend\")\n│   ├── shared/\n│   │   ├── spec.py            agent contract\n│   │   ├── room_events.py     status + transcript\n│   │   ├── session_runtime.py call time limit\n│   │   └── file_search.py     knowledge search\n│   └── applications/\n│       ├── digidevalaya/  Sahana, leads, KB\n│       └── helpdesk/      Robin, tickets, KB\n├── docs/\n├── tests/                 83 tests\n├── docker-compose.yml     secrets only in .env\n└── .env.example\n\nvoice-frontend/            React test app\n└── src/voice/             reusable voice module\n```",
+			"x": 0,
+			"y": 5057,
+			"width": 560,
+			"height": 666
+		},
+		{
+			"id": "6b0e52eeea5fafbb",
+			"type": "text",
+			"text": "1. Create `app/applications/<name>/` with a `config.py` (name, languages, voice) and an `agent.py` that builds the agent.\n2. Add its config to the list in `app/registry.py`.\n3. Call `GET /token/<name>`. Nothing else changes; tests automatically check the new agent builds for each language.\n\n```python\nSPEC = ApplicationSpec(\n    name=\"payroll\",\n    languages={\"en\": LanguageConfig(\n        voice=\"Kore\", language_code=\"en-IN\")},\n    default_language=\"en\",\n)\n```",
+			"x": 770,
+			"y": 5057,
+			"width": 520,
+			"height": 466,
+			"color": "4"
+		},
+		{
+			"id": "0b4cacfca12d0232",
+			"type": "text",
+			"text": "| Fix | Result |\n|---|---|\n| Current LiveKit event names | Status + transcript work for both; Robin's tickets carry the transcript. |\n| Sahana's tool description | Gemini sees when to collect details and to translate to English. |\n| No password in logs | MongoDB address no longer logged. |\n| Secrets only in `.env` | No keys in Docker files; `.env` out of git and image. |\n| One Docker setup | LiveKit, token server, worker with own container names. |\n| Call time limit default | 180 s instead of a crash. |\n| Knowledge search per app | Own knowledge folder and cache per agent. |\n| FAQ renamed | `temple_faq.md` → `helpdesk_faq.md`, content unchanged. |\n| `LIVEKIT_PUBLIC_URL` | Tells browsers where to connect, so other machines can reach it. |",
+			"x": 1500,
+			"y": 5057,
+			"width": 640,
+			"height": 686
+		},
+		{
+			"id": "a55c34216665f3cb",
+			"type": "text",
+			"text": "| Check | Result |\n|---|---|\n| Backend tests (routes, routing, messages, both agents) | ✅ 83 passing |\n| Frontend type-check, tests, build | ✅ Passing |\n| Prompts, validators, tool code vs originals | ✅ Identical |\n| Real routing test (real LiveKit, token server, worker) | ✅ Right agent every time |\n| HelpDesk knowledge: all 6,964 chars, old vs new | ✅ Identical |\n| Routes via frontend and office network | ✅ Working |\n| Live spoken conversation | ✅ Robin tested by PO (works well with earphones) |\n| `docker compose up` | ⏳ Not run (Compose not installed; file validated) |",
+			"x": 2350,
+			"y": 5057,
+			"width": 640,
+			"height": 621,
+			"color": "4"
+		},
+		{
+			"id": "2feb710a0e61042c",
+			"type": "text",
+			"text": "### HelpDesk knowledge base (5 old files → 4 new, nothing lost)\n\n| Old file | Content | New backend |\n|---|---|---|\n| `helpdesk_intake.md` | How to take a ticket | Identical |\n| `helpdesk_modules.md` | Which department | Identical |\n| `helpdesk_priority.md` | Low / medium / high / urgent | Identical |\n| `temple_faq.md` | Helpdesk FAQ, 12 Qs (misnamed) | → `helpdesk_faq.md`, identical |\n| `partner_faq.md` | Temple partner FAQ (Kannada), copy leftover | In Sahana's folder; old HelpDesk code skipped it on purpose |",
+			"x": 2350,
+			"y": 5718,
+			"width": 640,
+			"height": 483
+		},
+		{
+			"id": "6b776d6663a131c7",
+			"type": "text",
+			"text": "React app (`voice-frontend/`) to test both agents from one page. Each application gets its own frontend in production.\n\n- **Home:** a card per agent with language and what it helps with.\n- **Connecting:** three steps (getting ready, joining, agent joining) + mic hint.\n- **Call:** avatar ring (listening green · thinking amber · speaking), mic level meter, countdown, conversation, Mute / End.\n- **Robin's ticket panel:** progress steps, priority + department chips, ticket number with copy button. Marked *\"Demo · not saved\"*.\n- **End screen:** call length, ticket number, conversation.\n\nVoice code lives in `src/voice/` so it can move into the Helpdesk app later, swapping the demo ticket source for the real one.",
+			"x": 0,
+			"y": 6471,
+			"width": 600,
+			"height": 440
+		},
+		{
+			"id": "3dadd0840b6dfa4b",
+			"type": "text",
+			"text": "Four terminals, in this order:\n\n```bash\n# 1. LiveKit\ndocker run --rm --name lk-local --network host \\\n  livekit/livekit-server --dev --bind 0.0.0.0\n\n# 2. Token server\ncd ~/VoiceAgent__/voice_backend && \\\nsource ~/VoiceAgent__/.venv/bin/activate && \\\npython -m uvicorn app.main:app --host 0.0.0.0 --port 8080\n\n# 3. Worker (Sahana + Robin)\ncd ~/VoiceAgent__/voice_backend && \\\nsource ~/VoiceAgent__/.venv/bin/activate && \\\npython -m app.worker dev\n\n# 4. Test frontend\ncd ~/VoiceAgent__/voice-frontend && npm run dev\n```\n\nOpen `http://localhost:5173`.\n\nOffice network: `http://192.168.4.136:8080`\n- Address changes if the router assigns a new one.\n- Firewall must allow **8080, 7880, 7881 (TCP)** and **7882 (UDP)**.",
+			"x": 810,
+			"y": 6471,
+			"width": 620,
+			"height": 736
+		},
+		{
+			"id": "1eb9c70a90d58de2",
+			"type": "text",
+			"text": "Robin sometimes misheard users and showed random Chinese/Japanese text in the user's transcript. With earphones it worked well.\n\n| Cause | Fix | Status |\n|---|---|---|\n| Voice setting only sets the *spoken* language; for *listening* Gemini guesses, badly on unclear audio. | Tell the listening side the language: English (Robin), Kannada (Sahana). | Planned |\n| Echo: laptop speakers feed the agent's voice back into the mic. | Earphones tip in frontend. Lower Gemini's background-sound sensitivity. | Tip done, setting planned |\n| Agents guess when they didn't hear clearly. | Add \"If you didn't hear clearly, ask the user to repeat\" to both prompts. | Planned |\n| No server-side noise filter. | LiveKit Cloud includes noise cancellation. | With LiveKit Cloud |",
+			"x": 1640,
+			"y": 6471,
+			"width": 760,
+			"height": 551,
+			"color": "3"
+		},
+		{
+			"id": "dcf653706b465c86",
+			"type": "text",
+			"text": "Example: **10 people** calling at once, 5 to Sahana and 5 to Robin.",
+			"x": 0,
+			"y": 7477,
+			"width": 900,
+			"height": 70
+		},
+		{
+			"id": "da64c6c43406f3ed",
+			"type": "text",
+			"text": "**Room `digidevalaya-3f9a…`**\nUser 1 + Sahana copy 1",
+			"x": 20,
+			"y": 7597,
+			"width": 320,
+			"height": 90,
+			"color": "#C9A227"
+		},
+		{
+			"id": "18b7ad36a0e68c81",
+			"type": "text",
+			"text": "**Gemini conversation 1**",
+			"x": 540,
+			"y": 7607,
+			"width": 280,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "1ee46d66adf0ec6d",
+			"type": "text",
+			"text": "**Room `digidevalaya-81bd…`**\nUser 2 + Sahana copy 2",
+			"x": 20,
+			"y": 7727,
+			"width": 320,
+			"height": 90,
+			"color": "#C9A227"
+		},
+		{
+			"id": "5eb1ffaa476377f6",
+			"type": "text",
+			"text": "**Gemini conversation 2**",
+			"x": 540,
+			"y": 7737,
+			"width": 280,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "d26aca97b3d54a48",
+			"type": "text",
+			"text": "**Room `helpdesk-7c2e…`**\nUser 6 + Robin copy 1",
+			"x": 20,
+			"y": 7857,
+			"width": 320,
+			"height": 90,
+			"color": "#3B82F6"
+		},
+		{
+			"id": "2253ac170223bc81",
+			"type": "text",
+			"text": "**Gemini conversation 3**",
+			"x": 540,
+			"y": 7867,
+			"width": 280,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "45b5bca15c4d2a6c",
+			"type": "text",
+			"text": "**Room `helpdesk-05ff…`**\nUser 7 + Robin copy 2",
+			"x": 20,
+			"y": 7987,
+			"width": 320,
+			"height": 90,
+			"color": "#3B82F6"
+		},
+		{
+			"id": "f3e472c1fd37bac1",
+			"type": "text",
+			"text": "**Gemini conversation 4**",
+			"x": 540,
+			"y": 7997,
+			"width": 280,
+			"height": 70,
+			"color": "6"
+		},
+		{
+			"id": "2d06c4a42f69abbd",
+			"type": "text",
+			"text": "> **Safe today:** LiveKit creates 10 separate rooms. A pass opens only its own room, each agent copy has its own memory, and each call has its own Gemini conversation. Voices and answers cannot leak between users.",
+			"x": 0,
+			"y": 8137,
+			"width": 900,
+			"height": 161,
+			"color": "4"
+		},
+		{
+			"id": "ecf7c75698d4d21b",
+			"type": "text",
+			"text": "### Real risks and fixes (keeping one backend)\n\n| Risk | Example | Fix |\n|---|---|---|\n| Backend program stops | All 10 calls drop, both apps. | Auto-restart (in Docker setup) + team alert. |\n| Too many calls | 100 festival callers → choppy calls. | Production mode refuses calls at 70% busy. Load test; stronger machine if needed. |\n| One shared Google limit | A rush on Robin blocks Sahana. | Check/raise limit in AI Studio. Optionally one key per agent. |\n| LiveKit in test mode on a laptop | If it stops, every call stops. | LiveKit Cloud or a proper LiveKit server. |\n| A laptop isn't a server | Sleeps, restarts, changes network. | Cloud server with Docker. |\n\nIf one server is ever not enough, the same backend can be started a second time — still one backend, same code.",
+			"x": 1000,
+			"y": 7477,
+			"width": 720,
+			"height": 648,
+			"color": "2"
+		},
+		{
+			"id": "4f5e467bed65c0cc",
+			"type": "text",
+			"text": "### Google Gemini\n\nExact limits depend on billing tier; shown only in **Google AI Studio** (Usage / Rate limit). Look for:\n- `gemini-3.1-flash-live-preview` (both agents' voice)\n- `gemini-3.1-flash-lite` (Sahana's FAQ search)\n\n| Tier | How a project gets there |\n|---|---|\n| Free | No billing. Lowest limits. |\n| Tier 1 | Billing account added. |\n| Tier 2 | $100+ spent, 3 days since first payment. |\n| Tier 3 | $1,000+ spent, 30 days since first payment. |\n\nPer conversation: up to 15 min of audio, ~10 min per connection. **Our calls end at 3 min.**",
+			"x": 1930,
+			"y": 7477,
+			"width": 620,
+			"height": 573,
+			"color": "6"
+		},
+		{
+			"id": "00897516ae46e739",
+			"type": "text",
+			"text": "### LiveKit\n\nLocal server = self-hosted open source, no plan limits; the computer is the limit. LiveKit Cloud plans (25 Sep 2026):\n\n| Plan | Price | Connections | Agent sessions* |\n|---|---|---|---|\n| Build | Free | 100 | 5 |\n| Ship | From $50/mo | 1,000 | 20 |\n| Scale | From $500/mo | 5,000 | Up to 600 |\n| Enterprise | Custom | Custom | 50 and up |\n\n\\*For agents hosted on LiveKit Cloud. Our worker runs on our own server — confirm with LiveKit how it's counted. All plans include noise cancellation.",
+			"x": 1930,
+			"y": 8090,
+			"width": 620,
+			"height": 498,
+			"color": "6"
+		},
+		{
+			"id": "1ef5194d83623720",
+			"type": "text",
+			"text": "### Now\n- [ ] Tell Gemini the listening language for each agent.\n- [ ] Add \"ask the user to repeat\" to both prompts.\n- [ ] Test with 4–6 colleagues calling at once.",
+			"x": 0,
+			"y": 8858,
+			"width": 380,
+			"height": 303,
+			"color": "3"
+		},
+		{
+			"id": "bd680f14169dd20b",
+			"type": "text",
+			"text": "### Before real users\n- [ ] Run the backend on a cloud server with Docker in production mode.\n- [ ] Move to LiveKit Cloud or a proper LiveKit server.\n- [ ] Check and raise the Google limit.\n- [ ] Load test with fake callers and add alerts.",
+			"x": 460,
+			"y": 8858,
+			"width": 380,
+			"height": 303,
+			"color": "2"
+		},
+		{
+			"id": "021a254db744878a",
+			"type": "text",
+			"text": "### Later\n- [ ] Move `src/voice/` into the Helpdesk app and create real tickets.\n- [ ] A stronger server, or a second copy of the backend, if traffic needs it.",
+			"x": 920,
+			"y": 8858,
+			"width": 380,
+			"height": 303,
+			"color": "4"
+		},
+		{
+			"id": "331950f8219d9bd2",
+			"type": "text",
+			"text": "| Date | Decision |\n|---|---|\n| 24 Sep 2026 | HelpDesk tickets run in demo mode on the test frontend. Real creation later, inside the Helpdesk app. |\n| 24 Sep 2026 | One backend for all application agents, in a new folder. Originals kept as reference. |\n| 24 Sep 2026 | `GET /token/{application}` is the only token route. |\n| 24 Sep 2026 | One worker runs every agent. The application name travels with each call. |\n| 24 Sep 2026 | The HelpDesk agent is named Robin. |\n| 25 Sep 2026 | Test frontend: pitch-black, gold for Sahana, blue for Robin, English interface. |\n| 25 Sep 2026 | Keep one backend. Scale with production mode, a stronger server and production LiveKit before adding copies. |",
+			"x": 1510,
+			"y": 8858,
+			"width": 700,
+			"height": 656
+		},
+		{
+			"id": "776a13857c228955",
+			"type": "text",
+			"text": "| Term | Meaning |\n|---|---|\n| **Application** | A product with its own frontend: Digidevalaya or HelpDesk. |\n| **Application agent** | That app's voice assistant: Sahana or Robin. |\n| **Route** | The address a frontend calls, e.g. `/token/helpdesk`. |\n| **Token** | A pass that lets one browser join one room for up to an hour. |\n| **Room** | A private LiveKit call between one user and one agent. |\n| **Token server** | The program that hands out passes. |\n| **Worker** | The program that runs the agents and talks to Gemini. |\n| **Registry** | The list of applications the backend knows about. |\n| **Demo mode** | Robin's tickets get fake numbers and are not saved. |",
+			"x": 2420,
+			"y": 8858,
+			"width": 620,
+			"height": 711
+		}
+	],
+	"edges": [
+		{
+			"id": "72baa9d520b127dd",
+			"fromNode": "c82561ec215a6e31",
+			"fromSide": "right",
+			"toNode": "a6bbc91ae73dd21c",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "69746dd9b05454ba",
+			"fromNode": "180d8336ca7a4776",
+			"fromSide": "right",
+			"toNode": "4bb420f6637118c9",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "552acd90c96884c0",
+			"fromNode": "4bb420f6637118c9",
+			"fromSide": "right",
+			"toNode": "ab690da061c9b963",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "f056ba9633b803f1",
+			"fromNode": "a6bbc91ae73dd21c",
+			"fromSide": "bottom",
+			"toNode": "180d8336ca7a4776",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "ff98d47a8a3d33e8",
+			"fromNode": "85386162967e21a9",
+			"fromSide": "right",
+			"toNode": "74093b06c6ea7fbf",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "c2d551f8bf786de5",
+			"fromNode": "74093b06c6ea7fbf",
+			"fromSide": "right",
+			"toNode": "cb2abde5a8b30913",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "f421888918b43ff6",
+			"fromNode": "cb2abde5a8b30913",
+			"fromSide": "right",
+			"toNode": "3f538a3c75f1c564",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "3cdb0dd8faabc204",
+			"fromNode": "3f538a3c75f1c564",
+			"fromSide": "right",
+			"toNode": "4770005b2b37ae13",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "065ea8988ce71546",
+			"fromNode": "4770005b2b37ae13",
+			"fromSide": "right",
+			"toNode": "286f32e353ffd166",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "f5224aef15755715",
+			"fromNode": "286f32e353ffd166",
+			"fromSide": "right",
+			"toNode": "714883643bafdf1b",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "f0013a69a234aa85",
+			"fromNode": "714883643bafdf1b",
+			"fromSide": "bottom",
+			"toNode": "8f3556300b355d9d",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "dd0f791bd9496f61",
+			"fromNode": "8f3556300b355d9d",
+			"fromSide": "right",
+			"toNode": "480ddcae2e46248f",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "c3cf5a687284e0d0",
+			"fromNode": "480ddcae2e46248f",
+			"fromSide": "right",
+			"toNode": "55668fbb5711721c",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "482a351f2a2f1523",
+			"fromNode": "55668fbb5711721c",
+			"fromSide": "right",
+			"toNode": "4962b01834ed04e3",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "db390edd8c6c54db",
+			"fromNode": "4962b01834ed04e3",
+			"fromSide": "right",
+			"toNode": "3424fae52c20d1e8",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "82a72bfef7dcbad9",
+			"fromNode": "3424fae52c20d1e8",
+			"fromSide": "right",
+			"toNode": "b00ea3d7900b7036",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "c6bc586e4125cbbc",
+			"fromNode": "ab690da061c9b963",
+			"fromSide": "bottom",
+			"toNode": "5da23328a75e64bd",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "e83488e04e2a8c35",
+			"fromNode": "a9708074d1748b46",
+			"fromSide": "right",
+			"toNode": "df7d695f3c9e0cd9",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "GET /token"
+		},
+		{
+			"id": "019a687c3fd7c31d",
+			"fromNode": "d97974a68fdda84d",
+			"fromSide": "right",
+			"toNode": "fd77f9a79f85cdec",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "GET /token"
+		},
+		{
+			"id": "e20f0d4902a30e54",
+			"fromNode": "a9708074d1748b46",
+			"fromSide": "left",
+			"toNode": "56fe41a310874b33",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "joins call"
+		},
+		{
+			"id": "5fe8a1fd7ab33a21",
+			"fromNode": "d97974a68fdda84d",
+			"fromSide": "bottom",
+			"toNode": "56fe41a310874b33",
+			"toSide": "top",
+			"toEnd": "arrow",
+			"label": "joins call"
+		},
+		{
+			"id": "cf0663b15225272d",
+			"fromNode": "56fe41a310874b33",
+			"fromSide": "right",
+			"toNode": "774a295057a5523b",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "any free agent (no names)",
+			"color": "1"
+		},
+		{
+			"id": "c4e187dcd2ea9518",
+			"fromNode": "56fe41a310874b33",
+			"fromSide": "right",
+			"toNode": "a1d07c0e006cc171",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "any free agent (no names)",
+			"color": "1"
+		},
+		{
+			"id": "2fd60519570054c3",
+			"fromNode": "ae3d6249f9b15d72",
+			"fromSide": "right",
+			"toNode": "89d05aa8c665aa48",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "GET /token/digidevalaya"
+		},
+		{
+			"id": "3daf3224b85a18c8",
+			"fromNode": "c815601c20562718",
+			"fromSide": "right",
+			"toNode": "89d05aa8c665aa48",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "GET /token/helpdesk"
+		},
+		{
+			"id": "81833c66eb40e013",
+			"fromNode": "89d05aa8c665aa48",
+			"fromSide": "bottom",
+			"toNode": "bfe601116bad237e",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "337fb059d9d8f034",
+			"fromNode": "3948aeae31435377",
+			"fromSide": "top",
+			"toNode": "bfe601116bad237e",
+			"toSide": "bottom",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "23526f1840ef489d",
+			"fromNode": "3948aeae31435377",
+			"fromSide": "right",
+			"toNode": "225442aef9376ae7",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "2b14cb605a1ebfe1",
+			"fromNode": "3948aeae31435377",
+			"fromSide": "right",
+			"toNode": "3e032e4ef1df6412",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "1495632bab0a9204",
+			"fromNode": "ae3d6249f9b15d72",
+			"fromSide": "left",
+			"toNode": "30a70bd7077f1149",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "joins call"
+		},
+		{
+			"id": "b805d7ddcd91b1d3",
+			"fromNode": "c815601c20562718",
+			"fromSide": "bottom",
+			"toNode": "30a70bd7077f1149",
+			"toSide": "top",
+			"toEnd": "arrow",
+			"label": "joins call"
+		},
+		{
+			"id": "7a9a001008878388",
+			"fromNode": "30a70bd7077f1149",
+			"fromSide": "right",
+			"toNode": "3948aeae31435377",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "call + note: application",
+			"color": "4"
+		},
+		{
+			"id": "8a8625ece1d74a01",
+			"fromNode": "225442aef9376ae7",
+			"fromSide": "right",
+			"toNode": "78c5c98477e09bda",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "voice"
+		},
+		{
+			"id": "8bce5c225bb9a736",
+			"fromNode": "3e032e4ef1df6412",
+			"fromSide": "right",
+			"toNode": "78c5c98477e09bda",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "voice"
+		},
+		{
+			"id": "588d4c8022a1b06d",
+			"fromNode": "225442aef9376ae7",
+			"fromSide": "right",
+			"toNode": "27c5450c5dfd70d6",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "FAQ search"
+		},
+		{
+			"id": "456e25ca2b585673",
+			"fromNode": "225442aef9376ae7",
+			"fromSide": "top",
+			"toNode": "c64f87bc1ab25668",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "callback requests"
+		},
+		{
+			"id": "da86afcc58037b32",
+			"fromNode": "d9f2aaf151dfbd7b",
+			"fromSide": "right",
+			"toNode": "6bfd5a5e4f856d0f",
+			"toSide": "left",
+			"toEnd": "arrow",
+			"label": "merged"
+		},
+		{
+			"id": "70ef895d62319987",
+			"fromNode": "6bfd5a5e4f856d0f",
+			"fromSide": "right",
+			"toNode": "33f32367d136471a",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "3678abb8072a48c1",
+			"fromNode": "5da23328a75e64bd",
+			"fromSide": "bottom",
+			"toNode": "6bfd5a5e4f856d0f",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "3d7fdbe4e37f0a7b",
+			"fromNode": "2a1aa3927c0caff0",
+			"fromSide": "right",
+			"toNode": "65596aa7231b3707",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "74889de3da4a0454",
+			"fromNode": "65596aa7231b3707",
+			"fromSide": "right",
+			"toNode": "c9f5661a66ff0517",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "eef4643ead6ef24b",
+			"fromNode": "c9f5661a66ff0517",
+			"fromSide": "right",
+			"toNode": "8d78bf78f2508406",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "7ef3312fae0f4608",
+			"fromNode": "8d78bf78f2508406",
+			"fromSide": "right",
+			"toNode": "3b38947218d23e6d",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "0903dad7f64b7c65",
+			"fromNode": "31e0845ca34d0c7e",
+			"fromSide": "right",
+			"toNode": "edd667236f7e61d8",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "69b3721ca540616f",
+			"fromNode": "d9f2aaf151dfbd7b",
+			"fromSide": "bottom",
+			"toNode": "31e0845ca34d0c7e",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "964dacb248db9342",
+			"fromNode": "2016f56033e7ede9",
+			"fromSide": "right",
+			"toNode": "c7be1bba3bb991d9",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "06024b4ff02dc465",
+			"fromNode": "c7be1bba3bb991d9",
+			"fromSide": "right",
+			"toNode": "78a8e081db51207d",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "a57c2e82f05ebce2",
+			"fromNode": "78a8e081db51207d",
+			"fromSide": "right",
+			"toNode": "4185947d72c27fee",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "b2f77d559d4f90b6",
+			"fromNode": "31e0845ca34d0c7e",
+			"fromSide": "bottom",
+			"toNode": "2016f56033e7ede9",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "9cb586e270ac7726",
+			"fromNode": "f719a60fa888bdb8",
+			"fromSide": "right",
+			"toNode": "7c53a78a721517a5",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "abf26eb69f583d7b",
+			"fromNode": "7c53a78a721517a5",
+			"fromSide": "right",
+			"toNode": "855ef7b534cea4ca",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "8cc89a758e90a05e",
+			"fromNode": "2016f56033e7ede9",
+			"fromSide": "bottom",
+			"toNode": "f719a60fa888bdb8",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "6f2edbd98685e9e9",
+			"fromNode": "da64c6c43406f3ed",
+			"fromSide": "right",
+			"toNode": "18b7ad36a0e68c81",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "a7badea6cfb1b2c1",
+			"fromNode": "1ee46d66adf0ec6d",
+			"fromSide": "right",
+			"toNode": "5eb1ffaa476377f6",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "f391e286dbbe07f2",
+			"fromNode": "d26aca97b3d54a48",
+			"fromSide": "right",
+			"toNode": "2253ac170223bc81",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "2c002a4622ed6b90",
+			"fromNode": "45b5bca15c4d2a6c",
+			"fromSide": "right",
+			"toNode": "f3e472c1fd37bac1",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "65fb252a0ef3ff11",
+			"fromNode": "6a3c05bbf971d3d4",
+			"fromSide": "right",
+			"toNode": "576a10ac69a6a8f9",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "b02e39e18041e6e5",
+			"fromNode": "f719a60fa888bdb8",
+			"fromSide": "bottom",
+			"toNode": "6a3c05bbf971d3d4",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "7d9e4c3ae864118c",
+			"fromNode": "1ef5194d83623720",
+			"fromSide": "right",
+			"toNode": "bd680f14169dd20b",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "97197447a4562c7f",
+			"fromNode": "bd680f14169dd20b",
+			"fromSide": "right",
+			"toNode": "021a254db744878a",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "acb56f1951c9a102",
+			"fromNode": "855ef7b534cea4ca",
+			"fromSide": "bottom",
+			"toNode": "1ef5194d83623720",
+			"toSide": "top",
+			"toEnd": "arrow",
+			"label": "listening fixes"
+		},
+		{
+			"id": "93d3293de3f1411a",
+			"fromNode": "6a3c05bbf971d3d4",
+			"fromSide": "bottom",
+			"toNode": "a09575d96771e985",
+			"toSide": "top",
+			"toEnd": "arrow"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"8311783d81083ca4","type":"group","x":-320,"y":-100,"width":1020,"height":780,"label":"Current state vs next week goal"},
+		{
+			"id":"22c9cfb3665fe2c9",
+			"type":"text",
+			"text":"# Current state\n\n## Stabilization\n* Code migration has been completed\n\t* 95% of the new back-end architecture is in track\n\t* minor fixes required that can be done in run time.\n* Node building experiment is in progress\n\t* Needs discussion and clarification regarding the feature. \n---\n\n## AI Workflow\n* LLM with tools:\n\t* Prospect research workflow development\n\t\t* makes websearch and returns the information\n* Independent Agents: \n\t* Daily task workflow development\n\t\t* gathers the daily tasks and sends email.\n\t* Minutes of meeting workflow\n\t\t* Takes the meeting transcript and MoM is sent via email\n\t\t* agent converts raw transcript to structured MoM\n* n8n inspired:\n\t* outcome - Reduced manual effort and made email organization and tracking much faster.\n\t\t* Fetched Today's Emails\n\t\t* Processed Each Email Separately\n\t\t* Categorized Emails Automatically\n\t\t* Captured Important Information\n\t\t* Updated Google Sheet Automatically\n---\n\n## ERP\n* Design, development and testing of Job Requisition flow is being completed\n* Integration with ERP team is pending. \n\n---\n\n# Next Week Goal\n\n1. Exploration, design, and development on bulk data pattern\n2. Minor bug fixes in migrated codebase if needed\n3. integration with ERP team\n4. demo includes:\n\t1. Agentic demo\n\t2. ERP workflow\n5. GPT chat sent by ramesh sir - Documentation and understanding \n6. Need one discussion meeting with Head Of Engineering. ",
+			"styleAttributes":{},
+			"x":-280,
+			"y":-60,
+			"width":940,
+			"height":700,
+			"color":"2"
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

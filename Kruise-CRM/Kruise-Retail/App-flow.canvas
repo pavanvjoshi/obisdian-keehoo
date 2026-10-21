@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"2fe3eb98f5e93e6d","x":-640,"y":-247,"width":1035,"height":287,"type":"group","label":"Untitled group"},
+		{"id":"75721e96f6bb86b7","type":"text","text":"CRM Backend\n1. logic","x":-260,"y":-167,"width":250,"height":127},
+		{"id":"d295bcd40c261a58","type":"text","text":"Retail database / CRM database","x":125,"y":-40,"width":250,"height":60},
+		{"id":"e63fe31902840907","type":"text","text":"Master Data","x":125,"y":-133,"width":250,"height":60},
+		{"id":"80aa8483ec2db69d","x":125,"y":-227,"width":250,"height":60,"type":"text","text":"Stock Application"},
+		{"id":"cc92d19e92fabfbe","x":-620,"y":-133,"width":250,"height":60,"type":"text","text":"Retail FE"}
+	],
+	"edges":[
+		{"id":"bf7d041df7ef39b9","fromNode":"cc92d19e92fabfbe","fromSide":"right","toNode":"75721e96f6bb86b7","toSide":"left"},
+		{"id":"30d452d30a65a430","fromNode":"75721e96f6bb86b7","fromSide":"right","toNode":"80aa8483ec2db69d","toSide":"left"},
+		{"id":"f9ea08232464e5bf","fromNode":"75721e96f6bb86b7","fromSide":"right","toNode":"e63fe31902840907","toSide":"left"},
+		{"id":"55030eccf9e8ccce","fromNode":"75721e96f6bb86b7","fromSide":"right","toNode":"d295bcd40c261a58","toSide":"left"}
+	]
+}

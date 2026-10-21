@@ -1,0 +1,93 @@
+{
+	"nodes":[
+		{"id":"2def5c2e3b4c7fe2","type":"group","x":-2080,"y":1280,"width":2980,"height":1160,"label":"Core state machine"},
+		{"id":"f6173843210b49ec","type":"group","x":-1720,"y":-440,"width":460,"height":520,"label":"github "},
+		{"id":"ea375b7b45f910c2","type":"group","x":-1000,"y":-400,"width":290,"height":380,"label":"Untitled group"},
+		{"id":"68e51e407afe75a6","type":"group","x":-640,"y":-400,"width":290,"height":380,"label":"Untitled group"},
+		{"id":"6281047f84a94a30","type":"group","x":-300,"y":-400,"width":290,"height":380,"label":"Untitled group"},
+		{"id":"7cafb43c6a077e13","type":"group","x":60,"y":-390,"width":290,"height":370,"label":"Untitled group"},
+		{"id":"c8bbfadd8096ae3b","type":"text","text":"## Latest pointer\nSwapped **atomically** on publish.\nOnly moves forward.\nLatest = highest version number, always.","x":-320,"y":1360,"width":240,"height":230,"color":"4"},
+		{"id":"f5c7acdd8fa7c0d6","type":"text","text":"## Version N\nImmutable snapshot\n\nCreated only by publish.\nNever edited in place.","x":-1130,"y":1385,"width":260,"height":180,"color":"6"},
+		{"id":"8b0ccf2622d1fe4d","type":"text","text":"## Executions\nPin `version_id` **at start**.\nEngine loads definition by `version_id` only — never by `workflow_id + latest`.\n\nNew runs resolve latest once, at trigger time. Versions referenced by a run can't be deleted.","x":460,"y":1345,"width":320,"height":260,"color":"4"},
+		{"id":"b11c01ec93a0d4f7","type":"text","text":"## Rollback (roll-forward)\nV2 broken → Restore V1 → copies V1 content into the draft slot → publish → **V3** carries V1's behavior.\n\nHistory stays linear; latest never moves backward.","x":460,"y":1810,"width":320,"height":220,"color":"2"},
+		{"id":"1e281b8c6988ae14","type":"text","text":"## Version N+1\nImmutable snapshot","x":-320,"y":1860,"width":240,"height":120,"color":"6"},
+		{"id":"1b54997d2bf38c92","type":"text","text":"## Core invariants\n1. Published versions are immutable; only drafts mutate\n2. At most one draft per workflow — edit redirects into it\n3. Publish = draft → version N+1, never version → version\n4. Latest is a pointer, atomic swap, forward-only\n5. Executions pin their version at start\n6. Referenced versions can't be deleted\n7. Rollback = roll-forward (restore content → republish)","x":380,"y":2080,"width":480,"height":280,"color":"1"},
+		{"id":"e6271a0efe97aab0","type":"text","text":"## Editing\nCreate or iterate on the workflow","x":-1780,"y":1345,"width":260,"height":110,"color":"5"},
+		{"id":"4ed53f6b3bff0bd5","type":"text","text":"## Draft\nMutable, unpublished\n\n`forked_from: null | VN`\nOnly **one** draft per workflow (or none)","x":-1780,"y":1810,"width":260,"height":180,"color":"3"},
+		{"id":"b7a4565bf4090103","type":"text","text":"## New draft\nCopy of Version N\n\nEditing a published version **forks** — it never mutates.","x":-1130,"y":1840,"width":260,"height":160,"color":"3"},
+		{"id":"da2712ff8223866f","type":"text","text":"## Inversion — failure modes designed out\n- Lose user's work → persistent draft + `updated_at` save check\n- Break in-flight runs → immutability + version pinning\n- Ambiguous latest → single pointer inside publish transaction\n- Impossible rollback → versions never mutated/deleted while referenced\n- Publish garbage → validation gate; publish may fail\n- Tangled history → one-draft invariant ⇒ strictly linear","x":-1480,"y":2520,"width":600,"height":280,"color":"1"},
+		{"id":"35ad7810be04aec1","type":"text","text":"## Open questions\n- [ ] Publish validation rules?\n- [ ] Delete workflow with pinned running executions?\n- [ ] Draft undo / autosave snapshots?\n- [ ] Version retention / pruning policy?\n- [ ] Restore UX: review-first or auto-publish?","x":-740,"y":2520,"width":420,"height":280,"color":"3"},
+		{"id":"8db75bfc164685c9","type":"text","text":"## Decision log\n1. In-flight runs → **pinned**; only new runs use latest\n2. Drafts → **one or none** per workflow\n3. Publish? NO → draft stays editable forever\n4. Single-user product; keep `updated_at` check as two-tab insurance\n5. Rollback → **roll-forward**, not pointer repointing","x":-220,"y":2520,"width":480,"height":280,"color":"4"},
+		{"id":"f2c213444e238590","type":"text","text":"version 1","x":-280,"y":-120,"width":250,"height":60},
+		{"id":"bd97c0837bcf89b6","type":"text","text":"draft version","x":-978,"y":-120,"width":250,"height":60},
+		{"id":"bf4839c716120a99","type":"text","text":"Saved as draft. ","x":83,"y":-120,"width":250,"height":60},
+		{"id":"75ff2bae50ec0c64","type":"text","text":"still draft version no history saved. ","x":-620,"y":-120,"width":250,"height":60},
+		{"id":"09160e02d2315aa9","type":"text","text":"49 commits","x":-1675,"y":-147,"width":180,"height":87},
+		{"id":"6ed9e6cd70a17f49","type":"text","text":"50 th commit","x":-1460,"y":-163,"width":180,"height":87},
+		{"id":"ff2bfcdc3aa5509c","type":"text","text":"Publishing the draft?","x":-280,"y":-332,"width":250,"height":60},
+		{"id":"e4d50ff295b71490","type":"text","text":"Editing and saving the published workflow?","x":83,"y":-332,"width":250,"height":60},
+		{"id":"5569f0e9e6783e31","type":"text","text":"New workflow without publishing?","x":-953,"y":-332,"width":199,"height":60},
+		{"id":"aea5e9b7cc9c265b","type":"text","text":"Update exisiting Workflow without publishing?","x":-620,"y":-332,"width":250,"height":60},
+		{"id":"4762cc788ed3c7d5","type":"text","text":"repo","x":-1620,"y":-375,"width":250,"height":65},
+		{"id":"039d457e8cdabdb7","type":"text","text":"![[Pasted image 20260612091654.png]]","x":419,"y":2554,"width":403,"height":246}
+	],
+	"edges":[
+		{"id":"0a634ba6c836c1f5","fromNode":"5569f0e9e6783e31","fromSide":"bottom","toNode":"bd97c0837bcf89b6","toSide":"top"},
+		{"id":"f78e45a2dca370e3","fromNode":"aea5e9b7cc9c265b","fromSide":"bottom","toNode":"75ff2bae50ec0c64","toSide":"top"},
+		{"id":"dced224d97b0cb09","fromNode":"ff2bfcdc3aa5509c","fromSide":"bottom","toNode":"f2c213444e238590","toSide":"top"},
+		{"id":"50dba2d84b858466","fromNode":"e4d50ff295b71490","fromSide":"bottom","toNode":"bf4839c716120a99","toSide":"top"},
+		{"id":"6c09f79042523cdd","fromNode":"09160e02d2315aa9","fromSide":"top","toNode":"4762cc788ed3c7d5","toSide":"bottom"},
+		{"id":"4a0301b190c5edaa","fromNode":"6ed9e6cd70a17f49","fromSide":"top","toNode":"4762cc788ed3c7d5","toSide":"bottom"},
+		{"id":"0645a818a058e470","fromNode":"6ed9e6cd70a17f49","fromSide":"bottom","toNode":"09160e02d2315aa9","toSide":"bottom","label":"revert"},
+		{"id":"fe1688a69d20d939","fromNode":"b7a4565bf4090103","fromSide":"right","toNode":"1e281b8c6988ae14","toSide":"left","label":"publish? YES"},
+		{"id":"e315483b5cb5192f","fromNode":"f5c7acdd8fa7c0d6","fromSide":"bottom","toNode":"b7a4565bf4090103","toSide":"top","label":"edit forks a copy"},
+		{"id":"05aa87b5f4157018","fromNode":"c8bbfadd8096ae3b","fromSide":"right","toNode":"8b0ccf2622d1fe4d","toSide":"left","label":"new runs resolve once"},
+		{"id":"052cd129067915d7","fromNode":"1e281b8c6988ae14","fromSide":"top","toNode":"c8bbfadd8096ae3b","toSide":"bottom","label":"atomic swap"},
+		{
+			"id":"18486eeeb2c932c0",
+			"styleAttributes":{"arrow":"thin-triangle"},
+			"toFloating":false,
+			"fromNode":"f5c7acdd8fa7c0d6",
+			"fromSide":"right",
+			"toNode":"c8bbfadd8096ae3b",
+			"toSide":"left",
+			"label":"previously pointed"
+		},
+		{
+			"id":"e95f4a05138f35f0",
+			"fromFloating":false,
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"4ed53f6b3bff0bd5",
+			"fromSide":"left",
+			"toNode":"e6271a0efe97aab0",
+			"toSide":"left",
+			"label":"keep iterating (publish? NO)"
+		},
+		{
+			"id":"22094eae4dfe8af6",
+			"fromFloating":false,
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"4ed53f6b3bff0bd5",
+			"fromSide":"right",
+			"toNode":"f5c7acdd8fa7c0d6",
+			"toSide":"left",
+			"label":"publish? YES (validated, atomic)"
+		},
+		{
+			"id":"e832170c91462c7b",
+			"toFloating":false,
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"e6271a0efe97aab0",
+			"fromSide":"right",
+			"toNode":"4ed53f6b3bff0bd5",
+			"toSide":"top",
+			"label":"save"
+		},
+		{"id":"87a87a114727eeff","fromNode":"b11c01ec93a0d4f7","fromSide":"top","toNode":"8b0ccf2622d1fe4d","toSide":"bottom","label":"in-flight runs unaffected"},
+		{"id":"feefacd465199633","fromNode":"1e281b8c6988ae14","fromSide":"right","toNode":"b11c01ec93a0d4f7","toSide":"left","label":"V2 broken?"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

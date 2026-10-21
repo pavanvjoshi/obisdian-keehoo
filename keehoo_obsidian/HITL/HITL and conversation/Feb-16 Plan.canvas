@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"94aa17f84710c1d6","type":"text","text":"#### inference in process","x":-191,"y":-1305,"width":250,"height":60},
+		{"id":"53fa3c80b4c3696e","type":"text","text":"#### trigger for metadata Intelligence","x":-560,"y":-1509,"width":369,"height":69},
+		{"id":"1965dcd01d49db63","type":"text","text":"#### review request(temporary store)","x":204,"y":-1600,"width":332,"height":91},
+		{"id":"46578e9e40158b26","type":"text","text":"#### store metadata ","x":245,"y":-1051,"width":250,"height":71},
+		{"id":"59c607ea9e80e1b4","type":"text","text":"#### Clear the caches","x":844,"y":-1315,"width":200,"height":70}
+	],
+	"edges":[
+		{"id":"af207e1323506f27","fromNode":"53fa3c80b4c3696e","fromSide":"bottom","toNode":"94aa17f84710c1d6","toSide":"left"},
+		{"id":"97638d8b992d3797","fromNode":"94aa17f84710c1d6","fromSide":"bottom","toNode":"46578e9e40158b26","toSide":"left"},
+		{"id":"53ec892dfca76887","fromNode":"94aa17f84710c1d6","fromSide":"right","toNode":"1965dcd01d49db63","toSide":"left"},
+		{"id":"df6d857c87961e61","fromNode":"1965dcd01d49db63","fromSide":"right","toNode":"59c607ea9e80e1b4","toSide":"left","label":"no"},
+		{"id":"f2b42aca96c786ad","fromNode":"1965dcd01d49db63","fromSide":"right","toNode":"46578e9e40158b26","toSide":"right","label":"yes"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

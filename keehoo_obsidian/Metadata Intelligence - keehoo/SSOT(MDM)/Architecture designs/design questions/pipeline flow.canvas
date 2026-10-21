@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"2ed0c9e1b626923c","type":"group","x":-505,"y":400,"width":541,"height":400,"label":"Bronze Layer"},
+		{"id":"0a172da18090743b","type":"group","x":-439,"y":-80,"width":1039,"height":180,"label":"Data Loading"},
+		{"id":"c19f67aac0997f7d","type":"group","x":-439,"y":-400,"width":1040,"height":140,"label":"Source system Connection"},
+		{"id":"ad0e4562021ce15a","type":"group","x":-399,"y":940,"width":329,"height":300,"label":"MDM/SSOT"},
+		{"id":"e6f72d8e207598da","type":"text","text":"### Source connection \n(Mongodb or any other source system)","x":-419,"y":-380,"width":340,"height":100},
+		{"id":"8d5636409e03b3df","type":"text","text":"1. **For connecting the sources.**\n\t1. Airbyte or any other resource?","x":221,"y":-380,"width":360,"height":100},
+		{"id":"2e2356bf84b21997","type":"text","text":"1. **What are the layers?** \n\t1. Minio?\n\t2. ADLS?","x":220,"y":-39,"width":360,"height":98},
+		{"id":"09e827bf5e5cf5f9","type":"text","text":"### Landing\n\n1. Read data\n2. Store the read data in middle layer\n\t","x":-400,"y":-60,"width":350,"height":140},
+		{"id":"7183f2cd08b6e8bb","type":"text","text":"### Silver Layer ","x":-369,"y":980,"width":250,"height":60},
+		{"id":"22dbf67c5c60664f","type":"text","text":"### MDM Process kicks in.","x":-379,"y":1120,"width":270,"height":60},
+		{"id":"a528f3688f654cdd","type":"text","text":"### Data to metadata conversion:\n\n","x":-400,"y":160,"width":350,"height":80},
+		{"id":"6a32474245229efe","type":"text","text":"Store metadata in engineering **mongodb**","x":-410,"y":420,"width":350,"height":80},
+		{"id":"2f8f384829d8708f","type":"text","text":"### Metadata Intelligence \n\n1. Read Input from mongodb\n2. Metadata inference\n3. and store inference in the same mongodb","x":-485,"y":600,"width":501,"height":180}
+	],
+	"edges":[
+		{"id":"1c20bc7b06b8a7c2","fromNode":"2f8f384829d8708f","fromSide":"bottom","toNode":"7183f2cd08b6e8bb","toSide":"top"},
+		{"id":"48bdfd58dccdb06d","fromNode":"7183f2cd08b6e8bb","fromSide":"bottom","toNode":"22dbf67c5c60664f","toSide":"top"},
+		{"id":"b1901c243903e1f6","fromNode":"a528f3688f654cdd","fromSide":"bottom","toNode":"6a32474245229efe","toSide":"top"},
+		{"id":"74e05705cfde4218","fromNode":"6a32474245229efe","fromSide":"bottom","toNode":"2f8f384829d8708f","toSide":"top"},
+		{"id":"278f8ac0a7e87b02","fromNode":"2f8f384829d8708f","fromSide":"right","toNode":"6a32474245229efe","toSide":"right","label":"Store inferred metadata"},
+		{"id":"cf58d2652d0e941d","fromNode":"09e827bf5e5cf5f9","fromSide":"bottom","toNode":"a528f3688f654cdd","toSide":"top"},
+		{"id":"01e4cd336dce4941","fromNode":"e6f72d8e207598da","fromSide":"right","toNode":"8d5636409e03b3df","toSide":"left"},
+		{"id":"59f037bcc0ce086f","fromNode":"09e827bf5e5cf5f9","fromSide":"right","toNode":"2e2356bf84b21997","toSide":"left"},
+		{"id":"5b71bf0abd272b53","fromNode":"e6f72d8e207598da","fromSide":"bottom","toNode":"09e827bf5e5cf5f9","toSide":"top","label":"on connection success"}
+	]
+}

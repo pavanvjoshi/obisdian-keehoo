@@ -1,0 +1,51 @@
+{
+	"nodes":[
+		{"id":"diagram","type":"group","x":-500,"y":-520,"width":1620,"height":1050,"color":"4","label":"Architecture"},
+		{"id":"step3","type":"text","text":"3. Core\n\nChecks business rules:\n\n- Required fields\n- Duplicate lead\n- ICP rules","x":2080,"y":-205,"width":300,"height":220,"color":"5"},
+		{"id":"example_title","type":"text","text":"# Real-time Example: Kruise CRM\n\n**Create a Lead**","x":2080,"y":-725,"width":600,"height":180,"color":"1"},
+		{"id":"core","type":"text","text":"# Core Business Logic\n\nThe important rules live here.\n\nExamples:\n- Lead must match ICP\n- Deal cannot move to Closed without required data\n- Customer status changes only by valid rules","x":640,"y":-490,"width":420,"height":390,"color":"5"},
+		{"id":"ports","type":"text","text":"## Ports\n\nSimple interfaces used by the core.\n\nExample:\nLeadRepository\nEmailSender\nCRMIntegration","x":640,"y":115,"width":330,"height":250,"color":"1"},
+		{"id":"external","type":"text","text":"## Outside\n\nUI / API\nDatabase\nEmail\nExternal APIs\nQueue","x":-480,"y":-260,"width":260,"height":300,"color":"2"},
+		{"id":"adapters","type":"text","text":"## Adapters\n\nTranslate outside data\ninto what the core understands.\n\nExamples:\n- REST controller\n- PostgreSQL repository\n- Email service","x":75,"y":-475,"width":330,"height":360,"color":"3"},
+		{"id":"idea","type":"text","text":"## Main idea\n\n**Business logic stays in the center.**\n\nOutside systems can change without changing the core business rules.\n\n**Keep business rules in the center. Connect everything else through interfaces and adapters.**","x":-1040,"y":-160,"width":420,"height":280,"color":"6"},
+		{
+			"id":"4b8f2ef780008400",
+			"type":"text",
+			"text":"## Context\n\nIn legacy code system we used to write the logics like (write operation, calling operation and others) in single function, as the function keeps growing it is difficult to write every logic in the single function. ",
+			"styleAttributes":{},
+			"x":-1520,
+			"y":-140,
+			"width":380,
+			"height":240
+		},
+		{"id":"flow","type":"text","text":"## Simple flow\n\nUser → API → Adapter → Core → Port → Adapter → Database / API","x":-440,"y":220,"width":810,"height":170,"color":"6"},
+		{"id":"step1","type":"text","text":"1. User submits lead\n\nPOST /leads","x":2060,"y":-445,"width":260,"height":150,"color":"2"},
+		{"id":"step2","type":"text","text":"2. API Adapter\n\nReads request and converts it to a Lead command.","x":2420,"y":-455,"width":280,"height":170,"color":"3"},
+		{"id":"step4","type":"text","text":"4. Port\n\nLeadRepository.save(lead)","x":2465,"y":-170,"width":250,"height":150,"color":"1"},
+		{"id":"step5","type":"text","text":"5. Database Adapter\n\nSaves lead in PostgreSQL.","x":2440,"y":100,"width":300,"height":160,"color":"3"},
+		{"id":"why","type":"text","text":"## Why use it?\n\n- Easier testing\n- Database can change\n- External API can change\n- Business rules stay stable\n- Less coupling","x":2120,"y":320,"width":520,"height":260,"color":"6"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"external","fromSide":"right","toNode":"adapters","toSide":"left","label":"input / output"},
+		{"id":"e2","fromNode":"adapters","fromSide":"right","toNode":"core","toSide":"left","label":"calls core"},
+		{"id":"e3","fromNode":"core","fromSide":"bottom","toNode":"ports","toSide":"top","label":"uses interface"},
+		{"id":"e4","fromNode":"ports","fromSide":"left","toNode":"adapters","toSide":"bottom","label":"implemented by adapter"},
+		{"id":"e5","fromNode":"step1","fromSide":"right","toNode":"step2","toSide":"left"},
+		{"id":"e6","fromNode":"step2","fromSide":"bottom","toNode":"step3","toSide":"top"},
+		{"id":"e7","fromNode":"step3","fromSide":"right","toNode":"step4","toSide":"left"},
+		{"id":"e8","fromNode":"step4","fromSide":"bottom","toNode":"step5","toSide":"top"},
+		{
+			"id":"c6681286230872ad",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4b8f2ef780008400",
+			"fromSide":"right",
+			"toNode":"idea",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

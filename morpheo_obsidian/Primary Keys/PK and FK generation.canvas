@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"id":"e49d7acd9c6c6539","type":"text","text":"**What is primary key?**\n* Unique\n* Not null\n* Mostly a integer\n\n\n**How do you rank primary key based on what parameters?**\n* Name\n* Data type\n* is nullable?\n\n**What is foreign key?**\n* It is the primary key of another table which is present in current table.\n\n**How do you find the foreign keys?**\n* Check with the columns of current table one by one whether they are primary keys in any other table?","x":-460,"y":-300,"width":1000,"height":500},
+		{"id":"55b7b68c88826e05","type":"text","text":"**PKRT and FKRT:**\n\nPrimary key referencing table.\n\n","x":-460,"y":360,"width":1000,"height":500},
+		{"id":"c0e5e028b06b1c77","x":-1583,"y":53,"width":623,"height":387,"type":"text","text":"5 tables\n\nfor (i= 0 to 4)\n0th table\n* Get all columns.\n* Score every columns\n* if c1 is PK, if c5,c7 FK\n\t* Update 0th table.\n1th table\nGet all columns.\n* Score every columns\n* if c1 is PK, if c5,c7 FK\n\t* Update 0th table.\n"}
+	],
+	"edges":[]
+}

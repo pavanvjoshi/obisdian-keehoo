@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"3b9308ca91387ae3","type":"text","text":"|                                                                       |         |                        |          |            |\n| --------------------------------------------------------------------- | ------- | ---------------------- | -------- | ---------- |\n| Task                                                                  | Owner   | Status                 | Timeline | Dependency |\n| Agent for DQ rules                                                    | Pavan   | In progress            |          |            |\n| Comparing data quality queries and improving query inferences         | Inchara | In progress            |          |            |\n| Attaching context added via conversation to column level              | Naveen  | local testing          |          |            |\n| Table inference self-loop (infer one table using context from others) | Naveen  | local testing          |          |            |\n| Re-infer DQ rules when new context is added (design needed)           | Naveen  | Need design discussion |          |            |\n| Table name business labels                                            | Pavan   | In progress            |          |            |\n","x":-513,"y":-148,"width":1027,"height":248}
+	],
+	"edges":[]
+}

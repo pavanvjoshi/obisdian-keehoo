@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{
+			"id":"291c34b00a978c68",
+			"type":"text",
+			"text":"\n| Doable                                                                | Evolution                                                                   | Technical Debt                                                                                  |\n| --------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |\n| Human in the loop enhancement in terms backend integration            | Agent with multi tool call                                                  | Codebase Restructure(both frontend and backend)                                                 |\n| Template workflows bug fix - how do we make a workflow as a template? | MCP integration                                                             | Environment setup for different customers                                                       |\n| UI/UX improvement                                                     | workflows externalisation ( users (need polishing and developers(progress)) | Analytics and monitoring                                                                        |\n| Agent with single tool call                                           | Workflow version control                                                    | Long running tasks(30 days or 90 days) are not supported, but ERP belongs on long running tasks |\n| ERP primitive creation (tentative)                                    | Public nodes, private nodes, process for creating public and private nodes. |                                                                                                 |\n|                                                                       | ERP workflow assistance(extensions for nodes)                               |                                                                                                 |\n|                                                                       |                                                                             |                                                                                                 |\n",
+			"styleAttributes":{
+				"shape":null,
+				"textAlign":"center"
+			},
+			"x":-400,
+			"y":-140,
+			"width":1080,
+			"height":460
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

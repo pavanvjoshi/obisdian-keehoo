@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"ae7f1d7b0488f757","type":"text","text":"## Unified collection.\n\n1. client\n\t```json\n\t{\n\t\t\n\t}\n\t```\n2. source\n\t1.  embedding input (on source)\n\t2. \n3. table\n4. column","x":-560,"y":-280,"width":1200,"height":520},
+		{"id":"5d237296b1dc1cda","x":-561,"y":1142,"width":1081,"height":358,"type":"text","text":"Source (s1) --> table (t1) --> column (c1 - c10)  \n\n* Make the source inference as it for the first time.\n* start inferring the table and columns\n\t* get the table batch (4 tables)\n\t\t* (for 1 table) infer the table\n\t\t\t* get the table's column (batch of 10)\n\t\t\t\t* infer the column \n\t\t\t\t* then augment(re-infer) the table by keeping the context of columns\n\t\t\t\t* do the same for all the remaining columns\n\t\t\t* make the same for all the tables\n* at the last do the augment or re infer source by keeping the context of all tables."},
+		{"id":"fb0e7e678d9f8121","x":-561,"y":1560,"width":1064,"height":403,"type":"text","text":"I will now below explain you the process that is needs to be changes.\n\n*  Infer the source for the first time\n*  Now start infer the tables in batch.\n\t* Infer the table \n\t* For that table get the columns in batch.\n\t* infer the columns and augment the inference by keeping the context of inferred columns.\n\t* Do the "},
+		{"id":"c2d4526b3091bfb2","x":-410,"y":2300,"width":490,"height":220,"type":"text","text":"* **Source inference**\n* get tables in batch \n\t* for every table get all column \n\t* inferring  the column and table\n\t* update the column metadata\n\t*  then update the table "},
+		{"id":"e21dc78f667c2af5","x":340,"y":2410,"width":480,"height":270,"type":"text","text":"* Source inference without table context\n* get the tables in batch\n\t* infer the table without column context.\n\t* for every table get the columns in batch\n\t* infer the column batch\n\t* then re infer or augment the table by keeping the column context.\n* re infer or augment the source by keeping the table context."}
+	],
+	"edges":[
+		{"id":"7ff7801afe5a25ed","fromNode":"c2d4526b3091bfb2","fromSide":"right","toNode":"e21dc78f667c2af5","toSide":"left"}
+	]
+}

@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{
+			"id":"ab5bd92ad2e6af76",
+			"type":"text",
+			"text":"## Shows and asks\n\n1. Entire application demo\n\t1. Products onboard\n\t2. Chats\n\t\t1. gaps\n\t\t2. impact\n\t\t3. view\n2. Model migration and reponse\n\t1. reasoning\n\t2. time taking\n3. IAM integration\n4. Need to confirm whether the application is standalone or will be integrated in the IIP hub?",
+			"styleAttributes":{},
+			"x":-860,
+			"y":-260,
+			"width":560,
+			"height":500
+		},
+		{
+			"id":"f25f109f6a2433d8",
+			"type":"text",
+			"text":"## Need discussions\n\n1. Stock production database integration\n\t1. **What is the approach?**\n\t2. Need multiple data sources? \n\t\t1. teams and\n\t\t2. database? \n2. data points fetch?\n\t1. Format?\n3. both 1 and 2 are connection? \n4. entire pipeline structure \n5. approach for fetching plans from planner agent and rewriting into it. ",
+			"styleAttributes":{},
+			"x":-300,
+			"y":-260,
+			"width":520,
+			"height":500
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"nodes":[
+		{"id":"d875a43673ba8f48","type":"group","x":-800,"y":-460,"width":1360,"height":739,"label":"Untitled group"},
+		{"id":"ecc925df28f22153","type":"group","x":840,"y":-452,"width":335,"height":731,"label":"Morpheo Flow"},
+		{"id":"be0dea15545964bf","x":260,"y":-1200,"width":450,"height":440,"type":"group","label":"MDM/SSOT"},
+		{"id":"0cb3fe8818ffcad5","type":"text","text":"Details as in Data/Metadata?","x":-620,"y":-120,"width":250,"height":60},
+		{"id":"20bf9d3c2e19fb98","type":"text","text":"We can have separated tables/columns","x":-380,"y":78,"width":250,"height":60},
+		{"id":"46ce3f8a7b2b82bb","type":"text","text":"## database\n1. Mongodb\n2. postgres\n3. mysql\n4. oracle","x":-255,"y":-440,"width":294,"height":193},
+		{"id":"a388713a6e2c9581","type":"text","text":"If data flatten the data convert it to metadata","x":-780,"y":78,"width":220,"height":82},
+		{"id":"01ec50329cd7953b","type":"text","text":"1. **If we do have multiple storage accounts how do we read data and flatten it and make it metadata?**\n2. **how can we Read in different databases and converting into metadata? do we need to write separate script for difference data systems?**","x":68,"y":11,"width":452,"height":158},
+		{"id":"9f41da30e2ec0bbe","type":"text","text":"Conversion of data into metadata.\n1. One file will be considered as one table\n2. One Folder is considered as One source.\n3. Every header in the file are considered as columns","x":861,"y":-100,"width":290,"height":249},
+		{"id":"2b0d12d8f8596b75","type":"text","text":"Store metadata in mongodb","x":881,"y":200,"width":250,"height":60},
+		{"id":"c04e8aed8c93bde8","type":"text","text":"ADLS ","x":881,"y":-250,"width":250,"height":60},
+		{"id":"785a8acc77f11749","type":"text","text":"Airbyte","x":881,"y":-380,"width":250,"height":60},
+		{"id":"bc6e7f807b2c67af","type":"text","text":"1. What if user adds multiple sources?\n\t1. Do we need to show tables of all the source?\n2. ","x":68,"y":480,"width":464,"height":106},
+		{"id":"da55b9b6c20ea93e","x":-263,"y":-1700,"width":250,"height":64,"type":"text","text":"Mongodb or any other source"},
+		{"id":"ccce70e4bf187943","x":-263,"y":-1536,"width":250,"height":60,"type":"text","text":"Minio/ADLS"},
+		{"id":"1f685627073b865a","x":-300,"y":-1356,"width":325,"height":60,"type":"text","text":"Store in engineering mongodb"},
+		{"id":"ee8c12686252ae8f","x":180,"y":-1356,"width":250,"height":60,"type":"text","text":"Bronze layer"},
+		{"id":"60cf414144b990f3","x":-800,"y":-1077,"width":288,"height":67,"type":"text","text":"Metadata intelligence starts "},
+		{"id":"38a72181792bdcd1","x":315,"y":-1077,"width":250,"height":60,"type":"text","text":"Silver"},
+		{"id":"225f8ff040aab3f1","x":380,"y":-900,"width":250,"height":60,"type":"text","text":"Input for SSOT"}
+	],
+	"edges":[
+		{"id":"aef78350fdf5f6c2","fromNode":"46ce3f8a7b2b82bb","fromSide":"bottom","toNode":"0cb3fe8818ffcad5","toSide":"top","label":"Connect to get details\n\n"},
+		{"id":"178aab31f3ded92a","fromNode":"0cb3fe8818ffcad5","fromSide":"bottom","toNode":"a388713a6e2c9581","toSide":"top","label":"data"},
+		{"id":"5a15015b216e7457","fromNode":"0cb3fe8818ffcad5","fromSide":"bottom","toNode":"20bf9d3c2e19fb98","toSide":"top","label":"metadata"},
+		{"id":"99825ec54c0696e7","fromNode":"46ce3f8a7b2b82bb","fromSide":"bottom","toNode":"01ec50329cd7953b","toSide":"top"},
+		{"id":"c13d85556c58e7f3","fromNode":"785a8acc77f11749","fromSide":"bottom","toNode":"c04e8aed8c93bde8","toSide":"top"},
+		{"id":"b64ad35c44610ce5","fromNode":"c04e8aed8c93bde8","fromSide":"bottom","toNode":"9f41da30e2ec0bbe","toSide":"top","label":"Read data "},
+		{"id":"1aa047583670be6f","fromNode":"9f41da30e2ec0bbe","fromSide":"bottom","toNode":"2b0d12d8f8596b75","toSide":"top"},
+		{"id":"60506ce2fa1ec235","fromNode":"a388713a6e2c9581","fromSide":"right","toNode":"20bf9d3c2e19fb98","toSide":"left"},
+		{"id":"73e2902c1817ecb0","fromNode":"d875a43673ba8f48","fromSide":"bottom","toNode":"bc6e7f807b2c67af","toSide":"top","label":"future queries"},
+		{"id":"8b37a40d21b6aae9","fromNode":"da55b9b6c20ea93e","fromSide":"bottom","toNode":"ccce70e4bf187943","toSide":"top","label":"Data Landing"},
+		{"id":"9928898822b0a686","fromNode":"ccce70e4bf187943","fromSide":"bottom","toNode":"1f685627073b865a","toSide":"top","label":"Inference of metadata"},
+		{"id":"9a2b23a31cad1ba0","fromNode":"1f685627073b865a","fromSide":"left","toNode":"60cf414144b990f3","toSide":"left"},
+		{"id":"4bdef75c2940281e","fromNode":"60cf414144b990f3","fromSide":"right","toNode":"1f685627073b865a","toSide":"right","label":"bronze layer and store in mongo"},
+		{"id":"e9d19571fceb567b","fromNode":"ee8c12686252ae8f","fromSide":"bottom","toNode":"38a72181792bdcd1","toSide":"top"},
+		{"id":"f7d1d2b637f13365","fromNode":"1f685627073b865a","fromSide":"right","toNode":"ee8c12686252ae8f","toSide":"left"},
+		{"id":"69d5ba60a80319fd","fromNode":"38a72181792bdcd1","fromSide":"bottom","toNode":"225f8ff040aab3f1","toSide":"top"}
+	]
+}

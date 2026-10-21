@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"a5e72cb7538c8446","x":-378,"y":-140,"width":378,"height":800,"type":"text","text":"#### ML Basics:\n\n**Core Concepts**\n* Supervised vs Unsupervised learning\n* Train/validation/test split\n* Bias–variance tradeoff\n* Overfitting & Underfitting\n* Cross-validation\n\n**Algorithms (Conceptual clarity)**\n* Linear Regression\n* Logistic Regression\n* KNN\n* Decision Trees\n* Random Forest\n* Gradient Boosting\n\n**Evaluation Metrics**\n* Accuracy\n* Precision / Recall\n* F1-score\n* ROC-AUC\n* Confusion Matrix\n\n**Optimization**\n* Gradient Descent (Batch, SGD, Mini-batch)\n* Learning rate\n* Regularization (L1, L2)"},
+		{"id":"4aeda101fd8cf60b","x":-378,"y":-300,"width":378,"height":100,"type":"text","text":"#### Python"}
+	],
+	"edges":[
+		{"id":"343d2a5de237da2b","fromNode":"4aeda101fd8cf60b","fromSide":"bottom","toNode":"a5e72cb7538c8446","toSide":"top"}
+	]
+}

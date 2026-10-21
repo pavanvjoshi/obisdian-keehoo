@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"25b8ab3feaa36f04","type":"text","text":"1.Find signals \n1.Linkdin \n2.Tracxn\n","x":-960,"y":299,"width":180,"height":120},
+		{"id":"81f542ab869ccdb6","type":"text","text":"Response - Book meeting","x":1760,"y":250,"width":221,"height":99},
+		{"id":"cb85b32fe0b0054c","type":"text","text":"No response - Nurture -- tasks module -- maintian relationship","x":1760,"y":419,"width":255,"height":140},
+		{"id":"a74e377b6623f152","type":"text","text":"Get relevant context.\n\nThey use Databricks, are expanding their data team and modernizing their platform\"\n","x":-620,"y":260,"width":280,"height":183},
+		{"id":"2015b518a9b34f28","type":"text","text":"ICP Againts our match","x":-109,"y":60,"width":221,"height":85},
+		{"id":"249713a935fb8b76","type":"text","text":"Found a contact in event","x":-130,"y":419,"width":264,"height":142},
+		{"id":"150fdb90c8174980","type":"text","text":"Priorities \nTier 1 \nTier 2 \nTier 3 \n\n**Investor A**\n\n- Invests Seed/Series A ✅\n- AI/Data focus ✅\n- Typical cheque matches Kruise ✅\n- Recently invested in similar companies ✅\n- Partner has relevant portfolio experience ✅\n\n→ **Tier 1**\n\n**Investor B**\n\n- Invests Seed ✅\n- SaaS ✅\n- Cheque fits ✅\n- But hasn't invested recently in your space\n\n→ **Tier 2**\n\n**Investor C**\n\n- Invests later-stage companies\n- Typical cheque much larger than Kruise's requirement\n\n→ **Tier 3 / potentially exclude**","x":660,"y":-52,"width":420,"height":752},
+		{"id":"7b3464550ebdee63","type":"text","text":"Find contact apollo or Hunter","x":220,"y":240,"width":223,"height":95},
+		{"id":"2ceb2e2340045bbd","type":"text","text":"Personalised outreach + calls\n1. Follow Ups \n2. Call Reminders\n\n   ","x":1340,"y":171,"width":277,"height":178}
+	],
+	"edges":[
+		{"id":"3c73b6e039f96e9d","fromNode":"25b8ab3feaa36f04","fromSide":"right","toNode":"a74e377b6623f152","toSide":"left"},
+		{"id":"494f21f40203cc13","fromNode":"a74e377b6623f152","fromSide":"right","toNode":"2015b518a9b34f28","toSide":"left"},
+		{"id":"558907b48870f3f2","fromNode":"2015b518a9b34f28","fromSide":"right","toNode":"7b3464550ebdee63","toSide":"left","label":"yes or no"},
+		{"id":"cfb267bcfaaf490e","fromNode":"7b3464550ebdee63","fromSide":"right","toNode":"150fdb90c8174980","toSide":"left"},
+		{"id":"178f45a9add6ee29","fromNode":"150fdb90c8174980","fromSide":"right","toNode":"2ceb2e2340045bbd","toSide":"left","label":"Research"},
+		{"id":"e1a56347e3b5897a","fromNode":"2ceb2e2340045bbd","fromSide":"right","toNode":"81f542ab869ccdb6","toSide":"left"},
+		{"id":"622c59130e6f0644","fromNode":"2ceb2e2340045bbd","fromSide":"right","toNode":"cb85b32fe0b0054c","toSide":"left"},
+		{"id":"6b73b068bce59200","fromNode":"150fdb90c8174980","fromSide":"left","toNode":"249713a935fb8b76","toSide":"right"},
+		{"id":"63dc6c4b77a00c45","fromNode":"249713a935fb8b76","fromSide":"top","toNode":"2015b518a9b34f28","toSide":"bottom"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

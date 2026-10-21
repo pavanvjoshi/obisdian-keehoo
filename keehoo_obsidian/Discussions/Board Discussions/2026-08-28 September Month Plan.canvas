@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{
+			"id":"7fc18df3c8e044f9",
+			"type":"text",
+			"text":"## Need discussions\n\n1. Stock production database integration\n\t1. **What is the approach?**\n\t2. Need multiple data sources? \n\t\t1. teams and\n\t\t2. database? \n2. data points fetch?\n\t1. Format?\n3. both 1 and 2 are connection? \n4. entire pipeline structure \n5. approach for fetching plans from planner agent and rewriting into it. ",
+			"styleAttributes":{},
+			"x":-200,
+			"y":-240,
+			"width":500,
+			"height":400
+		},
+		{
+			"id":"9e62cb0cec673e7c",
+			"type":"text",
+			"text":"1. Task module integrated\n\t1. on-boarded almost all the products\n2. Model migration\n\t1. responses are better than previous \n\t2. reasoning is better\n3. IAM integration completed\n\t1. need to integrate in IIP hub\n4. Adhoc tasks\n\t1. model migration\n\t2. IAM issue",
+			"styleAttributes":{},
+			"x":-720,
+			"y":-240,
+			"width":420,
+			"height":400
+		},
+		{
+			"id":"d5829b34460acdf2",
+			"type":"text",
+			"text":"## next month agenda just thoughts\n\n1. new task as per discussion\n2. improvement task\n3. CEO Analytics & Visualization Experience\n\t1. from past month\n4. Sandboxed Code Execution & Plotting Integration\n\t1. from past month\n5. Also add adhoc task if there are any. ",
+			"styleAttributes":{},
+			"x":-510,
+			"y":220,
+			"width":560,
+			"height":340
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,6 @@
+1. Digi Incubator is an AI-powered startup ecosystem platform that helps founders build, validate, fund, and scale their startups. It offers tools like AI-driven market research, pitch deck creation, investor matching, and startup management dashboards — all in one platform.
+
+2. Digi Incubator primarily targets startup founders, early-stage entrepreneurs, and aspiring business owners who need support with idea validation, fundraising, mentorship, and scaling their ventures. Its broader ecosystem also serves investors, incubators, mentors, educational institutions, and government organizations involved in startup development and innovation.
+
+3. Digi Incubator differentiates itself by combining multiple startup-enablement services into one AI-powered ecosystem instead of offering isolated tools. Key features include AI-driven market research, lean canvas and pitch deck generation, investor matchmaking, government scheme discovery, mentorship access, and startup performance dashboards — all designed to help founders move from idea validation to scaling in a single platform.
+ 

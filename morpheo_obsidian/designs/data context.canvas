@@ -1,0 +1,6 @@
+{
+	"nodes":[
+		{"id":"8682f03b562d3491","type":"text","text":"```plain\nRe-inference workflows \n\n- New or modified context is provided through conversation \n- New or modified context is provided through the tabular view \n- Modified context is provided through the graph \n- New or modified context is provided through the ‘Add Data Context’ option at onboarding: User adds a source, and adds context. This context is not specific to the initial source. Our engine maps the relevant context to the first source, and any remaining to a knowledge base. When a second source is added, Morpheo scans against the knowledge base and remaps intelligence to the second source (potentially removing it from overall knowledge base).\n```","x":-600,"y":-280,"width":1100,"height":280}
+	],
+	"edges":[]
+}

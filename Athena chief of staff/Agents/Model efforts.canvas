@@ -1,0 +1,49 @@
+{
+	"nodes":[
+		{
+			"id":"32a6c9a0afc1045b",
+			"type":"text",
+			"text":"|Agent ID|Agent name|LLM purpose key|Reasoning effort (current config)|Per-agent override?|LLM invoked in chat today?|\n|---|---|---|---|---|---|\n|`product`|Product Agent|`specialist`|medium|No|Yes|\n|`finance`|Finance Agent|`specialist`|medium|No|No (no tools configured)|\n|`hr`|HR Agent|`specialist`|medium|No|No (no tools configured)|\n|`operations`|Operations Agent|`specialist`|medium|No|No (no tools configured)|\n|`fallback`|Fallback Agent|`specialist`|medium|",
+			"styleAttributes":{},
+			"x":60,
+			"y":-140,
+			"width":1100,
+			"height":220
+		},
+		{
+			"id":"193ac36e8fb2f19a",
+			"type":"text",
+			"text":"| Purpose key        | Role / component                                                    | Reasoning effort (current config) | Per-purpose override in code?   |\n| ------------------ | ------------------------------------------------------------------- | --------------------------------- | ------------------------------- |\n| `comprehend`       | Request classifier (route: general / out_of_scope / scoped_complex) | low                               | No                              |\n| `general`          | Direct answer (no specialists)                                      | minimal                           | No                              |\n| `planner`          | Task decomposition into specialist agents                           | high                              | No                              |\n| `specialist`       | All registry agents (Product, Finance, HR, Operations, Fallback)    | medium                            | No                              |\n| `synthesizer`      | Final answer from specialist evidence                               | medium                            | No                              |\n| `org_pulse`        | Org-wide status UI artifact (JSON builder)                          | low                               | No                              |\n| `domain_agent`     | Department spawn / gather-complete decisions                        | low                               | No — falls through to `default` |\n| `sandbox_analysis` | Chart generation in sandbox ReAct loop                              | low                               | No — falls through to `default` |\n| `extract`          | Execution ingestion (not chat)                                      | medium                            | No                              |\n| `registry`         | Registry suggestion extraction (not chat)                           | low                               | No                              |\n| `default`          | Anything without an explicit purpose mapping                        | low                               | —                               |\n\nChat-relevant only:\n\n|Purpose key|Effort|\n|---|---|\n|`comprehend`|low|\n|`general`|minimal|\n|`planner`|high|\n|`specialist`|medium|\n|`synthesizer`|medium|\n|`org_pulse`|low|\n|`domain_agent`|low|\n|`sandbox_analysis`|low|",
+			"styleAttributes":{},
+			"x":60,
+			"y":140,
+			"width":1100,
+			"height":920
+		},
+		{
+			"id":"1bdec2b1c3194374",
+			"type":"text",
+			"text":"| Purpose key        | Role / component                                                    | Reasoning effort (current config) |\n| ------------------ | ------------------------------------------------------------------- | --------------------------------- |\n| `comprehend`       | Request classifier (route: general / out_of_scope / scoped_complex) | minimal                           |\n| `general`          | Direct answer (no specialists)                                      | minimal                           |\n| `planner`          | Task decomposition into specialist agents                           | medium                            |\n| `specialist`       | All registry agents (Product, Finance, HR, Operations, Fallback)    | low                               |\n| `synthesizer`      | Final answer from specialist evidence                               | low                               |\n| `org_pulse`        | Org-wide status UI artifact (JSON builder)                          | minimal                           |\n| `domain_agent`     | Department spawn / gather-complete decisions                        | minimal                           |\n| `sandbox_analysis` | Chart generation in sandbox ReAct loop                              | minimal                           |\n| `extract`          | Execution ingestion (not chat)                                      | low                               |\n| `registry`         | Registry suggestion extraction (not chat)                           | minimal                           |\n| `default`          | Anything without an explicit purpose mapping                        | minimal                           |\n\nChat-relevant only:\n\n| Purpose key        | Effort  |\n| ------------------ | ------- |\n| `comprehend`       | minimal |\n| `general`          | minimal |\n| `planner`          | medium  |\n| `specialist`       | low     |\n| `synthesizer`      | low     |\n| `org_pulse`        | minimal |\n| `domain_agent`     | minimal |\n| `sandbox_analysis` | minimal |\n",
+			"styleAttributes":{},
+			"x":1400,
+			"y":140,
+			"width":1100,
+			"height":920
+		}
+	],
+	"edges":[
+		{
+			"id":"52c97091d8a820ac",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"193ac36e8fb2f19a",
+			"fromSide":"right",
+			"toNode":"1bdec2b1c3194374",
+			"toSide":"left"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

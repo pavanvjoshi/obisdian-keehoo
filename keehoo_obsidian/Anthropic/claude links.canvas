@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"e93014cde124978b",
+			"type":"text",
+			"text":"1. Claude code skills - https://github.com/addyosmani/agent-skills\n2. UI SaaS skill - https://gist.github.com/mpaiva-cc/d4ef3a652872cb5a91aa529db98d62dd\n3. graph chat for marketing and sales agent- https://claude.ai/public/artifacts/3e18b5ef-95ad-4e65-8ff5-b589528fc28d\n4. hexagonal - https://github.com/aligundogdu/symfony-hexagonal-skill\n5. ",
+			"styleAttributes":{},
+			"x":-460,
+			"y":-260,
+			"width":900,
+			"height":460
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

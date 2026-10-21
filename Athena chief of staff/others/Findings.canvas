@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"fc3df96e856a0993",
+			"type":"text",
+			"text":"## gpt - 5 mini latency optimisation\n\nhttps://medium.com/@Micheal-Lanham/gpt-5-is-incredibly-powerful-but-latency-will-kill-your-user-experience-heres-how-to-fix-it-a7e4e6be4676\n\n",
+			"styleAttributes":{},
+			"x":-420,
+			"y":-240,
+			"width":800,
+			"height":360
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

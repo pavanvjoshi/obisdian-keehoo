@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"0fca46ffa9922993","x":-456,"y":-217,"width":696,"height":577,"type":"text","text":"```\n┌──────────────────────────────────────────────────────────────────┐\n│  🌐 INFRASTRUCTURE  (knows about HTTP, SQL, Pydantic)            │\n│  main.py · router.py · schemas.py · orm_models.py               │\n│  repository.py · dependencies.py · database.py                  │\n│                                                                  │\n│   ┌──────────────────────────────────────────────────────────┐   │\n│   │  ⚙️  APPLICATION  (orchestrates, owns the ports)         │   │\n│   │  ports/incoming.py · ports/outgoing.py                   │   │\n│   │  use_cases/create_todo.py · complete_todo.py · etc.      │   │\n│   │                                                           │   │\n│   │   ┌───────────────────────────────────────────────────┐  │   │\n│   │   │  💎 DOMAIN  (pure Python, zero dependencies)      │  │   │\n│   │   │  entities.py · value_objects.py · events.py       │  │   │\n│   │   └───────────────────────────────────────────────────┘  │   │\n│   └──────────────────────────────────────────────────────────┘   │\n└──────────────────────────────────────────────────────────────────┘\n\n             Arrow of allowed imports:\n             INFRASTRUCTURE  →  APPLICATION  →  DOMAIN\n             NEVER the other way around.\n\n```"}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

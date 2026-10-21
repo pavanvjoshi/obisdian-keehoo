@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"6597b37403a2870b","x":-220,"y":-240,"width":847,"height":580,"type":"text","text":"### 3. DEC Series — \"The Rulings\" (DEC-001 to DEC-006)\n\nThese are **specific governance decisions** — like amendments or official rulings that lock in a particular choice once it's been debated. They're shorter and more surgical than the M docs.\n\n| Doc     | What it locks in                                                                                                                                     |\n| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |\n| DEC-001 | Official naming — what \"AOSP,\" \"KOS,\" \"Athena,\" and \"IOC\" each mean, so people stop using them interchangeably                                       |\n| DEC-002 | How Athena's outputs get saved externally (checkpoints → artifacts → storage) so nothing lives only \"in the chat\"                                    |\n| DEC-003 | Athena's internal \"advisors\" (like Atlas for strategy, Mercury for execution) — a structured way Athena thinks through problems from multiple angles |\n| DEC-004 | A transparency rule — Athena must always label what's a fact vs. an assumption vs. a guess                                                           |\n| DEC-005 | The \"big picture\" rule — Athena must think about the whole system, not just whatever single document is in front of it                               |\n| DEC-006 | The rule that weekly backups must be complete and self-contained — no depending on outside files to recover                                          |\n\n**Analogy:** if the M series is the constitution, the DEC series is like **specific court rulings or board resolutions** that clarify how the constitution applies to a particular situation."}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

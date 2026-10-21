@@ -1,0 +1,94 @@
+{
+	"nodes":[
+		{"id":"219f41ed637f97d8","type":"group","x":-4020,"y":-3240,"width":5220,"height":6540,"label":"Untitled group"},
+		{"id":"5aab887e38d799b9","type":"group","x":-3780,"y":-3220,"width":4960,"height":2480,"label":"Untitled group"},
+		{"id":"f9e8a534c14b3ce0","type":"group","x":-1160,"y":6800,"width":1340,"height":2740,"label":"Untitled group"},
+		{"id":"71ce0f7c601304dc","type":"group","x":380,"y":6800,"width":1320,"height":2740,"label":"Untitled group"},
+		{
+			"id":"d802ba7c8868a622",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    autonumber\n    participant U as Sales Rep\n    participant CRM as CRM (Lead System)\n    participant R as MCP Router\n    participant E as Email MCP\n    participant M as Meeting MCP\n    participant T as Chat MCP\n    participant P as Processing (LLM)\n    participant V as Vector Store\n    participant L as Link Table (LeadID→RecordID)\n\n    rect rgb(235, 245, 255)\n    Note over U,L: PHASE 1 — INGESTION & LINKING (runs continuously / event-triggered)\n\n    U->>CRM: Create Lead\n    CRM->>CRM: Generate Lead ID (e.g. LEAD-10234)\n    CRM-->>R: Emit event: New Lead + contact info (email, domain)\n\n    par Email arrives\n        E->>R: New email involving lead's address\n        R->>R: Match sender/recipient to Lead ID\n        R->>P: Send email content for processing\n    and Meeting occurs\n        M->>R: New meeting/transcript with lead as attendee\n        R->>R: Match attendee to Lead ID\n        R->>P: Send transcript for processing\n    and Chat message posted\n        T->>R: New Teams/Slack message in lead's channel/thread\n        R->>R: Match channel/thread to Lead ID\n        R->>P: Send chat log for processing\n    end\n\n    P->>P: Summarize content\n    P->>P: Generate embedding + extract entities\n    P-->>R: Return summary + embedding\n\n    R->>V: Store content + embedding + summary\n    R->>L: Write record (LeadID, RecordID, SourceType, Timestamp)\n    end\n\n    rect rgb(235, 255, 240)\n    Note over U,L: PHASE 2 — RETRIEVAL (on demand)\n\n    U->>CRM: Open Lead LEAD-10234\n    CRM->>L: Query all RecordIDs for LeadID\n    L-->>CRM: Return RecordID list (emails, meetings, chats)\n    CRM->>V: Fetch content/summaries for RecordIDs\n    V-->>CRM: Return summarized records\n    CRM->>CRM: Merge into unified timeline\n    CRM-->>U: Display timeline (emails + meetings + chats)\n    end\n```",
+			"styleAttributes":{"shape":"predefined-process"},
+			"x":-1440,
+			"y":-3200,
+			"width":2600,
+			"height":1920
+		},
+		{
+			"id":"bf6a15132f08f1b4",
+			"type":"text",
+			"text":"```mermaid\nsequenceDiagram\n    autonumber\n    participant U as Sales Rep\n    participant CRM as CRM Application\n    participant Src as Source System<br/>(Email/Meeting/Chat Webhook)\n    participant EL as Event Listener\n    participant Q as Queue\n    participant Res as Resolver\n    participant P as Processing (LLM)\n    participant V as Vector Store\n    participant L as Link Table\n\n    rect rgb(235, 245, 255)\n    Note over U,L: PHASE 1 — INGESTION (event-driven, one run per event)\n\n    U->>CRM: Create Lead\n    CRM->>CRM: Generate Lead ID + store matching metadata\n    Note over CRM: (email address, domain, attendee list —<br/>accessible to Engine for matching)\n\n    Src-->>EL: Webhook fires (new email / meeting ended / chat message)\n    EL->>EL: Check idempotency<br/>(seen this event/message ID before?)\n\n    alt Duplicate event\n        EL-->>Src: Ack (discard, no further action)\n    else New event\n        EL->>Q: Enqueue event\n        Q->>Res: Worker picks up event\n        Res->>CRM: Lookup lead metadata (sender/attendee/channel)\n        CRM-->>Res: Return candidate Lead ID (if any)\n\n        alt No match found\n            Res->>CRM: Route to Manual Tag Queue\n            CRM-->>U: Notify rep to tag manually\n            U->>CRM: Assign correct Lead ID\n            CRM-->>Res: Resume with assigned Lead ID\n        end\n\n        Res->>P: Send content for processing (Lead ID attached)\n        P->>P: Summarize content\n        P->>P: Generate embedding + extract entities\n        P->>V: Store content + summary + embedding\n        P->>L: Write link record (LeadID, RecordID, SourceType, Timestamp)\n        P-->>EL: Processing complete\n        EL-->>Src: Ack event\n    end\n    end\n\n    rect rgb(235, 255, 240)\n    Note over U,L: PHASE 2 — RETRIEVAL (user-triggered, independent of ingestion)\n\n    U->>CRM: Open Lead / request timeline\n    CRM->>L: Query all RecordIDs for LeadID\n    L-->>CRM: Return RecordID list\n    CRM->>V: Fetch content/summaries for those RecordIDs\n    V-->>CRM: Return records\n    CRM->>CRM: Merge into unified timeline\n    CRM-->>U: Display timeline (emails + meetings + chats)\n    end\n```",
+			"styleAttributes":{},
+			"x":-4000,
+			"y":480,
+			"width":2920,
+			"height":2100
+		},
+		{
+			"id":"77d7afb560747f57",
+			"type":"text",
+			"text":"```mermaid\nflowchart TB\n\n    subgraph CRM[\"📇 CRM Application\"]\n        A1[\"Create Lead\"]\n        A2[\"Generate Lead ID<br/>+ store matching metadata<br/>(email, domain, attendee list)\"]\n        A9[\"Manual Tag Queue<br/>(rep resolves unmatched items)\"]\n        A10[\"Open Lead / Retrieval API Call\"]\n        A11[\"Display Unified Timeline\"]\n    end\n\n    subgraph Sources[\"📡 External Source Systems\"]\n        S1[\"Email Provider<br/>(Graph/Gmail Webhook)\"]\n        S2[\"Meeting/Calendar Provider<br/>(Webhook - meeting ended)\"]\n        S3[\"Teams/Slack<br/>(Webhook - new message)\"]\n    end\n\n    subgraph Engine[\"⚙️ Core Engine (your application)\"]\n        direction TB\n\n        subgraph Listener[\"Event Listener\"]\n            L1[\"Receive Webhook Payload\"]\n            L2{\"Already processed?<br/>(idempotency check<br/>by message/event ID)\"}\n        end\n\n        subgraph QueueL[\"Queue\"]\n            Q1[\"Push event to Queue\"]\n        end\n\n        subgraph ResolverL[\"Resolver\"]\n            R1[\"Match sender / attendee /<br/>channel to Lead ID<br/>using CRM metadata\"]\n            R2{\"Match found?\"}\n        end\n\n        subgraph ProcL[\"Processing\"]\n            P1[\"Extract content\"]\n            P2[\"Summarize (LLM)\"]\n            P3[\"Generate embedding<br/>+ extract entities\"]\n        end\n\n        subgraph StoreL[\"Storage\"]\n            V1[(\"Vector Store<br/>content + summary + embedding\")]\n            V2[(\"Link Table<br/>LeadID → RecordID, Type, Timestamp\")]\n        end\n\n        subgraph RetrieveL[\"Retrieval API\"]\n            RT1[\"Query Link Table by LeadID\"]\n            RT2[\"Fetch matching records<br/>from Vector Store\"]\n            RT3[\"Merge into timeline\"]\n        end\n    end\n\n    A1 --> A2\n    S1 --> L1\n    S2 --> L1\n    S3 --> L1\n    L1 --> L2\n    L2 -- \"Yes, discard (ack only)\" --> L1\n    L2 -- \"No, new event\" --> Q1\n    Q1 --> R1\n    R1 --> R2\n    R2 -- \"No match\" --> A9\n    A9 -- \"Rep assigns Lead ID\" --> R1\n    R2 -- \"Matched\" --> P1\n    P1 --> P2 --> P3\n    P3 --> V1\n    P3 --> V2\n\n    A10 --> RT1\n    RT1 --> V2\n    V2 --> RT2\n    RT2 --> V1\n    V1 --> RT3\n    RT3 --> A11\n```",
+			"styleAttributes":{},
+			"x":-720,
+			"y":480,
+			"width":1820,
+			"height":2800
+		},
+		{
+			"id":"ab12bf6543c7efdc",
+			"type":"text",
+			"text":"```mermaid\nflowchart TB\n\n    subgraph User[\"👤 Sales / Account Owner\"]\n        A1[\"New Lead Created\"]\n        A2[\"Lead ID Generated<br/>(e.g. LEAD-10234)\"]\n        A6[\"Later: Search / Retrieve<br/>by Lead ID\"]\n    end\n\n    subgraph CRM[\"📇 CRM / Lead System of Record\"]\n        B1[\"Lead ID stored as<br/>Master Key\"]\n        B2[\"Lead ID propagated to<br/>every linked interaction\"]\n    end\n\n    subgraph MCP[\"🔌 MCP Orchestration Layer\"]\n        C1[\"MCP Router /<br/>Connector Dispatcher\"]\n        C2[\"Attach Lead ID as<br/>Metadata Tag\"]\n    end\n\n    subgraph Sources[\"📡 Source Systems (via MCP)\"]\n        D1[\"✉️ Email MCP<br/>(Gmail / Outlook)\"]\n        D2[\"📅 Meeting MCP<br/>(Calendar / Zoom / Meet)\"]\n        D3[\"💬 Chat MCP<br/>(Teams / Slack)\"]\n    end\n\n    subgraph Processing[\"⚙️ Processing Pipeline\"]\n        E1[\"Extract Raw Content<br/>(email body, transcript, chat log)\"]\n        E2[\"Summarize<br/>(LLM pass)\"]\n        E3[\"Generate Embedding<br/>+ Extract Entities\"]\n    end\n\n    subgraph Storage[\"🗄️ Storage & Index\"]\n        F1[(\"Knowledge Store<br/>(Vector DB / Search Index)\")]\n        F2[(\"Link Table<br/>LeadID → RecordID, Type, Timestamp\")]\n    end\n\n    subgraph Retrieval[\"🔎 Retrieval\"]\n        G1[\"Query: 'Show all activity<br/>for Lead ID X'\"]\n        G2[\"Unified Timeline<br/>Emails + Meetings + Chats\"]\n    end\n\n    A1 --> A2 --> B1\n    B1 --> B2 --> C1\n    C1 --> D1\n    C1 --> D2\n    C1 --> D3\n    D1 --> E1\n    D2 --> E1\n    D3 --> E1\n    E1 --> E2 --> E3\n    E3 --> C2\n    C2 --> F1\n    C2 --> F2\n\n    A6 --> G1 --> F2\n    F2 --> F1\n    F1 --> G2 --> A6\n```",
+			"styleAttributes":{},
+			"x":-3640,
+			"y":-3200,
+			"width":1960,
+			"height":2440
+		},
+		{
+			"id":"3dd181db1af8d8a6",
+			"type":"text",
+			"text":"\n```mermaid\nflowchart TD\n    START([Start: Contact intake]) --> ENRICH[Web search / enrich profile]\n    ENRICH --> SCORE[AI scoring 0-100]\n    SCORE --> GATE{Score >= campaign threshold?}\n\n    GATE -- No --> END_NQ([End: Not Qualified])\n    GATE -- Yes --> DRAFT[AI drafts intro email]\n    DRAFT --> SEND1[Send intro email via MCP]\n    SEND1 --> STORE1[Store thread_id, message_id, contact_email]\n\n    STORE1 --> WAIT1{{Wait up to 3 days\npoll inbox for reply}}\n\n    WAIT1 -- Reply found --> READ1[Read reply via MCP]\n    READ1 --> HUMAN1[/Human reviews reply/]\n    HUMAN1 --> FORM1[/Human provides to, subject, body/]\n    FORM1 --> SEND_R1[Send reply via MCP]\n    SEND_R1 --> END_OK([End: Replied & Handled])\n\n    WAIT1 -- 3 days, no reply --> FU1[/Human provides Follow-up 1 details/]\n    FU1 --> SEND2[Send Follow-up 1 via MCP]\n    SEND2 --> STORE2[Update tracking metadata]\n    STORE2 --> WAIT2{{Wait up to 3 days\npoll inbox for reply}}\n\n    WAIT2 -- Reply found --> READ2[Read reply via MCP]\n    READ2 --> HUMAN2[/Human reviews reply/]\n    HUMAN2 --> FORM2[/Human provides to, subject, body/]\n    FORM2 --> SEND_R2[Send reply via MCP]\n    SEND_R2 --> END_OK\n\n    WAIT2 -- 3 days, no reply --> FU2[/Human provides Follow-up 2 details/]\n    FU2 --> SEND3[Send Follow-up 2 via MCP]\n    SEND3 --> STORE3[Update tracking metadata]\n    STORE3 --> WAIT3{{Wait up to 3 days\npoll inbox for reply}}\n\n    WAIT3 -- Reply found --> READ3[Read reply via MCP]\n    READ3 --> HUMAN3[/Human reviews reply/]\n    HUMAN3 --> FORM3[/Human provides to, subject, body/]\n    FORM3 --> SEND_R3[Send reply via MCP]\n    SEND_R3 --> END_OK\n\n    WAIT3 -- 3 days, no reply --> END_NR([End: No Response])\n\n```\n",
+			"styleAttributes":{},
+			"x":2880,
+			"y":1270,
+			"width":1180,
+			"height":2620
+		},
+		{
+			"id":"47bdc8eb60f01f9f",
+			"type":"text",
+			"text":"```mermaid\nflowchart TD\n    START([Start: Contact Intake]) --> ENRICH[Tool: MCP Enrich Contact]\n    ENRICH --> SCORE[Agent: AI Score 0-100]\n    SCORE --> GATE{\"Condition: score >= campaign.threshold?\"}\n\n    GATE -- No --> END_NQ([End: Not Qualified])\n    GATE -- Yes --> DRAFT[Agent: AI Draft Intro Email]\n    DRAFT --> SEND1[Tool: MCP Send Email]\n    SEND1 --> STORE1[Set Variable: thread_id, message_id, contact_email]\n\n    STORE1 --> WAIT1{{\"NEW NODE: Wait For Reply<br/>watch inbox via MCP · timeout 3d\"}}\n\n    WAIT1 -- reply --> READ1[Tool: MCP Read Reply]\n    READ1 --> HT1[/Human Task: review reply + compose to, subject, body/]\n    HT1 --> SEND_R1[Tool: MCP Send Reply]\n    SEND_R1 --> END_OK([End: Replied and Handled])\n\n    WAIT1 -- timed_out --> FU1[/Human Task: provide Follow-up 1 content/]\n    FU1 --> SEND2[Tool: MCP Send Follow-up 1]\n    SEND2 --> STORE2[Set Variable: update tracking]\n    STORE2 --> WAIT2{{\"NEW NODE: Wait For Reply<br/>timeout 3d\"}}\n\n    WAIT2 -- reply --> READ2[Tool: MCP Read Reply]\n    READ2 --> HT2[/Human Task: review reply + compose to, subject, body/]\n    HT2 --> SEND_R2[Tool: MCP Send Reply]\n    SEND_R2 --> END_OK\n\n    WAIT2 -- timed_out --> FU2[/Human Task: provide Follow-up 2 content/]\n    FU2 --> SEND3[Tool: MCP Send Follow-up 2]\n    SEND3 --> STORE3[Set Variable: update tracking]\n    STORE3 --> WAIT3{{\"NEW NODE: Wait For Reply<br/>timeout 3d\"}}\n\n    WAIT3 -- reply --> READ3[Tool: MCP Read Reply]\n    READ3 --> HT3[/Human Task: review reply + compose to, subject, body/]\n    HT3 --> SEND_R3[Tool: MCP Send Reply]\n    SEND_R3 --> END_OK\n\n    WAIT3 -- timed_out --> END_NR([End: No Response])\n\n    classDef gap fill:#ffdddd,stroke:#cc0000,stroke-width:2px,stroke-dasharray: 5 5;\n    class WAIT1,WAIT2,WAIT3 gap;\n```",
+			"styleAttributes":{},
+			"x":-1140,
+			"y":6880,
+			"width":1300,
+			"height":2640
+		},
+		{
+			"id":"e7de1a537ded667a",
+			"type":"text",
+			"text":"### Target design (needs the one new node)",
+			"styleAttributes":{},
+			"x":-1140,
+			"y":6820,
+			"width":480,
+			"height":60
+		},
+		{
+			"id":"0f42c39b7d0d0e28",
+			"type":"text",
+			"text":"```mermaid\nflowchart TD\n    START([Start: Contact Intake]) --> ENRICH[Tool: MCP Enrich Contact]\n    ENRICH --> SCORE[Agent: AI Score 0-100]\n    SCORE --> GATE{\"Condition: score >= campaign.threshold?\"}\n\n    GATE -- No --> END_NQ([End: Not Qualified])\n    GATE -- Yes --> DRAFT[Agent: AI Draft Intro Email]\n    DRAFT --> SEND1[Tool: MCP Send Email]\n    SEND1 --> DELAY1{{\"Delay: fixed wait 3 days\"}}\n    DELAY1 --> CHECK1[/Human Task: check inbox, decide Replied or No Reply — paste reply text + compose response if Replied/]\n\n    CHECK1 -- Replied --> SEND_R1[Tool: MCP Send Reply]\n    SEND_R1 --> END_OK([End: Replied and Handled])\n\n    CHECK1 -- No Reply --> FU1[/Human Task: provide Follow-up 1 content/]\n    FU1 --> SEND2[Tool: MCP Send Follow-up 1]\n    SEND2 --> DELAY2{{\"Delay: fixed wait 3 days\"}}\n    DELAY2 --> CHECK2[/Human Task: check inbox, decide Replied or No Reply/]\n\n    CHECK2 -- Replied --> SEND_R2[Tool: MCP Send Reply]\n    SEND_R2 --> END_OK\n\n    CHECK2 -- No Reply --> FU2[/Human Task: provide Follow-up 2 content/]\n    FU2 --> SEND3[Tool: MCP Send Follow-up 2]\n    SEND3 --> DELAY3{{\"Delay: fixed wait 3 days\"}}\n    DELAY3 --> CHECK3[/Human Task: check inbox, decide Replied or No Reply/]\n\n    CHECK3 -- Replied --> SEND_R3[Tool: MCP Send Reply]\n    SEND_R3 --> END_OK\n\n    CHECK3 -- No Reply --> END_NR([End: No Response])\n\n    classDef today fill:#ddffdd,stroke:#009900,stroke-width:2px;\n    class DELAY1,DELAY2,DELAY3,CHECK1,CHECK2,CHECK3 today;\n```",
+			"styleAttributes":{},
+			"x":400,
+			"y":6880,
+			"width":1280,
+			"height":2640
+		},
+		{"id":"d4428d7b4e8c9c08","type":"text","text":"### Buildable today (simplified substitute)","x":408,"y":6800,"width":452,"height":60}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

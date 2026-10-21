@@ -1,0 +1,7 @@
+{
+	"nodes":[
+		{"id":"cde56753a15342b6","x":-235,"y":-164,"width":515,"height":384,"type":"text","text":"Dec - 9 **Build room plans or bugs to be solved**\n\n1. Infer the metadata using gpt 5o mini \n2. Cleaning table name\n3. Make self loop for table inference\n4. new rule is not being added through conversation.\n5. check with duplication of business rule\n6. documentation for prompt file.\n7. thorough testing of business entity\n8. "},
+		{"id":"21f904bb0a14dc92","x":-180,"y":540,"width":571,"height":500,"type":"text","text":"SELECT COUNT(1) AS invalid_records FROM uat_vena.dec9_e2e_testing.sample_gl_export_cleansed_sheet1 WHERE date < 'start_date' OR date > 'end_date'\n\n\n69383b9b0eb7febda0467a1b\n\nThe `dec9_e2e_testing.sample_gl_export_cleansed_sheet1.date` must fall within the defined reporting period.\n\n---\nSELECT COUNT(1) AS invalid_records FROM uat_vena.dec9_e2e_testing.sample_gl_export_cleansed_sheet1 WHERE date IS NULL\n\n\n69383bab0eb7febda0467a1e\n\nThe `dec9_e2e_testing.sample_gl_export_cleansed_sheet1.date` must be between the reporting start date and end date defined by the `dec9_e2e_testing.sample_gl_export_cleansed_sheet1.period`."}
+	],
+	"edges":[]
+}

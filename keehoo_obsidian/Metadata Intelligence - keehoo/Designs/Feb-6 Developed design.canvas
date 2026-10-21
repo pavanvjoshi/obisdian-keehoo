@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"1b6aa671c49cdf7d","x":-571,"y":-39,"width":250,"height":60,"type":"text","text":"Local DDL "},
+		{"id":"f1da10c8ece903d7","x":-570,"y":80,"width":250,"height":60,"type":"text","text":"Extracts DDL from the given path and pass it to parser"},
+		{"id":"bcc5408a3b5bb5de","x":-570,"y":180,"width":250,"height":60,"type":"text","text":"Parses the DDLs (DDL to Abstract synatx tree {AST.})"},
+		{"id":"e945fe1ffb522748","x":-570,"y":280,"width":250,"height":60,"type":"text","text":"AST to metadata schema"},
+		{"id":"96634f5379f8f9f7","x":-570,"y":440,"width":250,"height":60,"type":"text","text":"infers embedding input."},
+		{"id":"a0fe8b076c995122","x":-220,"y":-320,"width":105,"height":60,"type":"text","text":"#### Input "},
+		{"id":"69cd02669975fa9f","x":0,"y":-39,"width":250,"height":60,"type":"text","text":"MY SQL Data"},
+		{"id":"e3069cb679fc6b12","x":1,"y":111,"width":250,"height":60,"type":"text","text":"MYSQL connector "},
+		{"id":"4865e6e8eb800d05","x":2407,"y":1025,"width":573,"height":1655,"type":"text","text":"```mermaid\n\nflowchart TD\n\nA[Start Workflow] --> B{Source Type}\n\nB -->|Local DDL Files| C[Prepare Skeletons]\n\nB -->|MySQL Database| D[Prepare from MySQL]\n\nC --> E[Parse DDL with SQLGlot]\n\nD --> F[Connect to MySQL]\n\nF --> G[Fetch Table DDLs]\n\nG --> E\n\nE --> H[Generate Metadata Skeletons]\n\nH --> I[Persist to MongoDB]\n\nI --> J[Trigger AI Enrichment]\n\nJ --> K[LangChain Agent Processing]\n\nK --> L[Analyze DDL Content]\n\nL --> M[Infer Metadata]\n\nM --> N[Update MongoDB]\n\nN --> O[Return Success Response]\n\n```\n"},
+		{"id":"52ccc24d0af7126f","x":3120,"y":1025,"width":1794,"height":1234,"type":"text","text":"```mermaid\n\nsequenceDiagram\n\nparticipant Client\n\nparticipant API as FastAPI\n\nparticipant Service as DDL Service\n\nparticipant Orch as Orchestration\n\nparticipant Parser\n\nparticipant MySQL\n\nparticipant Mongo as MongoDB\n\nparticipant Agent as AI Agent\n\nClient->>API: POST Request\n\nAPI->>Service: Process Request\n\nService->>Orch: Start Workflow\n\nOrch->>Service: Phase 1 - Prepare\n\nService->>Parser: Parse DDL/Extract Schema\n\nParser-->>Service: Metadata Structure\n\nService->>MySQL: (if MySQL source)\n\nMySQL-->>Service: Database Schema\n\nService->>Mongo: Phase 2 - Persist Data\n\nMongo-->>Service: Storage Confirmation\n\nOrch->>Service: Phase 3 - Trigger Enrichment\n\nService->>Agent: Run AI Analysis\n\nAgent->>Mongo: Fetch Skeleton Data\n\nMongo-->>Agent: Raw Metadata\n\nAgent->>Agent: LLM Processing\n\nAgent->>Mongo: Update Enriched Metadata\n\nMongo-->>Agent: Update Complete\n\nAgent-->>Service: Enrichment Result\n\nService-->>Orch: Workflow Status\n\nOrch-->>API: Final Response\n\nAPI-->>Client: Success/Failure\n\n```\n"},
+		{"id":"52964baf1ed4b49a","x":1440,"y":1025,"width":428,"height":1058,"type":"text","text":"```mermaid\n\ngraph TD\n\nA[Client Request] --> B{Input Type}\n\nB -->|DDL Files| C[DDL Router]\n\nB -->|MySQL DB| D[MySQL Router]\n\nC --> E[Orchestration Layer]\n\nD --> E\n\nE --> F[Phase 1: Prepare]\n\nF --> G[Phase 2: Persist]\n\nG --> H[Phase 3: Enrich]\n\nH --> I[MongoDB Storage]\n\nI --> J[Response to Client]\n\n```\n"}
+	],
+	"edges":[
+		{"id":"b4967052e85d5dc4","fromNode":"a0fe8b076c995122","fromSide":"bottom","toNode":"1b6aa671c49cdf7d","toSide":"top"},
+		{"id":"fc2de224d364a743","fromNode":"a0fe8b076c995122","fromSide":"bottom","toNode":"69cd02669975fa9f","toSide":"top"},
+		{"id":"492aa7cb0aa7d54a","fromNode":"1b6aa671c49cdf7d","fromSide":"bottom","toNode":"f1da10c8ece903d7","toSide":"top"},
+		{"id":"aef100f220409ea7","fromNode":"f1da10c8ece903d7","fromSide":"bottom","toNode":"bcc5408a3b5bb5de","toSide":"top"},
+		{"id":"5c022305a3763859","fromNode":"bcc5408a3b5bb5de","fromSide":"bottom","toNode":"e945fe1ffb522748","toSide":"top"},
+		{"id":"939fe613d631093b","fromNode":"e945fe1ffb522748","fromSide":"bottom","toNode":"96634f5379f8f9f7","toSide":"top","label":"agent kicks in"},
+		{"id":"d7f6109f9e1a4bdd","fromNode":"69cd02669975fa9f","fromSide":"bottom","toNode":"e3069cb679fc6b12","toSide":"top"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

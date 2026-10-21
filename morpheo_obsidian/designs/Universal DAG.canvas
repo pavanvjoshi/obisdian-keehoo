@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"6045f5bba9847592","x":-880,"y":-70,"width":250,"height":60,"type":"text","text":"Landing "},
+		{"id":"5e5dfbe6eaa711dc","x":-500,"y":-70,"width":250,"height":60,"type":"text","text":"Flattening"},
+		{"id":"1edb8126f060ecad","x":-160,"y":20,"width":250,"height":60,"type":"text","text":"Meta Inference"},
+		{"id":"89543230f1a0e874","x":180,"y":80,"width":250,"height":60,"type":"text","text":"Cross source"},
+		{"id":"7b1d1c61220ff1ac","x":480,"y":220,"width":250,"height":60,"type":"text","text":"metadata migration"},
+		{"id":"76a42eb810c0168e","x":780,"y":380,"width":250,"height":60,"type":"text","text":"data loading "},
+		{"id":"9a04a6984a82e60b","x":1100,"y":560,"width":250,"height":60,"type":"text","text":"dq rules"},
+		{"id":"579e5f567fc2fada","x":1420,"y":760,"width":250,"height":60,"type":"text","text":"rules migration"}
+	],
+	"edges":[
+		{"id":"ca653a64fdeddb0b","fromNode":"6045f5bba9847592","fromSide":"right","toNode":"5e5dfbe6eaa711dc","toSide":"left"},
+		{"id":"83c71144d1828004","fromNode":"5e5dfbe6eaa711dc","fromSide":"right","toNode":"1edb8126f060ecad","toSide":"left"},
+		{"id":"777736cfa12b6258","fromNode":"1edb8126f060ecad","fromSide":"right","toNode":"89543230f1a0e874","toSide":"left"},
+		{"id":"f3538606b38f67da","fromNode":"89543230f1a0e874","fromSide":"bottom","toNode":"7b1d1c61220ff1ac","toSide":"left"},
+		{"id":"990b9a9e4b901567","fromNode":"7b1d1c61220ff1ac","fromSide":"bottom","toNode":"76a42eb810c0168e","toSide":"left"},
+		{"id":"1739dc92560de52c","fromNode":"76a42eb810c0168e","fromSide":"bottom","toNode":"9a04a6984a82e60b","toSide":"left"},
+		{"id":"4f29ea929d50aa72","fromNode":"9a04a6984a82e60b","fromSide":"bottom","toNode":"579e5f567fc2fada","toSide":"left"}
+	]
+}

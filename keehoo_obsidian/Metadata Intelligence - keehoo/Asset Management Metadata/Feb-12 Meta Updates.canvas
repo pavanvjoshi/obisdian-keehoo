@@ -1,0 +1,45 @@
+{
+	"nodes":[
+		{"id":"dc29881b9d794ddb","type":"group","x":-1120,"y":-878,"width":2180,"height":1009,"label":"Untitled group"},
+		{"id":"2f604242211987ac","type":"group","x":-1211,"y":340,"width":2748,"height":751,"label":"Untitled group"},
+		{"id":"56e441e099f7cef9","type":"group","x":-700,"y":-180,"width":1289,"height":284,"color":"3","label":"Metadata inference irrespective of Application"},
+		{"id":"bdee24c59ad7deec","type":"text","text":"**Implementation/current thoughts:**\n\n1. Make configure driven code where we can change the input anytime. (BLOB, MINIO, S3 etc...)\n2. Make Flexible framework where it does helps more in pluggable.\n3. For every **structured data** we add **DDL connector** as in we always convert input as DDL no matter the input file format.","x":-716,"y":-808,"width":654,"height":480,"color":"4"},
+		{"id":"8f9f630d783a2e9c","type":"text","text":"**Queries/Questions:**\n\n1. **Push vs Pull mechanism:** The current API model leans toward a \"push\" mechanism where files are placed in a bucket/folder and the metadata tool extracts the information?\n\t1. Needs to discuss How the mechanism should be is it push or pull.\n2. **Will application call this meta API or will it be used by the orchestrator end?**\n\t1. If meta API - (Need thinking)\n\t2. if orchestrator - How much information on that file will be known to orchestrator(Like who uploaded the file? when?).\n3. **Triggering Mechanism:** Needs discussion on how the triggering mechanism will work.\n\t1. Trigger(API trigger) for every file landing(image, video, audio...)\n\t2. Trigger for every set of files land(image, video, audio, structured data...)\n4. **DDL connector:** how  connector application is handled for every different databases. ","x":-42,"y":-858,"width":480,"height":580,"color":"1"},
+		{"id":"07b4807966835469","type":"text","text":"#### Input store (MINIO)","x":-1100,"y":-373,"width":250,"height":96,"color":"4"},
+		{"id":"6783671b84820e78","type":"text","text":"#### type of inputs\n\n**Current inputs:**\n1. Video\n2. Image\n3. DDLs\n\n**future inputs:**\n5. Audio\n6. text","x":-1100,"y":-227,"width":250,"height":338,"color":"4"},
+		{"id":"4dd3aeda1014c1a1","type":"text","text":"#### Output:\n\n**DATASET:** \n* Entity\n* aspects\n* relationships\n\n#### FILES:\n* Entity\n* aspects","x":240,"y":-160,"width":338,"height":204,"color":"3"},
+		{"id":"f674a05dfbfda2ca","type":"text","text":"#### Process:\n* File inference is python script\n* Agents for DDL inference which also includes agent to agent calling. ","x":-202,"y":-160,"width":320,"height":204,"color":"3"},
+		{"id":"b64b4fea7fe2ab07","type":"text","text":"#### output store (MongoDB)\n\n**collections:**\n1. **Entity collection**: master level metadata.\n2. **Aspect collection:** file level metadata\n3. **Relationship collection:** relationship ","x":680,"y":-227,"width":320,"height":338,"color":"4"},
+		{"id":"fbc75c6293fc51bd","type":"text","text":"#### Inputs:\n* **entity type**: dataset(structured)/file(unstructured)\n* **path**: path of files\n* **metadata**(as in extra parameter(**optional**))","x":-671,"y":-160,"width":369,"height":204,"color":"3"},
+		{"id":"0a38ab85ead47be4","type":"text","text":"**Different type of databases for structured Data:**\n1. RDMS database\n2. Structured files\n3. semi structured files\n","x":-1191,"y":360,"width":300,"height":180,"color":"4"},
+		{"id":"46bb214b0d0ae6e4","type":"text","text":"**Storage for unstructured data:**\n\n**Currently: MINIO**\nFuture: S3, blob, etc..","x":-1191,"y":600,"width":300,"height":160,"color":"4"},
+		{"id":"a330ef8aa28381f8","type":"text","text":"#### connector for DDL extraction (needs discussion)","x":-831,"y":405,"width":320,"height":90,"color":"1"},
+		{"id":"d19864ecba6a03bb","type":"text","text":"#### Input file or dataset","x":-11,"y":649,"width":227,"height":62,"color":"4"},
+		{"id":"0d572a5bc1f9f6f9","type":"text","text":"**Common database for Keehoo**","x":-451,"y":570,"width":250,"height":60,"color":"1"},
+		{"id":"a7cb75e54d51b5ea","type":"text","text":"**Structured (DDL) File trigger:**\n\n1. Folder path is given extract DDL's from the folder path.\n2. Flatten the metadata schema given for structured format.\n3. Loop every DDL as table.\n4. check for the all the required fields are present, as in (pk, fk, and other fields)\n\t1. if not present call other agents for PK, FK agents.\n\t2. if present infer those and call embedding input agent.","x":524,"y":711,"width":424,"height":360,"color":"4"},
+		{"id":"d0af9f686b84f1d4","type":"text","text":"**Unstructured File trigger:**\n\n1. Read input provided\n2. Generate schema as defined\n3. Read dumped file.\n4. Extract relevant metadata passed via payload\n5. Extract relevant metadata from the file.\n6. Map metadata into unified schema from both **file** and **payload input** via **Agent**.","x":524,"y":381,"width":424,"height":268,"color":"4"},
+		{"id":"dce9beb82ac83e25","type":"text","text":"\n```mermaid\n\nsequenceDiagram\n\nparticipant Client\n\nparticipant API\n\nparticipant MetadataService\n\nparticipant MinioService\n\nparticipant Extractor\n\nparticipant Agent\n\nparticipant Database\n\n%% Phase 1: Request Reception and Validation\n\nClient->>API: POST /extract-metadata\n\nAPI->>MetadataService: process_metadata_extraction()\n\nMetadataService->>MinioService: object_exists()\n\nMinioService-->>MetadataService: existence check\n\n%% Phase 2: Content Retrieval and Extraction\n\nMetadataService->>MinioService: get_object()\n\nMinioService-->>MetadataService: file_content, metadata\n\nMetadataService->>Extractor: extract()\n\n%% Phase 3: Storage and Response\n\nExtractor->>Extractor: Process file content\n\nExtractor-->>MetadataService: extracted_data\n\nMetadataService->>Database: Store entities/aspects\n\nDatabase-->>MetadataService: confirmation\n\nMetadataService-->>API: result\n\nAPI-->>Client: Success response\n\n```\n","x":1840,"y":-485,"width":1608,"height":931},
+		{"id":"719ba4bd41729493","type":"text","text":"#### High-Level Sequence Diagram","x":1840,"y":-568,"width":334,"height":83},
+		{"id":"f60908be45a64135","type":"text","text":"#### MongoDB storage:\n\n**Files:** entities, aspects.\n**Datasets:** entities, aspects, relationships. ","x":1204,"y":570,"width":313,"height":179,"color":"4"}
+	],
+	"edges":[
+		{"id":"f6880dfd5a8053df","fromNode":"07b4807966835469","fromSide":"bottom","toNode":"6783671b84820e78","toSide":"top"},
+		{"id":"f19874561f203868","fromNode":"6783671b84820e78","fromSide":"right","toNode":"56e441e099f7cef9","toSide":"left"},
+		{"id":"5a45e45fb102bc88","fromNode":"fbc75c6293fc51bd","fromSide":"right","toNode":"f674a05dfbfda2ca","toSide":"left"},
+		{"id":"b45c14d40bbfe781","fromNode":"f674a05dfbfda2ca","fromSide":"right","toNode":"4dd3aeda1014c1a1","toSide":"left"},
+		{"id":"ad145146d20b09e3","fromNode":"56e441e099f7cef9","fromSide":"right","toNode":"b64b4fea7fe2ab07","toSide":"left"},
+		{"id":"3f5a70ff684340b8","fromNode":"0a38ab85ead47be4","fromSide":"right","toNode":"a330ef8aa28381f8","toSide":"left"},
+		{"id":"538ef6f8d6bee29b","fromNode":"a330ef8aa28381f8","fromSide":"right","toNode":"0d572a5bc1f9f6f9","toSide":"left"},
+		{"id":"55940ef04e5a9b72","fromNode":"46bb214b0d0ae6e4","fromSide":"right","toNode":"0d572a5bc1f9f6f9","toSide":"left","label":"optional"},
+		{"id":"87b14b6ff5c74c16","fromNode":"46bb214b0d0ae6e4","fromSide":"right","toNode":"d19864ecba6a03bb","toSide":"left","label":"OR"},
+		{"id":"8ea4b620cc7476e5","fromNode":"0d572a5bc1f9f6f9","fromSide":"right","toNode":"d19864ecba6a03bb","toSide":"left"},
+		{"id":"fb57e94ce6299dd8","fromNode":"d19864ecba6a03bb","fromSide":"right","toNode":"d0af9f686b84f1d4","toSide":"left","label":"orchestrator trigger"},
+		{"id":"614fb32e58188d5b","fromNode":"d19864ecba6a03bb","fromSide":"right","toNode":"a7cb75e54d51b5ea","toSide":"left","label":"orchestrator trigger"},
+		{"id":"be37eecfd5787628","fromNode":"d0af9f686b84f1d4","fromSide":"right","toNode":"f60908be45a64135","toSide":"left"},
+		{"id":"98cb02397fedc83a","fromNode":"a7cb75e54d51b5ea","fromSide":"right","toNode":"f60908be45a64135","toSide":"left"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

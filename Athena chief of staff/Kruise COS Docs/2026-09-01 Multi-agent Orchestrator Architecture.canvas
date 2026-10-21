@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{
+			"id":"284c132827cf6154",
+			"type":"text",
+			"text":"```mermaid\nflowchart TD\n    Start([Start]) --> Context[Context builder<br/>No language model]\n\n    Context --> Comprehend[Comprehend classifier<br/>Preflight rules or language model]\n\n    Comprehend --> RouteComprehend{Route decision}\n\n    RouteComprehend -->|Generic greeting or meta| General[General responder<br/>Single language model call]\n    RouteComprehend -->|Out of scope| OutOfScope[Static refusal<br/>No language model]\n    RouteComprehend -->|Organizational work| Planner[Planner<br/>Task decomposition]\n\n    General --> EndGeneral([End])\n    OutOfScope --> EndOOS([End])\n\n    Planner --> Scheduler[Scheduler<br/>Task ledger wave picker]\n\n    Scheduler --> RouteScheduler{Ready tasks?}\n\n    RouteScheduler -->|Invalid plan or no active wave| Synthesizer[Synthesizer<br/>Chief of Staff voice]\n    RouteScheduler -->|Domain-level task| DomainAgent[Domain coordinator<br/>Department spawn decision]\n    RouteScheduler -->|Department-level task| Specialist[Specialist agent<br/>Tool loop per department]\n\n    DomainAgent --> Scheduler\n\n    Specialist --> Barrier[Barrier<br/>Wave synchronization]\n\n    Barrier --> RouteBarrier{Next step?}\n\n    RouteBarrier -->|More pending tasks| Scheduler\n    RouteBarrier -->|Department round finished| DomainMerge[Domain merge<br/>Combine department briefs]\n    RouteBarrier -->|All work complete| Synthesizer\n\n    DomainMerge --> DomainGate[Domain gate<br/>Coverage and iteration check]\n\n    DomainGate --> RouteGate{Continue gathering?}\n\n    RouteGate -->|Another department round needed| DomainAgent\n    RouteGate -->|Domain complete| Scheduler\n\n    Synthesizer --> OptionalOrgPulse{Org-wide status brief?}\n    OptionalOrgPulse -->|Yes| OrgPulseBuilder[Org pulse JSON builder<br/>Second language model pass]\n    OptionalOrgPulse -->|No| EndSynth([End])\n    OrgPulseBuilder --> EndSynth\n\n```",
+			"styleAttributes":{},
+			"x":-1120,
+			"y":-1360,
+			"width":1400,
+			"height":2520
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

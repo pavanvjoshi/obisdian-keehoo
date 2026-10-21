@@ -1,0 +1,58 @@
+{
+	"nodes":[
+		{
+			"id":"1365f46a220aaddd",
+			"type":"text",
+			"text":"# Client Application",
+			"styleAttributes":{},
+			"x":-360,
+			"y":420,
+			"width":340,
+			"height":240
+		},
+		{
+			"id":"515427ff215e4406",
+			"type":"text",
+			"text":"# Testing App (POC)\n\n1. Playwright script -> input\n2. Test\n\t1. If pass\n\t\t1. Success message\n\t2. If fail\n\t\t1. Auto heal agent: \n\t\t\t1. Analyse the error\n\t\t\t2. Given script Analyse\n\t\t\t3. Application Crawl through URL\n\t\t\t4. Propose the Fix(HITL)\n\t\t\t5. Test\n\t\t\t6. Success return",
+			"styleAttributes":{},
+			"x":-700,
+			"y":-320,
+			"width":340,
+			"height":480
+		},
+		{
+			"id":"273224e35a27dc49",
+			"type":"text",
+			"text":"# Inspecto\n\n1. Playwright script\n2. Healing agent",
+			"styleAttributes":{},
+			"x":-200,
+			"y":-320,
+			"width":340,
+			"height":220
+		}
+	],
+	"edges":[
+		{
+			"id":"e9a9daa903311127",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"273224e35a27dc49",
+			"fromSide":"bottom",
+			"toNode":"1365f46a220aaddd",
+			"toSide":"top"
+		},
+		{
+			"id":"c8e4283786a6dcc8",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"515427ff215e4406",
+			"fromSide":"bottom",
+			"toNode":"1365f46a220aaddd",
+			"toSide":"top"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

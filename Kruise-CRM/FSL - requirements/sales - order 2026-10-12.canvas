@@ -1,0 +1,49 @@
+{
+	"nodes":[
+		{
+			"id":"a34d6dce9a789ffd",
+			"type":"text",
+			"text":"1. heading create sales order to only **Sales Order**\n2. remove above and below content of header\n3. Order source\n\t1. give few options first \n\t\t1. website\n\t\t2. direct sales\n\t\t3. customer po\n\t\t4. repeat/contract\n\t\t5. social media\n\t\t6. + add others\n\t2. must be in drop down format\n4. Customer name must not be shown directly\n\t1. instead use their ID\n\t2. when we try to search the name it \"ID\" must be only seen\n\t3. name must be not shown until user clicks for view button\n5. remove sales person field\n6. remove place of supply field\n7. add customer mobile number and email id\n8. remove currency field",
+			"styleAttributes":{},
+			"x":-400,
+			"y":-240,
+			"width":700,
+			"height":540
+		},
+		{
+			"id":"bd23a0bb5f91bf33",
+			"type":"text",
+			"text":"1. In order items\n\t1. add serial number for all the items\n\t2. product item\n\t3. description\n\t4. unit\n\t\t1. kg\n\t\t2. number\n\t\t3. ltr?\n\t5. unit price\n\t6. quantity\n\t7. discount\n\t8. GST",
+			"styleAttributes":{},
+			"x":320,
+			"y":-240,
+			"width":600,
+			"height":540
+		},
+		{
+			"id":"780d1ceb53146062",
+			"type":"text",
+			"text":"### priorities sales-flow \n\n1. Master data alignment\n2. Stock application alignment\n3. production integration\n\t1. when there is no products in stock ",
+			"styleAttributes":{},
+			"x":980,
+			"y":-240,
+			"width":620,
+			"height":540
+		},
+		{
+			"id":"7350b7119bfc86e0",
+			"type":"text",
+			"text":"1. Customer ID to Company ID\n2. In CRM application until and unless lead contact become SQL he is lead contact after qualification he will become as customer push the customer data into master data. Also from master data we also have an option to add the customer. ",
+			"styleAttributes":{},
+			"x":780,
+			"y":380,
+			"width":480,
+			"height":540
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

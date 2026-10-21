@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"50f417cd378764fb","type":"text","text":"```mermaid\nflowchart TB\n    subgraph ID[\"🧭 IDENTITY LAYER — Who Athena Is\"]\n        M01[\"M01 Vision<br/>Why this exists\"]\n        M02[\"M02 Continuity Strategy<br/>Philosophy of preserving knowledge\"]\n        M04[\"M04 Constitution<br/>Rules, identity, boundaries\"]\n        M01 --> M04\n        M02 --> M04\n    end\n\n    subgraph MEM[\"🗂️ MEMORY LAYER — Where Knowledge Lives\"]\n        M03[\"M03 HQ Vision<br/>Concept of knowledge domains\"]\n        M05[\"M05 HQ Architecture<br/>Structure of every HQ\"]\n        M06[\"M06 Register Framework<br/>How history gets recorded\"]\n        HQBOX[\"Each HQ contains:<br/>Current Intelligence + Registers\"]\n        M03 --> M05\n        M05 --> M06\n        M05 --> HQBOX\n    end\n\n    subgraph BEH[\"⚙️ BEHAVIOR LAYER — How Athena Acts Daily\"]\n        M07[\"M07 Operating Model<br/>The workflow for handling info\"]\n        M08[\"M08 Operational Rhythm<br/>Daily / weekly review calendar\"]\n        M07 --> M08\n    end\n\n    subgraph BAK[\"💾 BACKUP LAYER — How Athena Survives Loss\"]\n        M09[\"M09 Persistence and Recovery\"]\n        EQ[\"Athena Definition<br/>+ HQ Intelligence<br/>+ Delta Packages<br/>= Recoverable Athena\"]\n        M09 --> EQ\n    end\n\n    subgraph ACT[\"📋 ACTION LAYER — The Scripts\"]\n        P[\"P01–P33 Prompt Library<br/>Ready-to-run instructions\"]\n    end\n\n    subgraph GOV[\"⚖️ GOVERNANCE LAYER — The Rulings\"]\n        DEC[\"DEC-001–DEC-006<br/>Approved Decisions\"]\n    end\n\n    M04 --> M03\n    M04 --> M07\n    M07 --> M09\n    M08 --> P\n    M04 --> DEC\n```","x":-178,"y":-1020,"width":1738,"height":980},
+		{"id":"b7f1211e7d5088be","x":582,"y":160,"width":218,"height":120,"type":"text","text":"[[M-series.canvas]]\n[[DEC-series.canvas]]\n[[P-series.canvas]]"},
+		{"id":"b4c69fa79d0dcd3b","x":38,"y":-1240,"width":402,"height":80,"type":"text","text":"## Architecture exported from the provided docx"}
+	],
+	"edges":[
+		{"id":"03467501ab2b135c","fromNode":"50f417cd378764fb","fromSide":"bottom","toNode":"b7f1211e7d5088be","toSide":"top"},
+		{"id":"42a2b0b95be5fe32","fromNode":"b4c69fa79d0dcd3b","fromSide":"bottom","toNode":"50f417cd378764fb","toSide":"top"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"f4aefb45a6006e98","x":-419,"y":-195,"width":179,"height":55,"type":"text","text":"# source_1"},
+		{"id":"3e917c1c44dc51b4","x":-660,"y":20,"width":250,"height":60,"type":"text","text":"# table 1"},
+		{"id":"71bce964573d1641","x":-329,"y":20,"width":250,"height":60,"type":"text","text":"# table 2"},
+		{"id":"218ee786e3fa8f82","x":-20,"y":20,"width":250,"height":60,"type":"text","text":"# table 3"},
+		{"id":"e1c685131605ccf4","x":-426,"y":379,"width":250,"height":60,"type":"text","text":"# inferred "},
+		{"id":"c6c3f1a369d32952","x":-432,"y":635,"width":353,"height":50,"type":"text","text":"# universal migration"},
+		{"id":"2141932f23d48c35","x":442,"y":286,"width":250,"height":60,"type":"text","text":"# CIC concept"},
+		{"id":"44609465c77c25d5","x":940,"y":259,"width":590,"height":240,"type":"text","text":"1. Need to infer the only table, or may be column\n2. check the relationship of new table or column for every existing metadata.\n3. if new table is being added (re infer its source, and its columns)\n4. if new column is being added (re infer it source and table)\n5. once the re-inference for CIC is happened then we need to migrate the received table/column. "},
+		{"id":"a3200be06c9b72c6","x":840,"y":-227,"width":250,"height":60,"type":"text","text":"# new table 4"}
+	],
+	"edges":[
+		{"id":"5fb0a3976175466d","fromNode":"f4aefb45a6006e98","fromSide":"bottom","toNode":"3e917c1c44dc51b4","toSide":"top"},
+		{"id":"660ca700eca97999","fromNode":"f4aefb45a6006e98","fromSide":"bottom","toNode":"71bce964573d1641","toSide":"top"},
+		{"id":"4573eadb43474249","fromNode":"f4aefb45a6006e98","fromSide":"bottom","toNode":"218ee786e3fa8f82","toSide":"top"},
+		{"id":"e35e454f465c7cf0","fromNode":"f4aefb45a6006e98","fromSide":"bottom","toNode":"a3200be06c9b72c6","toSide":"top","label":"second time for same source"},
+		{"id":"9f8ea1a0ab511324","fromNode":"3e917c1c44dc51b4","fromSide":"bottom","toNode":"e1c685131605ccf4","toSide":"top"},
+		{"id":"2e2fb8d8f917a4e8","fromNode":"71bce964573d1641","fromSide":"bottom","toNode":"e1c685131605ccf4","toSide":"top"},
+		{"id":"6cd8ecaff7d98c04","fromNode":"218ee786e3fa8f82","fromSide":"bottom","toNode":"e1c685131605ccf4","toSide":"top"},
+		{"id":"640670cb5e66383c","fromNode":"e1c685131605ccf4","fromSide":"bottom","toNode":"c6c3f1a369d32952","toSide":"top"},
+		{"id":"b91deaefc5a40951","fromNode":"a3200be06c9b72c6","fromSide":"bottom","toNode":"2141932f23d48c35","toSide":"top"},
+		{"id":"eb3ae7eb2b450f04","fromNode":"44609465c77c25d5","fromSide":"bottom","toNode":"e1c685131605ccf4","toSide":"right"},
+		{"id":"4886558aa743902b","fromNode":"2141932f23d48c35","fromSide":"right","toNode":"44609465c77c25d5","toSide":"left"}
+	]
+}
