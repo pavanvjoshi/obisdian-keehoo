@@ -1,0 +1,93 @@
+{
+	"nodes":[
+		{"id":"c5b8be254b828d04","type":"text","text":"Lead","x":-1355,"y":-555,"width":250,"height":60},
+		{"id":"a2c2a7eade1de1c9","type":"text","text":"What is that you sell ?\n\nIs it a group company or individual entity ?\n\nDo you have system in place to perform all below ?\n\nMarketing and Campaign Management\nLead Management\nPre Sales Management\nSales Management\nPost Sales - CRM\nOrder management\nStock Management\nWarehouse Management\nProduction Management\nProcurement Management\nMaintenance Management\nAsset Management\nFinance Management\nTicket Management/Help Desk\n\n\n- I am an on ERP\n- I am on Excel Sheet\n- I am on Partial ERP\n\t- sakjflkasjf\n\n\n- Can you explain pain points in each modules ?\n\t- We present our Standard Flows\n\t\t- They can comment that they want step and 4 and 5 .\n- The system you are using, does it give you integrated ERP ?\n- Does your existing system give you right, accurate analaytics ?\n- Does it give your real time analytics ?\n- ","x":-1150,"y":-430,"width":665,"height":1060},
+		{"id":"b9c39e0761d6aec7","type":"text","text":"**Onboarding**","x":-1355,"y":-700,"width":250,"height":60},
+		{"id":"617e821109519ce5","type":"text","text":"MQL","x":-1025,"y":-555,"width":250,"height":60},
+		{"id":"026bfebb9d290d6e","type":"text","text":"Discovery","x":-700,"y":-555,"width":250,"height":60},
+		{"id":"4acb47060c78ab2f","type":"text","text":"Demo","x":-400,"y":-555,"width":250,"height":60},
+		{"id":"24248c60c880bdb9","type":"text","text":"SQL","x":-65,"y":-555,"width":250,"height":60},
+		{"id":"033ee42095af4ece","type":"text","text":"Discovery","x":431,"y":-449,"width":250,"height":60},
+		{"id":"d403c25056cfc1ec","type":"text","text":"SQL Stage","x":431,"y":-552,"width":250,"height":60},
+		{"id":"af687cf7b20bc98f","type":"text","text":"Marketing- MQL Stage","x":431,"y":-670,"width":250,"height":60},
+		{"id":"a150205c9ab98743","type":"text","text":"Quotation","x":-65,"y":-449,"width":250,"height":60},
+		{"id":"4bf737fd0df60a03","type":"text","text":"Negotiation","x":-65,"y":-320,"width":250,"height":60},
+		{"id":"d70250b8772b09e7","type":"text","text":"Deal or Close","x":-65,"y":-186,"width":250,"height":60},
+		{"id":"0c37c6a0d33f5387","type":"text","text":"**Onboard**\n\n- Master Data\n- Lot of Configuration\n\t- Process\n\t- Role\n\t- Events\n\t- Pricing","x":-65,"y":-50,"width":250,"height":300},
+		{"id":"338b7ea4770681f0","type":"text","text":"- Config driven onboarding \n- Questions interesting\n- Question flow is inter related\n- Type of questions\n\t- Radio\n\t- Check Box\n\t- Text\n- 1st time response from user/customer\n\t- Reply from the Seller\n\t- Further reply from the user/customer \n- Schedule a Call option\n\t- Choice to contact support with available calendar","x":431,"y":-353,"width":384,"height":453},
+		{"id":"918fa424e1a470d9","type":"text","text":"Demo Stage\n\nCall recordings","x":431,"y":150,"width":250,"height":100},
+		{"id":"5ab560ba4ca52d59","type":"text","text":"**Onboarding** - Post Sales\n\n- Aadhar\n- Pricing\n- Master Data\n\t- Easy excel sheet loading\n- Customisation package\n\t- New PRocesses","x":431,"y":299,"width":266,"height":265},
+		{"id":"52c70faaa3dfeecb","type":"text","text":"Onboarding Calls\n- Transcript ","x":431,"y":630,"width":266,"height":110},
+		{"id":"54aba416ab6a9c43","type":"text","text":"**CRM**\n- Keehoo is a customer\n- Kruise is a customer\n- DigiDevalay is a customer","x":-124,"y":371,"width":369,"height":259},
+		{"id":"1d7ddcd00e370bd8","type":"text","text":"**Stages** for activities/Interactions\n\n- Campaign\n\t- Transcript\n- MQL\n\t- Transcript\n- SQL\n\t- Transcript\n- Discovery\n\t- Questionaries\n- Demo\n\t- Transcript\n- Onboarding\n\t- Master Data\n\t- Configuration\n- Customisation\n\t- Calls with Customer\n\t\t- Transcript\n\n\nDeal Stage\n- Company Documents\n- ","x":980,"y":-468,"width":438,"height":685}
+	],
+	"edges":[
+		{
+			"id":"30be1a58d1115ed1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"c5b8be254b828d04",
+			"fromSide":"right",
+			"toNode":"617e821109519ce5",
+			"toSide":"left"
+		},
+		{
+			"id":"d486f8c25ec7f8f1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"617e821109519ce5",
+			"fromSide":"right",
+			"toNode":"026bfebb9d290d6e",
+			"toSide":"left"
+		},
+		{
+			"id":"a3ec04550792c5b0",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"026bfebb9d290d6e",
+			"fromSide":"right",
+			"toNode":"4acb47060c78ab2f",
+			"toSide":"left"
+		},
+		{
+			"id":"d86534c6c3a832e5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4acb47060c78ab2f",
+			"fromSide":"right",
+			"toNode":"24248c60c880bdb9",
+			"toSide":"left"
+		},
+		{
+			"id":"4b5da8066a194cf7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"24248c60c880bdb9",
+			"fromSide":"bottom",
+			"toNode":"a150205c9ab98743",
+			"toSide":"top"
+		},
+		{
+			"id":"db12271076f777e5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a150205c9ab98743",
+			"fromSide":"bottom",
+			"toNode":"4bf737fd0df60a03",
+			"toSide":"top"
+		},
+		{
+			"id":"fb36d959803d9011",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4bf737fd0df60a03",
+			"fromSide":"bottom",
+			"toNode":"d70250b8772b09e7",
+			"toSide":"top"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}

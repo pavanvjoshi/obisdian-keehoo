@@ -1,46 +1,156 @@
 {
 	"nodes":[
-		{"id":"8d9d1ea67afb674c","type":"group","x":-1360,"y":-870,"width":2720,"height":1480,"label":"Untitled group"},
-		{"id":"d0d614adc15d7b2a","type":"group","x":-1170,"y":-350,"width":2260,"height":360,"label":"CRM sales order flow"},
+		{"id":"8d9d1ea67afb674c","type":"group","x":5760,"y":-4320,"width":2720,"height":1480,"label":"Untitled group"},
+		{"id":"d0d614adc15d7b2a","type":"group","x":5950,"y":-3800,"width":2260,"height":360,"label":"CRM sales order flow"},
 		{
-			"id":"002c154b1f92954e",
+			"id":"c5ceda2e2a5c1b54",
 			"type":"text",
-			"text":"Dispatched",
-			"styleAttributes":{"textAlign":"center"},
-			"x":380,
-			"y":-310,
-			"width":260,
-			"height":60,
-			"color":"4"
-		},
-		{
-			"id":"24a3349df95b89c3",
-			"type":"text",
-			"text":"Dispatched",
-			"styleAttributes":{"textAlign":"center"},
-			"x":380,
-			"y":-100,
-			"width":260,
-			"height":60,
-			"color":"3"
-		},
-		{
-			"id":"3fba159e2c4b5d58",
-			"type":"text",
-			"text":"**API 3 for confirming dispatched?** \n1. yes\n\t1. Fulfillment\n2. no\n\t1. throw an error",
+			"text":"Finance",
 			"styleAttributes":{},
-			"x":380,
-			"y":210,
+			"x":5180,
+			"y":-5380,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"5533cf841ea25e8a",
+			"type":"text",
+			"text":"Production",
+			"styleAttributes":{},
+			"x":5180,
+			"y":-5480,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"da1c0d3dc63cbcfd",
+			"type":"text",
+			"text":"CRM",
+			"styleAttributes":{},
+			"x":5180,
+			"y":-5580,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"3475f8d04b35687b",
+			"type":"text",
+			"text":"SQS\n\n\n ",
+			"styleAttributes":{},
+			"x":5600,
+			"y":-5820,
+			"width":340,
+			"height":220
+		},
+		{
+			"id":"bd07e26e395db73d",
+			"type":"text",
+			"text":"Procurement\n1. invoice create\n\t1. producer",
+			"styleAttributes":{},
+			"x":4680,
+			"y":-5380,
+			"width":260,
+			"height":140
+		},
+		{
+			"id":"5e8b9f21c57c6ce9",
+			"type":"text",
+			"text":"Purchase invoice create",
+			"styleAttributes":{},
+			"x":4940,
+			"y":-5180,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"753be56df803a2d2",
+			"type":"text",
+			"text":"Event publisher\n1. CRM\n\t1. invoice\n\t2. consumers\n2. Production\n\t1. invoice\n3. Finance\n\t1. invoice",
+			"styleAttributes":{},
+			"x":4680,
+			"y":-5820,
+			"width":300,
+			"height":270
+		},
+		{
+			"id":"b514804816454772",
+			"type":"text",
+			"text":"Create sales order ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":5970,
+			"y":-3620,
+			"width":260,
+			"height":60,
+			"color":"2"
+		},
+		{
+			"id":"9476a6516e4834f8",
+			"type":"text",
+			"text":"**API 1 for checking stock availability**\n1. Stock available?\n\t1. Stock reserved\n\t2. Dispatched\n\t3. Fulfilled\n2. Not available?\n\t1. Production started \n\t2. Dispatched\n\t3. Fulfilled\n",
+			"styleAttributes":{},
+			"x":6320,
+			"y":-3280,
+			"width":320,
+			"height":320
+		},
+		{
+			"id":"999805b9cedbe75f",
+			"type":"text",
+			"text":"check item stock in stock application",
+			"styleAttributes":{"textAlign":"center"},
+			"x":6350,
+			"y":-3620,
+			"width":260,
+			"height":60,
+			"color":"2"
+		},
+		{
+			"id":"10c84c9ca8db545a",
+			"type":"text",
+			"text":"**API 2 for Stock reservation**\n\n1. Stock reserved? \n\t1. continue the process \n2. failed\n\t1. Throw an error",
+			"styleAttributes":{},
+			"x":7100,
+			"y":-4240,
+			"width":300,
+			"height":270
+		},
+		{
+			"id":"3c0f764ec7eaa76f",
+			"type":"text",
+			"text":"**API 4  for fulfillment complete**\n1. yes\n\t1. sales order success\n2. no \n\t1. sales order failed",
+			"styleAttributes":{},
+			"x":7900,
+			"y":-3240,
 			"width":270,
 			"height":280
+		},
+		{
+			"id":"c395f84a1496275c",
+			"type":"text",
+			"text":"**API  3 for confirming dispatched?** \n1. yes\n\t1. Fulfillment\n2. no\n\t1. throw an error",
+			"styleAttributes":{},
+			"x":7495,
+			"y":-4240,
+			"width":270,
+			"height":270
+		},
+		{
+			"id":"1afc23d78166b072",
+			"type":"text",
+			"text":"**API 4 for fulfillment complete**\n1. yes\n\t1. sales order success\n2. no \n\t1. sales order failed",
+			"styleAttributes":{},
+			"x":7895,
+			"y":-4240,
+			"width":270,
+			"height":250
 		},
 		{
 			"id":"2205bbc9d6c27c71",
 			"type":"text",
 			"text":"Fulfillment",
 			"styleAttributes":{"textAlign":"center"},
-			"x":780,
-			"y":-310,
+			"x":7900,
+			"y":-3760,
 			"width":260,
 			"height":60,
 			"color":"4"
@@ -50,41 +160,8 @@
 			"type":"text",
 			"text":"Fulfillment",
 			"styleAttributes":{"textAlign":"center"},
-			"x":780,
-			"y":-100,
-			"width":260,
-			"height":60,
-			"color":"3"
-		},
-		{
-			"id":"b514804816454772",
-			"type":"text",
-			"text":"Create sales order ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-1150,
-			"y":-170,
-			"width":260,
-			"height":60,
-			"color":"2"
-		},
-		{
-			"id":"999805b9cedbe75f",
-			"type":"text",
-			"text":"check item stock in stock application",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-770,
-			"y":-170,
-			"width":260,
-			"height":60,
-			"color":"2"
-		},
-		{
-			"id":"125f71cce3265aff",
-			"type":"text",
-			"text":"production started ",
-			"styleAttributes":{"textAlign":"center"},
-			"x":0,
-			"y":-100,
+			"x":7900,
+			"y":-3550,
 			"width":260,
 			"height":60,
 			"color":"3"
@@ -94,81 +171,164 @@
 			"type":"text",
 			"text":"**API 5 for production started**\n\n1. production started and completed? \n\t1. continue the process \n2. failed\n\t1. Throw an error",
 			"styleAttributes":{},
-			"x":-20,
-			"y":210,
+			"x":7100,
+			"y":-3240,
 			"width":300,
 			"height":280
+		},
+		{
+			"id":"002c154b1f92954e",
+			"type":"text",
+			"text":"Dispatched",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7500,
+			"y":-3760,
+			"width":260,
+			"height":60,
+			"color":"4"
+		},
+		{
+			"id":"24a3349df95b89c3",
+			"type":"text",
+			"text":"Dispatched",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7500,
+			"y":-3550,
+			"width":260,
+			"height":60,
+			"color":"3"
+		},
+		{
+			"id":"3fba159e2c4b5d58",
+			"type":"text",
+			"text":"**API 3 for confirming dispatched?** \n1. yes\n\t1. Fulfillment\n2. no\n\t1. throw an error",
+			"styleAttributes":{},
+			"x":7500,
+			"y":-3240,
+			"width":270,
+			"height":280
+		},
+		{
+			"id":"125f71cce3265aff",
+			"type":"text",
+			"text":"production started ",
+			"styleAttributes":{"textAlign":"center"},
+			"x":7120,
+			"y":-3550,
+			"width":260,
+			"height":60,
+			"color":"3"
 		},
 		{
 			"id":"c71adc41c2bb4bd0",
 			"type":"text",
 			"text":"Stock reserved ",
 			"styleAttributes":{"textAlign":"center"},
-			"x":0,
-			"y":-310,
+			"x":7120,
+			"y":-3760,
 			"width":260,
 			"height":60,
 			"color":"4"
-		},
-		{
-			"id":"c395f84a1496275c",
-			"type":"text",
-			"text":"**API  3 for confirming dispatched?** \n1. yes\n\t1. Fulfillment\n2. no\n\t1. throw an error",
-			"styleAttributes":{},
-			"x":375,
-			"y":-790,
-			"width":270,
-			"height":270
-		},
-		{
-			"id":"1afc23d78166b072",
-			"type":"text",
-			"text":"**API 4 for fulfillment complete**\n1. yes\n\t1. sales order success\n2. no \n\t1. sales order failed",
-			"styleAttributes":{},
-			"x":775,
-			"y":-790,
-			"width":270,
-			"height":250
-		},
-		{
-			"id":"3c0f764ec7eaa76f",
-			"type":"text",
-			"text":"**API 4  for fulfillment complete**\n1. yes\n\t1. sales order success\n2. no \n\t1. sales order failed",
-			"styleAttributes":{},
-			"x":780,
-			"y":210,
-			"width":270,
-			"height":280
-		},
-		{
-			"id":"9476a6516e4834f8",
-			"type":"text",
-			"text":"**API 1 for checking stock availability**\n1. Stock available?\n\t1. Stock reserved\n\t2. Dispatched\n\t3. Fulfilled\n2. Not available?\n\t1. Production started \n\t2. Dispatched\n\t3. Fulfilled\n",
-			"styleAttributes":{},
-			"x":-800,
-			"y":170,
-			"width":320,
-			"height":320
-		},
-		{
-			"id":"10c84c9ca8db545a",
-			"type":"text",
-			"text":"**API 2 for Stock reservation**\n\n1. Stock reserved? \n\t1. continue the process \n2. failed\n\t1. Throw an error",
-			"styleAttributes":{},
-			"x":-20,
-			"y":-790,
-			"width":300,
-			"height":270
 		},
 		{
 			"id":"98371104d95b3bcc",
 			"type":"text",
 			"text":"## bypass",
 			"styleAttributes":{},
-			"x":0,
-			"y":650,
+			"x":7120,
+			"y":-2800,
 			"width":260,
 			"height":220
+		},
+		{
+			"id":"0ffd141a2dcaaf89",
+			"type":"text",
+			"text":"stock SQS ## 2.1",
+			"styleAttributes":{},
+			"x":8800,
+			"y":-5880,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"2a72f7e1c64957bb",
+			"type":"text",
+			"text":"Event sent to CRM SNS topic",
+			"styleAttributes":{},
+			"x":7400,
+			"y":-5460,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"b2f6c39ea529cde1",
+			"type":"text",
+			"text":"CRM SNS Topic ## 1",
+			"styleAttributes":{},
+			"x":7800,
+			"y":-5460,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"c2cbd8428944a60b",
+			"type":"text",
+			"text":"stock SNS Topic ## 2",
+			"styleAttributes":{},
+			"x":7800,
+			"y":-5360,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"54ee32938181bbfc",
+			"type":"text",
+			"text":"Production SNS Topic ## 3",
+			"styleAttributes":{},
+			"x":7800,
+			"y":-5260,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"7fe681fb734511c0",
+			"type":"text",
+			"text":"Stock reads",
+			"styleAttributes":{},
+			"x":9160,
+			"y":-5880,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"4729305adc054fcc",
+			"type":"text",
+			"text":"CRM SQS ## 1.1",
+			"styleAttributes":{},
+			"x":8370,
+			"y":-5880,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"141739331d058b9e",
+			"type":"text",
+			"text":"Production SQS ## 3.1",
+			"styleAttributes":{},
+			"x":8240,
+			"y":-5100,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"4fdf0c90742dcd74",
+			"type":"text",
+			"text":"Stock reads",
+			"styleAttributes":{},
+			"x":8670,
+			"y":-5100,
+			"width":260,
+			"height":60
 		}
 	],
 	"edges":[
@@ -374,6 +534,118 @@
 			"fromSide":"top",
 			"toNode":"10c84c9ca8db545a",
 			"toSide":"bottom"
+		},
+		{
+			"id":"55f0cf73ef7af972",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"bd07e26e395db73d",
+			"fromSide":"right",
+			"toNode":"c5ceda2e2a5c1b54",
+			"toSide":"left",
+			"label":"api"
+		},
+		{
+			"id":"e35bd5d2735ba650",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"bd07e26e395db73d",
+			"fromSide":"right",
+			"toNode":"5533cf841ea25e8a",
+			"toSide":"left",
+			"label":"api"
+		},
+		{
+			"id":"2c07a302bfd4e566",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"bd07e26e395db73d",
+			"fromSide":"right",
+			"toNode":"da1c0d3dc63cbcfd",
+			"toSide":"left",
+			"label":"api"
+		},
+		{
+			"id":"c54b45c77f9b0a07",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"bd07e26e395db73d",
+			"fromSide":"top",
+			"toNode":"753be56df803a2d2",
+			"toSide":"bottom",
+			"label":"invoice create"
+		},
+		{
+			"id":"adb7cb05c54082ce",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b2f6c39ea529cde1",
+			"fromSide":"right",
+			"toNode":"0ffd141a2dcaaf89",
+			"toSide":"left",
+			"label":"SQS"
+		},
+		{
+			"id":"2e0883cc279d8983",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"b2f6c39ea529cde1",
+			"fromSide":"right",
+			"toNode":"141739331d058b9e",
+			"toSide":"left",
+			"label":"SQS"
+		},
+		{
+			"id":"4e91f0e400fcca2b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"2a72f7e1c64957bb",
+			"fromSide":"right",
+			"toNode":"b2f6c39ea529cde1",
+			"toSide":"left"
+		},
+		{
+			"id":"e98abe2e311803e8",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"0ffd141a2dcaaf89",
+			"fromSide":"right",
+			"toNode":"7fe681fb734511c0",
+			"toSide":"left"
+		},
+		{
+			"id":"65a83c5027a20060",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"141739331d058b9e",
+			"fromSide":"right",
+			"toNode":"4fdf0c90742dcd74",
+			"toSide":"left"
+		},
+		{
+			"id":"180f4891d168b18c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"0ffd141a2dcaaf89",
+			"fromSide":"bottom",
+			"toNode":"b2f6c39ea529cde1",
+			"toSide":"right",
+			"label":"subscribed"
+		},
+		{
+			"id":"047172e912a6ac7e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"141739331d058b9e",
+			"fromSide":"top",
+			"toNode":"b2f6c39ea529cde1",
+			"toSide":"right",
+			"label":"subscribed"
 		}
 	],
 	"metadata":{
